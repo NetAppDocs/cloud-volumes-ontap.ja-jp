@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: reference_limitations_96.html 
+keywords: limitations, detaching, snapmanager, features, disks, aggregates, features, svm 
+summary: 既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。これらの制限事項を慎重に確認してください 
+---
+= すべてのクラウドプロバイダでの Cloud Volumes ONTAP 9.6 の制限
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。これらの制限事項を慎重に確認してください
+
+AWS 、 Azure 、 GCP のすべてのクラウドプロバイダで Cloud Volumes ONTAP に該当する制限事項を以下に記載します。
+
+
+
+== ソフトウェアの更新を Cloud Manager で完了しておく必要があります
+
+Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+
+
+
+== から Cloud Volumes ONTAP 環境を変更することはできません クラウドプロバイダのコンソール
+
+クラウドプロバイダのコンソールから Cloud Volumes ONTAP 構成を変更した場合、サポートされない構成になります。Cloud Manager で作成および管理する Cloud Volumes ONTAP リソースに対する変更は、システムの安定性および Cloud Manager によるシステムの管理機能に影響を及ぼす可能性があります。
+
+
+
+== ディスクとアグリゲートは Cloud Manager で管理する必要があります
+
+すべてのディスクとアグリゲートは、 Cloud Manager から直接作成および削除する必要があります。これらのアクションは、別の管理ツールから実行しないでください。これにより、システムの安定性が低下し、将来ディスクを追加できなくなる可能性があります。また、クラウドプロバイダの冗長料金が発生する可能性もあります。
+
+
+
+== SnapManager のライセンスに関する制限
+
+SnapManager のサーバ単位のライセンスは、 Cloud Volumes ONTAP でサポートされます。ストレージシステム（ SnapManager スイート）単位のライセンスはサポートされません。
+
+
+
+== サポートされない ONTAP 機能です
+
+Cloud Volumes ONTAP では、次の機能はサポートされていません。
+
+* アグリゲートレベルのインライン重複排除
+* アグリゲートレベルのバックグラウンド重複排除
+* ディスクメンテナンスセンター
+* ディスク完全消去
+* Fibre Channel （ FC ；ファイバチャネル）
+* Flash Pool の機能です
+* Infinite Volume
+* インターフェイスグループ
+* ノード内の LIF のフェイルオーバー
+* MetroCluster
+* マルチテナンシー（サポートされるデータ提供用 SVM は 1 つだけ）
+* RAID 4 、 RAID-DP 、 RAID-TEC （ RAID 0 のサポート）
+* サービスプロセッサ
+* SnapLock Compliance モード（ Enterprise モードがサポートされます）
+* SnapMirror Synchronous
+* VLAN
+

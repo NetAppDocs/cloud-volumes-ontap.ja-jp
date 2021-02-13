@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: reference_limitations_aws_97.html 
+keywords: limitations, aws, amazon web services, flashe cache, alarms, cloudwatch, giveback, govcloud, c2s 
+summary: これらの既知の制限は、 Amazon Web Services の Cloud Volumes ONTAP に固有のものです。 
+---
+= AWS での Cloud Volumes ONTAP 9.7 の既知の制限事項
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+以下に記載する制限は、 Amazon Web Services の Cloud Volumes ONTAP に固有のものです。また、必ず確認してください link:reference_limitations_97.html["すべてのクラウドプロバイダでの Cloud Volumes ONTAP 9.7 の制限事項"]。
+
+
+
+== AWS アウトポストでは HA ペアはサポートされていません
+
+AWS のアウトポストではシングルノードシステムがサポートされますが、現時点では HA ペアはサポートされていません。
+
+
+
+== Flash Cache の制限事項
+
+C5D および R5D インスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。次の制限事項に注意してください。
+
+* Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。
++
+Cloud Manager からボリュームを作成するときに Storage Efficiency を使用しないようにするか、またはボリュームを作成してから実行することができます http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["CLI を使用してデータ圧縮を無効にします"^]。
+
+* 再起動後のキャッシュの再ウォームアップは、 Cloud Volumes ONTAP ではサポートされていません。
+
+
+
+
+== Amazon CloudWatch から誤ったアラームが報告されます
+
+Cloud Volumes ONTAP はアイドル状態のときに CPU を解放しないため、 Amazon CloudWatch は使用率を 100% と認識しているため、 EC2 インスタンスに対して CPU 使用率の上昇を警告します。このアラームは無視してかまいません。ONTAP statistics コマンドを実行すると、 CPU の実際の使用状況が表示されます。
+
+
+
+== Cloud Volumes ONTAP HA ペアでは、ストレージの迅速な使用はサポートされません ギブバック
+
+ノードがリブートしたら、ストレージを戻す前に、パートナーがデータを同期する必要があります。データの再同期にかかる時間は、ノードが停止している間にクライアントが書き込んだデータの量、およびギブバックの実行中のデータの書き込み速度によって異なります。
+
+
+
+== AWS C2S 環境の制限事項
+
+を参照してください https://docs.netapp.com/us-en/occm/media/c2s.pdf["AWS Commercial クラウドサービス環境向けクイックスタートガイド"^]。

@@ -1,0 +1,172 @@
+---
+sidebar: sidebar 
+permalink: reference_configs_azure_96.html 
+keywords: vm, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, disks, sizes 
+summary: Cloud Volumes ONTAP は、従量課金制またはライセンス使用の構成で Azure で利用できます。PAYGO の場合は Explore 、 Standard 、 Premium のいずれかを選択できます。 
+---
+= Cloud Volumes ONTAP 9.6 で Azure でサポートされる構成
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP は、従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランで Azure で提供されています。従量課金制の場合は、 Explore 、 Standard 、 Premium の 3 つの構成から選択できます。
+
+
+
+== ライセンスでサポートされている構成
+
+Cloud Volumes ONTAP は、 Azure でシングルノードシステムおよび HA ペアとして使用できます。
+
+
+
+=== シングルノードシステム
+
+Cloud Volumes ONTAP をシングルノードシステムとして Azure に導入する場合は、次の構成から選択できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| サポートされる仮想マシンタイプ | DS3_v2 の場合  a| 
+* DS4_v2
+* DS13_v2 の場合
+
+ a| 
+* DS5_v2 の場合
+* DS14_v2
+* DS15_v2 の場合
+
+ a| 
+* DS3_v2 の場合
+* DS4_v2
+* DS5_v2 の場合
+* DS13_v2 の場合
+* DS14_v2
+* DS15_v2 の場合
+
+
+
+
+| サポートされているディスクタイプ ^1 4+| 標準 HDD 管理ディスク、標準 SSD 管理ディスク、およびプレミアム SSD 管理ディスク 
+
+
+| BLOB ストレージへのコールドデータの階層化 ^2^ | サポート対象外 3+| サポートされます 
+
+
+| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. 拡張書き込みパフォーマンスは、 SSD を使用している場合は有効になりますが、 DS3_v2 仮想マシンタイプを使用している場合は有効になりません。
+. データ階層化は、 DS3_v2 仮想マシンタイプではサポートされていません。
+. Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
+
+
+
+
+=== HA ペア
+
+Azure で Cloud Volumes ONTAP を HA ペアとして導入する場合は、次の構成から選択できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| サポートされる仮想マシンタイプ | サポート対象外  a| 
+* DS4_v2
+* DS13_v2 の場合
+
+ a| 
+* DS5_v2 の場合
+* DS14_v2
+* DS15_v2 の場合
+
+ a| 
+* DS4_v2
+* DS5_v2 の場合
+* DS13_v2 の場合
+* DS14_v2
+* DS15_v2 の場合
+
+
+
+
+| サポートされているディスクタイプ | サポート対象外 3+| プレミアムページブロブ 
+
+
+| BLOB ストレージへのコールドデータの階層化 ^2^ | サポート対象外 3+| サポートされます 
+
+
+| 最大システム容量（ディスク + オブジェクトストレージ） | サポート対象外 | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
+
+
+
+
+== サポートされるディスクサイズ
+
+Azure では、アグリゲートに同じタイプおよびサイズのディスクを 12 本まで含めることができます。
+
+
+
+=== シングルノードシステム
+
+シングルノードシステムで Azure Managed Disks を使用している。次のディスクサイズがサポートされています。
+
+[cols="3*"]
+|===
+| Premium SSD の場合 | 標準 SSD | 標準的な HDD 
+
+
+ a| 
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 32 TB
+
+ a| 
+* 100 GB
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 32 TB
+
+ a| 
+* 100 GB
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 32 TB
+
+
+|===
+
+
+=== HA ペア
+
+HA ペアでは、 Premium ページ BLOB を使用します。次のディスクサイズがサポートされています。
+
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+

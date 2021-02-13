@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: reference_limitations_94.html 
+keywords: limitations, alarms, cloudwatch, giveback, govcloud, detaching, encryption, snapmanager, features 
+summary: 既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。これらの制限事項を慎重に確認してください 
+---
+= Cloud Volumes ONTAP 9.4 の既知の制限事項
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。これらの制限事項を慎重に確認してください
+
+
+
+== 一般的な制限事項
+
+AWS および Azure の Cloud Volumes ONTAP には次の制限があります。
+
+
+
+=== ソフトウェアの更新を Cloud Manager で完了しておく必要があります
+
+Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+
+
+
+=== 暗号化は、ブートディスクとルートディスクではサポートされていません
+
+すべての新しいボリュームやディスクを自動的に暗号化するオプションをクラウドプロバイダから有効にした場合は、 Cloud Volumes ONTAP の導入時に一時的に無効にする必要があります。インストールしないと、 Cloud Volumes ONTAP の導入に失敗します。Cloud Volumes ONTAP システムのブートディスクとルートディスクでは暗号化がサポートされていません。
+
+
+
+=== から Cloud Volumes ONTAP 環境を変更することはできません クラウドプロバイダのコンソール
+
+クラウドプロバイダのコンソールから Cloud Volumes ONTAP 構成を変更した場合、サポートされない構成になります。Cloud Manager で作成および管理する Cloud Volumes ONTAP リソースに対する変更は、システムの安定性および Cloud Manager によるシステムの管理機能に影響を及ぼす可能性があります。
+
+
+
+=== ディスクとアグリゲートは Cloud Manager で管理する必要があります
+
+すべてのディスクとアグリゲートは、 Cloud Manager から直接作成および削除する必要があります。これらのアクションは、別の管理ツールから実行しないでください。これにより、システムの安定性が低下し、将来ディスクを追加できなくなる可能性があります。また、クラウドプロバイダの冗長料金が発生する可能性もあります。
+
+
+
+=== SnapManager のライセンスに関する制限
+
+SnapManager のサーバ単位のライセンスは、 Cloud Volumes ONTAP でサポートされます。ストレージシステム（ SnapManager スイート）単位のライセンスはサポートされません。
+
+
+
+=== サポートされない ONTAP 機能です
+
+Cloud Volumes ONTAP では、次の機能はサポートされていません。
+
+* アグリゲートレベルのインライン重複排除
+* アグリゲートレベルのバックグラウンド重複排除
+* ディスクメンテナンスセンター
+* ディスク完全消去
+* Fibre Channel （ FC ；ファイバチャネル）
+* Flash Pool の機能です
+* FlexCache
+* Infinite Volume
+* インターフェイスグループ
+* ノード内の LIF のフェイルオーバー
+* MetroCluster
+* マルチテナンシー（サポートされるデータ提供用 SVM は 1 つだけ）
+* NetApp Volume Encryption の略
+* RAID 4 、 RAID-DP 、 RAID-TEC （ RAID 0 のサポート）
+* サービスプロセッサ
+* SnapLock Compliance モード（ Enterprise モードがサポートされます）
+* SnapMirror Synchronous
+* VLAN
+
+
+
+
+== AWS の既知の制限事項は以下のとおりです
+
+次の既知の制限事項は、 AWS の Cloud Volumes ONTAP に影響します。
+
+
+
+=== Amazon CloudWatch から誤ったアラームが報告されます
+
+Cloud Volumes ONTAP はアイドル状態のときに CPU を解放しないため、 Amazon CloudWatch は使用率を 100% と認識しているため、 EC2 インスタンスに対して CPU 使用率の上昇を警告します。このアラームは無視してかまいません。ONTAP statistics コマンドを実行すると、 CPU の実際の使用状況が表示されます。
+
+
+
+=== Cloud Volumes ONTAP HA ペアでは、ストレージの迅速な使用はサポートされません ギブバック
+
+ノードがリブートしたら、ストレージを戻す前に、パートナーがデータを同期する必要があります。データの再同期にかかる時間は、ノードが停止している間にクライアントが書き込んだデータの量、およびギブバックの実行中のデータの書き込み速度によって異なります。
+
+
+
+=== AWS GovCloud （米国）地域の制限
+
+* 任意の AWS GovCloud （ US ）リージョンで Cloud Volumes ONTAP インスタンスを起動する場合は、 Cloud Manager が AWS GovCloud （ US ）リージョンに導入されている必要があります。
+* AWS GovCloud （ US ）リージョンに導入されている場合、 Cloud Manager は、 Microsoft Azure 構成用の NetApp プライベートストレージまたは SoftLayer 構成用の NetApp プライベートストレージ内の ONTAP クラスタを検出できません。
+
+
+
+
+=== EBS ボリュームの接続解除と再接続はサポートされていません
+
+EBS ボリュームを Cloud Volumes ONTAP インスタンスから接続解除して別の Cloud Volumes ONTAP インスタンスに再接続することはできません。インスタンス間でデータをレプリケートするには、 Cloud Manager を使用する必要があります。
+
+
+
+=== 暗号化の制限
+
+* Cloud Volumes ONTAP 暗号化が有効になっているシステムでは、 LUN の移動はサポートされません。
+* Cloud Volumes ONTAP は、作成に失敗したアグリゲートの暗号化キーをキー管理ツールに送信します。
++
+キー管理ツールからキーを手動で削除する必要があります。
+
+
+
+
+
+== Microsoft Azure の既知の制限事項は以下のとおりです
+
+以下に記載する既知の制限事項は、 Azure の Cloud Volumes ONTAP に影響します。
+
+
+
+=== 従量課金制は、 CSP パートナーが利用できません
+
+マイクロソフトクラウドソリューションプロバイダー (CSP) パートナーの場合、従量課金制のサブスクリプションは CSP パートナーに提供されないため、 Cloud Volumes ONTAP Explore 、 Standard 、または Premium を展開することはできません。ライセンスを購入し、 Cloud Volumes ONTAP BYOL を導入する必要があります。

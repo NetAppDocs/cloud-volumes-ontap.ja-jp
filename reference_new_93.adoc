@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: reference_new_93.html 
+keywords: what's new, new, features, release notes, enhancements 
+summary: ONTAP Cloud の新リリースには、新機能、拡張機能、およびバグ修正が含まれています。 
+---
+= ONTAP Cloud 9.3 の新機能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Cloud 9.3 には、いくつかの新機能と機能拡張が含まれています。
+
+
+
+== AWS での ONTAP Cloud HA の機能拡張
+
+9.3 リリースでは、 AWS エコシステム内でのネットワークの不具合や一時的なレイテンシの増加に対応し、このようなイベントが発生した場合の顧客データの可用性を確保するために、 ONTAP クラウド HA ペアの耐障害性に対応しています。
+
+
+
+== AWS で EU （パリ）リージョンがサポートされます
+
+ONTAP クラウドは、 AWS の EU （パリ）リージョンでサポートされるようになりました。このリージョンでサポートされているインスタンスタイプに基づいて、 EU （パリ）リージョンで次の ONTAP クラウド構成を使用できます。
+
+* ONTAP クラウド標準（ r4.xlarge ）
+* ONTAP クラウドプレミアム（ r4.2xlarge ）
+* ONTAP クラウド BYOL （ r4.xlarge および r4.2xlarge ）
+
+
+
+
+== Azure Premium ディスクで書き込みパフォーマンスを向上
+
+Azure で Premium Storage ディスクを使用すると、 ONTAP Cloud の書き込みパフォーマンスが向上します。この機能拡張は、 ONTAP クラウドの Standard 、 Premium 、および BYOL でサポートされています。
+
+
+NOTE: DS3_v2 仮想マシンタイプを使用している場合、書き込みパフォーマンスの拡張はサポートされません。
+
+
+
+== ONTAP Cloud Premium および BYOL における容量制限の引き上げ Azure
+
+DS5_v2 または DS14_v2 仮想マシンタイプを使用している場合、 ONTAP クラウドプレミアムおよび ONTAP クラウド BYOL の容量制限は、 2 倍の 252TB になりました。
+
+
+NOTE: この変更は、 Azure 仮想マシンあたりの使用可能なディスク数が増加したために可能です。アグリゲートあたりの最大容量は変更されません。
+
+
+
+== Azure US Gov リージョンのサポート
+
+次の Azure リージョンに Cloud Manager と ONTAP Cloud BYOL を導入できるようになりました。
+
+* アリゾナ州、米国政府
+* 米国テキサス州知事
+* 米国バージニア州知事
+
+
+これらのリージョンに Cloud Manager を導入するには、 Azure Marketplace で CentOS 7.3 仮想マシンを作成し、ネットアップサポートサイトから Cloud Manager インストーラをダウンロードして、ソフトウェアをインストールする必要があります。Cloud Manager の実行後、これらのリージョンでは、他のリージョンと同様に ONTAP Cloud BYOL システムを導入できます。
+
+
+
+== SVM ディザスタリカバリのサポート
+
+ONTAP クラウドでは、 1 つのデータ提供用 SVM と 1 つのディザスタリカバリ用デスティネーション SVM がサポートされます。ソース SVM で障害が発生した場合は、デスティネーション SVM をデータアクセス用にアクティブ化できます。
+
+SVM ディザスタリカバリは、ソース SVM からデスティネーション SVM への SVM のデータと設定の非同期ミラーリングです。ソース SVM が使用できなくなった場合は、デスティネーション SVM をデータアクセス用に簡単にアクティブ化できます。
+
+
+NOTE: Cloud Manager では、 SVM ディザスタリカバリのセットアップやオーケストレーションはサポートされません。また、追加の SVM ではストレージ関連のタスクをサポートしません。SVM ディザスタリカバリには、 System Manager または CLI を使用する必要があります。
+
+https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856["SVM ディザスタリカバリ設定エクスプレスガイド"^]
+
+https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857["『 SVM ディザスタリカバリエクスプレスガイド』"^]
+
+
+
+== アップグレードに関する注意事項
+
+* Cloud Manager からのアップグレードが完了している必要があります。System Manager または CLI を使用して ONTAP Cloud をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+* ONTAP Cloud 9.2 から ONTAP Cloud 9.3 にアップグレードできます。
+* シングルノードシステムのアップグレードでは、 I/O が中断されるまで最大 25 分間システムがオフラインになります。
+* HA ペアのアップグレードは無停止で、 I/O が中断されません。無停止アップグレードでは、各ノードが連携してアップグレードされ、クライアントへの I/O の提供が継続されます。
+

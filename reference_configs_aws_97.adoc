@@ -1,0 +1,188 @@
+---
+sidebar: sidebar 
+permalink: reference_configs_aws_97.html 
+keywords: ec2, instance, type, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, sizes, disks 
+summary: Cloud Volumes ONTAP は、単一ノードシステムまたは HA ペアとして AWS で使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランが用意されています。 
+---
+= AWS の Cloud Volumes ONTAP 9.7 でサポートされている構成
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP は、単一ノードシステムまたは HA ペアとして AWS で使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランがあります。
+
+
+
+== 従量課金制の概要
+
+* Cloud Volumes ONTAP は、 Explore 、 Standard 、 Premium の 3 種類の構成で提供されます。
+* AWS に初めて導入する Cloud Volumes ONTAP システムに対しては、 30 日間の無償トライアルを利用できます。
++
+** 1 時間ごとのソフトウェア料金は発生しませんが、 AWS インフラの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。
+** 無料トライアルが終了すると、選択したライセンスに従って 1 時間ごとに請求されます。 https://aws.amazon.com/marketplace/pp/B07QX2QLXX["購読している限り"^]。購読していない場合は、システムがシャットダウンします。
+
+
+* PAYGO から BYOL への変換は現在サポートされていません。
+* 基本的なテクニカルサポートが提供されますが、ご使用のシステムに関連付けられたネットアップのシリアル番号を登録して有効化する必要があります。
++
+https://docs.netapp.com/us-en/occm/task_registering.html["Cloud Manager で従量課金制システムを登録"^]
+
+
+
+
+
+== BYOL の概要
+
+* 12 カ月、 24 カ月などの期間ベースのサブスクリプションオプションを使用するシングルノードライセンスまたは HA ライセンスです。
+* サブスクリプション期間中はサポートが含まれます。
+* Cloud Volumes ONTAP BYOL システムでは、複数のライセンスを購入して、 368 TB を超える容量を割り当てることができます。
++
+たとえば、 2 つのライセンスを購入して、 Cloud Volumes ONTAP に最大 736TB の容量を割り当てることができます。また、 4 つのライセンスを購入して、最大 1.4 PB までライセンスを取得することもできます。
+
+
+
+
+
+== ライセンスでサポートされている構成
+
+Cloud Volumes ONTAP は、 AWS ではシングルノードシステムおよび HA ペアとして使用できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| サポートされている EC2 インスタンスタイプ ^1  a| 
+* m4.xlarge
+* m5.xlarge のように指定します
+
+ a| 
+* m4.2xlarge
+* m5.2xlarge
+* R4.xlarge （ R4.xlarge ）
+* R5.xlarge （ R5.xlarge ）
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge を使用する場合
+* c5.9xlarge のサイズ
+* c5.18 × ラージ
+* c5d.csi^2^
+* c5d.9xlarge ^2^
+* c5d.18 x ラージ ^2^
+* c5n.9xlarge ^3^
+* c5n.18 x ラージ ^3^
+* m4.mc
+* m5.mc
+* m5.16 x ラージ
+* m5d.8xlarge ^2^
+* m5d.12xlarge ^2^
+* r4.2xlarge
+* r5.2xlarge
+* r5.8xlarge
+* r5.12xlarge ^4^
+* r5d.2xlarge ^2^
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge を使用する場合
+* c5.9xlarge のサイズ
+* c5.18 × ラージ
+* c5d.csi^2^
+* c5d.9xlarge ^2^
+* c5d.18 x ラージ ^2^
+* c5n.9xlarge ^3^
+* c5n.18 x ラージ ^3^
+* m4.xlarge
+* m4.2xlarge
+* m4.mc
+* m5.xlarge のように指定します
+* m5.2xlarge
+* m5.mc
+* m5.16 x ラージ
+* m5d.8xlarge ^2^
+* m5d.12xlarge ^2^
+* R4.xlarge （ R4.xlarge ）
+* r4.2xlarge
+* R5.xlarge （ R5.xlarge ）
+* r5.2xlarge
+* r5.8xlarge
+* r5.12xlarge ^4^
+* r5d.2xlarge ^2^
+
+
+
+
+| サポートされているディスクタイプ ^5^ 4+| 汎用 SSD 、プロビジョニングされた IOPS SSD 、スループット最適化 HDD 、およびコールド HDD （シングルノードのみ） 
+
+
+| S3 へのコールドデータ階層化 | サポート対象外 3+| サポート対象ですが、コールド HDD ディスクではサポートされません 
+
+
+| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB^6^ | ライセンスあたり 368 TB ^6^ 
+|===
+注：
+
+. EC2 インスタンスタイプを選択する場合は、そのインスタンスが共有インスタンスか専用インスタンスかを指定できます。
+. これらのインスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。 https://docs.netapp.com/us-en/occm/concept_flash_cache.html["詳細はこちら。"^]。
+. C5n.9xlarge および c5n.18xlarge は 9.7 P5 以降でサポートされています。
+. r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。
+. SSD を Cloud Volumes ONTAP Standard 、 Premium 、および BYOL とともに使用すると、書き込みパフォーマンスが向上します。
+. 一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_97.html["ストレージの制限"]。
+. AWS リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
+. Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。
+
+
+
+
+== サポートされるディスクサイズ
+
+AWS では、アグリゲートに同じタイプおよびサイズのディスクを最大 6 本含めることができます。
+
+[cols="4*"]
+|===
+| 汎用 SSD です | プロビジョニングされた IOPS の SSD | スループット最適化 HDD | コールド HDD （シングルノードのみ） 
+
+
+ a| 
+* 100 GB
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 6TB
+* 8 TB
+* 16 TB
+
+ a| 
+* 100 GB
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 6TB
+* 8 TB
+* 16 TB
+
+ a| 
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 6TB
+* 8 TB
+* 16 TB
+
+ a| 
+* 2TB
+* 4 TB
+* 6TB
+* 8 TB
+* 16 TB
+
+
+|===

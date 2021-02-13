@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: reference_limitations_95.html 
+keywords: limitations, alarms, cloudwatch, giveback, govcloud, detaching, encryption, snapmanager, features, ha limitations, nfsv4, nfsv3, data tiering, disks, aggregates 
+summary: 既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。これらの制限事項を慎重に確認してください 
+---
+= Cloud Volumes ONTAP 9.5 の既知の制限事項は以下のとおりです
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。これらの制限事項を慎重に確認してください
+
+
+
+== 一般的な制限事項
+
+AWS および Azure の Cloud Volumes ONTAP には次の制限があります。
+
+
+
+=== ソフトウェアの更新を Cloud Manager で完了しておく必要があります
+
+Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+
+
+
+=== から Cloud Volumes ONTAP 環境を変更することはできません クラウドプロバイダのコンソール
+
+クラウドプロバイダのコンソールから Cloud Volumes ONTAP 構成を変更した場合、サポートされない構成になります。Cloud Manager で作成および管理する Cloud Volumes ONTAP リソースに対する変更は、システムの安定性および Cloud Manager によるシステムの管理機能に影響を及ぼす可能性があります。
+
+
+
+=== ディスクとアグリゲートは Cloud Manager で管理する必要があります
+
+すべてのディスクとアグリゲートは、 Cloud Manager から直接作成および削除する必要があります。これらのアクションは、別の管理ツールから実行しないでください。これにより、システムの安定性が低下し、将来ディスクを追加できなくなる可能性があります。また、クラウドプロバイダの冗長料金が発生する可能性もあります。
+
+
+
+=== SnapManager のライセンスに関する制限
+
+SnapManager のサーバ単位のライセンスは、 Cloud Volumes ONTAP でサポートされます。ストレージシステム（ SnapManager スイート）単位のライセンスはサポートされません。
+
+
+
+=== サポートされない ONTAP 機能です
+
+Cloud Volumes ONTAP では、次の機能はサポートされていません。
+
+* アグリゲートレベルのインライン重複排除
+* アグリゲートレベルのバックグラウンド重複排除
+* ディスクメンテナンスセンター
+* ディスク完全消去
+* Fibre Channel （ FC ；ファイバチャネル）
+* Flash Pool の機能です
+* FlexCache
+* Infinite Volume
+* インターフェイスグループ
+* ノード内の LIF のフェイルオーバー
+* MetroCluster
+* マルチテナンシー（サポートされるデータ提供用 SVM は 1 つだけ）
+* RAID 4 、 RAID-DP 、 RAID-TEC （ RAID 0 のサポート）
+* サービスプロセッサ
+* SnapLock Compliance モード（ Enterprise モードがサポートされます）
+* SnapMirror Synchronous
+* VLAN
+
+
+
+
+== AWS の既知の制限事項は以下のとおりです
+
+次の既知の制限事項は、 AWS の Cloud Volumes ONTAP に影響します。
+
+
+
+=== Flash Cache の制限事項
+
+C5D および R5D インスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。次の制限事項に注意してください。
+
+* Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。
++
+Cloud Manager からボリュームを作成するときに Storage Efficiency を使用しないようにするか、またはボリュームを作成してから実行することができます http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["CLI を使用してデータ圧縮を無効にします"^]。
+
+* 再起動後のキャッシュの再ウォームアップは、 Cloud Volumes ONTAP ではサポートされていません。
+
+
+
+
+=== Amazon CloudWatch から誤ったアラームが報告されます
+
+Cloud Volumes ONTAP はアイドル状態のときに CPU を解放しないため、 Amazon CloudWatch は使用率を 100% と認識しているため、 EC2 インスタンスに対して CPU 使用率の上昇を警告します。このアラームは無視してかまいません。ONTAP statistics コマンドを実行すると、 CPU の実際の使用状況が表示されます。
+
+
+
+=== Cloud Volumes ONTAP HA ペアでは、ストレージの迅速な使用はサポートされません ギブバック
+
+ノードがリブートしたら、ストレージを戻す前に、パートナーがデータを同期する必要があります。データの再同期にかかる時間は、ノードが停止している間にクライアントが書き込んだデータの量、およびギブバックの実行中のデータの書き込み速度によって異なります。
+
+
+
+=== AWS C2S 環境の制限事項
+
+を参照してください https://docs.netapp.com/us-en/occm/media/c2s.pdf["AWS Commercial クラウドサービス環境向けクイックスタートガイド"^]。
+
+
+
+=== AWS GovCloud （ US ）リージョンの制限
+
+* 任意の AWS GovCloud （ US ）リージョンで Cloud Volumes ONTAP インスタンスを起動する場合は、 Cloud Manager が AWS GovCloud （ US ）リージョンに導入されている必要があります。
+* AWS GovCloud （ US ）リージョンで導入した場合、 Cloud Manager は NetApp Private Storage for Microsoft Azure 構成または NetApp Private Storage for SoftLayer 構成の ONTAP クラスタを検出できません。
+
+
+
+
+=== EBS ボリュームの接続解除と再接続はサポートされていません
+
+EBS ボリュームを Cloud Volumes ONTAP インスタンスから接続解除して別の Cloud Volumes ONTAP インスタンスに再接続することはできません。インスタンス間でデータをレプリケートするには、 Cloud Manager を使用する必要があります。
+
+
+
+== Microsoft Azure の既知の制限事項は以下のとおりです
+
+以下に記載する既知の制限事項は、 Azure の Cloud Volumes ONTAP に影響します。
+
+
+
+=== 新しい導入はサポートされていません
+
+Cloud Volumes ONTAP 9.5 の新規導入は Azure でサポートされなくなりました。Cloud Volumes ONTAP 9.7 を導入する必要があります。
+
+
+
+=== HA の制限事項
+
+次の制限事項が Microsoft Azure の Cloud Volumes ONTAP HA ペアに影響します。
+
+* データ階層化はサポートされていません。
+* NFSv4 はサポートされていません。NFSv3 がサポートされています。
+* 一部のリージョンでは HA ペアがサポートされません。
++
+https://cloud.netapp.com/cloud-volumes-global-regions["サポートされる Azure リージョンの一覧を参照してください"^]。
+
+
+
+
+
+=== 従量課金制は、 CSP パートナーが利用できません
+
+マイクロソフトクラウドソリューションプロバイダー (CSP) パートナーの場合、従量課金制のサブスクリプションは CSP パートナーに提供されないため、 Cloud Volumes ONTAP Explore 、 Standard 、または Premium を展開することはできません。ライセンスを購入し、 Cloud Volumes ONTAP BYOL を導入する必要があります。

@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: reference_supported_configs_94.html 
+keywords: ec2, instance, type, vm, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations 
+summary: Cloud Volumes ONTAP は、 AWS と Azure のいくつかの構成で使用できます。 
+---
+= Cloud Volumes ONTAP 9.4 でサポートされる構成
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP は、 AWS と Azure の 2 つの価格設定オプションで利用できます。 1 つは従量課金制で、もう 1 つは独自のライセンス（ BYOL ）です。従量課金制の場合は、 Explore 、 Standard 、 Premium の 3 つの構成から選択できます。
+
+
+
+== Cloud Volumes ONTAP for AWS
+
+AWS では、 Cloud Volumes ONTAP を単一システムまたは HA ペアとして導入できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| EC2 インスタンスタイプ | m4.xlarge  a| 
+* m4.2xlarge
+* R4.xlarge （ R4.xlarge ）
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge を使用する場合
+* m4.mc
+* r4.2xlarge
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge を使用する場合
+* m4.xlarge
+* m4.2xlarge
+* m4.mc
+* R4.xlarge （ R4.xlarge ）
+* r4.2xlarge
+
+
+
+
+| 基盤となるストレージ 4+| 汎用 SSD 、プロビジョニング済み IOPS SSD 、スループット最適化 HDD 、コールド HDD を、ディスクあたり最大 16TB で提供します 
+
+
+| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. データ階層化を有効にすると、システムの容量制限は同じままになります。容量の制限には、ディスクとオブジェクトストレージの両方が含まれます。
+. データ階層化は、 Cloud Volumes ONTAP の Standard 、 Premium 、および BYOL でサポートされています。
+. EC2 インスタンスタイプを選択する場合は、そのインスタンスが共有インスタンスか専用インスタンスかを指定できます。
+. Cloud Volumes ONTAP Standard 、 Premium 、および BYOL で EBS SSD を使用すると、書き込みパフォーマンスが向上します。
+. AWS リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
+
+
+
+
+== Cloud Volumes ONTAP for Azure
+
+Azure では、 Cloud Volumes ONTAP をシングルノードシステムとして導入できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| 仮想マシンのタイプ | DS3_v2 の場合  a| 
+* DS4_v2
+* DS13_v2 の場合
+
+ a| 
+* DS5_v2 の場合
+* DS14_v2
+
+ a| 
+* DS3_v2 の場合
+* DS4_v2
+* DS5_v2 の場合
+* DS13_v2 の場合
+* DS14_v2
+
+
+
+
+| 基盤となるストレージ 4+| 標準 HDD 管理ディスク、標準 SSD 管理ディスク、およびプレミアム SSD 管理ディスク（ディスクあたり最大 32 TB ） 
+
+
+| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. データ階層化を有効にすると、システムの容量制限は同じままになります。容量の制限には、ディスクとオブジェクトストレージの両方が含まれます。
+. データ階層化は、 DS3_v2 仮想マシンタイプではサポートされていません。
+. 拡張書き込みパフォーマンスは、 Azure Premium Storage ディスクを使用している場合は有効になりますが、 DS3_v2 仮想マシンタイプを使用している場合は有効になりません。
+. Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
+

@@ -1,0 +1,121 @@
+---
+sidebar: sidebar 
+permalink: reference_new_94.html 
+keywords: what's new, new, features, release notes, enhancements 
+summary: Cloud Volumes ONTAP の新リリースには、新機能、拡張機能、およびバグ修正が含まれています。 
+---
+= Cloud Volumes ONTAP 9.4 の新機能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.4 には、いくつかの新機能と機能拡張が含まれています
+
+
+NOTE: その他の機能と機能拡張は、 Cloud Manager の最新バージョンで導入されました。を参照してください https://docs.netapp.com/us-en/occm/reference_new_occm.html["Cloud Manager リリースノート"] を参照してください。
+
+
+
+== AWS GovCloud （米国）地域での従量課金制のサポート
+
+Cloud Volumes ONTAP の従量課金制バージョンが AWS GovCloud （米国）地域でサポートされるようになりました。これは、 GovCloud （米国）地域で Cloud Volumes ONTAP BYOL をサポートすることに加えて追加されています。
+
+Cloud Volumes ONTAP は、他の地域と同様に GovCloud （ US ）地域に導入できます。NetApp Cloud Central にアクセスし、 GovCloud （米国）で Cloud Manager を起動します。次に、 Cloud Manager で新しい作業環境を作成して、 Cloud Volumes ONTAP Paygo または Byol を起動します。
+
+
+
+== Cloud Volumes ONTAP Premium および BYOL によるコールドデータの階層化
+
+9.2 リリースでは、パフォーマンス階層（ SSD または HDD ）と大容量階層（オブジェクトストア）の間でデータを自動的に階層化する機能が導入されました。大容量階層に送信されるコールドデータには、読み書き可能なボリューム（ _Snapshot Only の階層化ポリシー）の Snapshot コピーとデスティネーションボリューム（ _backup_tiering ポリシー）のデータが含まれていました。
+
+Cloud Volumes ONTAP 9.4 Premium と BYOL では、 3 つ目のオプションが追加されました。 _AUTO_階層 化ポリシーを使用し、読み書き可能ボリューム内のコールドデータブロックを大容量階層に階層化できます。コールドデータには、 Snapshot コピーだけでなく、アクティブなファイルシステムのコールドユーザデータも含まれます。
+
+ランダム読み取りで読み取りを行うと、容量階層のコールドデータブロックがホットになり、パフォーマンス階層に移動します。インデックススキャンやアンチウイルススキャンに関連するようなシーケンシャルリードで読み取られた場合、コールドデータブロックはコールド状態を維持し、パフォーマンス階層には移動しません。
+
+Cloud Manager でボリュームを作成または編集するときに、階層化ポリシーを選択できます。詳細については、を参照してください https://docs.netapp.com/us-en/occm/task_tiering.html["Cloud Manager のドキュメント"]。
+
+
+
+== Microsoft Azure のデータ階層化
+
+ホットデータ用のパフォーマンス階層（ Premium または Standard マネージドディスク）とコールドデータ用の大容量階層（ Azure BLOB ストレージ）を組み合わせることで、 Azure ストレージのコストを削減できるようになりました。AWS でサポートされている階層化ポリシーは、 auto 、 Snapshot only 、および backup でも Azure にサポートされています。
+
+
+NOTE: データ階層化は、 DS3_v2 仮想マシンタイプではサポートされていません。
+
+Cloud Manager でボリュームを作成または編集するときに、階層化ポリシーを選択できます。詳細については、を参照してください https://docs.netapp.com/us-en/occm/task_tiering.html["Cloud Manager のドキュメント"]。
+
+
+
+== プロビジョニングされた IOPS の SSD によるデータ階層化
+
+AWS では、 IOPS SSD をプロビジョニングしてデータ階層化をサポートするようになりました。これらの SSD をホットデータの高パフォーマンス階層として使用でき、 Amazon S3 をコールドデータの大容量階層として使用できます。
+
+
+
+== データを階層化する際のパフォーマンスが向上します
+
+9.2 および 9.3 リリースで導入された書き込みパフォーマンスの強化は、コールドデータをオブジェクトストアの大容量階層に階層化するボリュームでサポートされるようになりました。これは、 Cloud Volumes ONTAP 9.4 で新しい SSD アグリゲートに作成したボリュームに該当します。
+
+
+
+== AWS の複数のワークロードのパフォーマンスが向上します
+
+AWS にはネットワーク帯域幅が追加され、複数のワークロードを実行するシステムのパフォーマンスが向上しました。 Cloud Volumes ONTAP9.4 にアップグレードして新しい 9.4 システムを起動する場合は、次の EC2 インスタンスタイプで追加の帯域幅を使用できます。
+
+* m4.xlarge
+* m4.2xlarge
+* m4.mc
+* c4.4xlarge
+* c4.8xlarge を使用する場合
+
+
+
+
+== EC2 インスタンスタイプはサポートされなくなりました
+
+Cloud Volumes ONTAP のすべてのバージョンで複数の EC2 インスタンスタイプがサポートされるようになりました。これらのインスタンスタイプを実行している既存のシステムは引き続き正常に動作しますが、別のインスタンスタイプに変更することを強く推奨します。
+
+インスタンスタイプとネットアップライセンスの価格設定の違いについては、 AWS Marketplace で確認してください http://aws.amazon.com/marketplace/pp/B011KEZ734["シングルノードシステム"^] およびのため http://aws.amazon.com/marketplace/pp/B01H4LVJ84["HA ペア"^]。
+
+[cols="2*"]
+|===
+| インスタンスタイプはサポートされなくなりました | 推奨されるインスタンスタイプ 
+
+
+| c3.2xlarge | m4.xlarge 
+
+
+| C性 2xlarge のことです | m4.2xlarge 
+
+
+| M3 x ラージ | m4.xlarge 
+
+
+| m3.2xlarge | m4.2xlarge 
+
+
+| R3.xlarge （ R3.xlarge ） | m4.2xlarge 
+
+
+| r3.2xlarge | r4.2xlarge 
+|===
+
+TIP: M3 インスタンスタイプと R3 インスタンスタイプは、データの階層化とパフォーマンスの向上ではサポートされていないため、 M4 インスタンスタイプと R4 インスタンスタイプに移行することで、これらの Cloud Volumes ONTAP 機能を活用できます。
+
+
+
+== アップグレードに関する注意事項
+
+* Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+* 9.3 リリースから Cloud Volumes ONTAP 9.4 にアップグレードすることができます。
++
+バージョン要件については、を参照してください http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-dot-upgrade/GUID-AC0EB781-583F-4C90-A4C4-BC7B14CEFD39.html["ONTAP 9 ドキュメント：「 Cluster update requirements"^]。
+
+* シングルノードシステムのアップグレードでは、 I/O が中断されるまで最大 25 分間システムがオフラインになります。
+* HA ペアのアップグレードは無停止で、 I/O が中断されません。無停止アップグレードでは、各ノードが連携してアップグレードされ、クライアントへの I/O の提供が継続されます。
+

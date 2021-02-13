@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: reference_issues_97.html 
+keywords: issues, bugs, known issues 
+summary: 既知の問題は、このリリースの製品を正常に使用できない可能性のある問題を特定します。 
+---
+= Cloud Volumes ONTAP 9.7 の既知の問題
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+既知の問題は、このリリースの製品を正常に使用できない可能性のある問題を特定します。
+
+ONTAP ソフトウェアの既知の問題は、で確認できます https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP リリースノート"^]。
+
+
+
+== 複数の SVM を使用する HA ペアでは、ノードの停止が失敗することがあります
+
+複数の Storage VM （ SVM ）がある HA ペアの Cloud Volumes ONTAP ノードを停止またはリブートする場合は、ノードをシャットダウンする前に、すべての論理インターフェイス（ LIF ）をパートナーノードに事前に移行しておくことを推奨します。
+
+次の例は、現在の（ローカル）ノードからすべてのデータ LIF を移行します。
+
+'node1 ：： > network interface migrate-all -node local
+
+この処理を実行すると、ネットワークのパートナーノードへの移行が促進され、既知の問題が発生してもノードが停止することがないようになります。
+
+LIF の移行に時間がかかりすぎるためにノードを停止できない場合は、 reboot コマンドまたは halt コマンドを再試行してノードを停止してください。

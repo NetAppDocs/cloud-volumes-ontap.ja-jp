@@ -1,0 +1,268 @@
+---
+sidebar: sidebar 
+permalink: reference_new_95.html 
+keywords: what's new, new, features, release notes, enhancements 
+summary: Cloud Volumes ONTAP 9.5 には、複数の新機能と機能拡張が含まれています。 
+---
+= Cloud Volumes ONTAP 9.5 の新機能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.5 には、複数の新機能と機能拡張が含まれています。
+
+
+NOTE: その他の機能と機能拡張は、 Cloud Manager の最新バージョンで導入されました。を参照してください https://docs.netapp.com/us-en/occm/reference_new_occm.html["Cloud Manager リリースノート"] を参照してください。
+
+
+
+== 9.5 P11 （ 2020 年 3 月 6 日）
+
+Cloud Volumes ONTAP 9.5 P11 パッチリリースは、 Cloud Manager 3.8 以降で提供されます。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P11["P11 パッチで修正されたバグのリストを表示します"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+== 9.5 P10 （ 2020 年 1 月 12 日）
+
+Cloud Volumes ONTAP 用の 9.5 P10 パッチリリースが Cloud Manager から利用できるようになりました。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P10["P10 パッチで修正されたバグのリストを表示します"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+== 9.5 P9 パッチ（ 2019 年 11 月 17 日）
+
+Cloud Volumes ONTAP 9.5 の P9 パッチリリースが Cloud Manager から利用できるようになりました。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P9["P9 パッチで修正されたバグのリストを表示します"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+== 9.5 P8 パッチ（ 2019 年 10 月 6 日）
+
+Cloud Volumes ONTAP 用の 9.5 P8 パッチリリースがリリースされました。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P8["P8 パッチで修正されたバグのリストを表示します"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+== 9.5 P6 パッチ（ 2019 年 7 月 16 日）
+
+Cloud Volumes ONTAP 用の 9.5 P6 パッチリリースがリリースされました。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P6["P6 パッチで修正されたバグのリストを表示します"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+NOTE: Cloud Manager から、 Cloud Volumes ONTAP の重要な修正プログラムが含まれている ONTAP のパッチリリースにアップグレードするよう求められます。そのため、このリリースノートではパッチリリース間のギャップを発見する可能性があります。ここでは、 Cloud Manager で提供されているパッチのみを紹介します。
+
+
+
+== 9.5 P4 パッチ（ 2019 年 5 月 16 日）
+
+Cloud Volumes ONTAP 向け 9.5 P4 パッチリリースが公開されました。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P4["P4 パッチで修正されたバグのリストを確認します"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+== AWS C2S 環境をサポート（ 2019 年 5 月 2 日）
+
+Cloud Volumes ONTAP 9.5 と Cloud Manager 3.6.4 は、現在米国およびその他の国で使用できますAWS Commercial クラウドサービス（ C2S ）環境を介した Intelligence Community （ IC ）。HA ペアとシングルノードシステムは、 C2S に導入できます。
+
+https://docs.netapp.com/us-en/occm/media/c2s.pdf["AWS Commercial クラウドサービス環境向けクイックスタートガイド"^]
+
+
+
+== 9.5 P3 パッチ（ 2019 年 4 月 25 日）
+
+Cloud Volumes ONTAP 用の 9.5 P3 パッチリリースがリリースされました。 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P3["P3 パッチで修正されたバグのリストを表示します"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+== 9.5 P2 パッチ（ 2019 年 4 月 10 日）
+
+Cloud Volumes ONTAP 用の 9.5 P2 パッチリリースが提供されました。このパッチには、バグの修正に加え、新しい AWS EC2 インスタンスタイプでの Flash Cache のサポートも含まれています。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。
+
+https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P2["P2 で修正されたバグを参照するには、ここをクリックしてください パッチ"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+=== Flash Cache では、新しい EC2 インスタンスタイプがサポートされます
+
+Premium ライセンスと BYOL ライセンスで次の EC2 インスタンスタイプがサポートされるようになりました。
+
+* c5d.csi
+* c5d.9xlarge
+* r5d.2xlarge
+
+
+これらのインスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。
+
+Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。Cloud Manager からボリュームを作成するときに Storage Efficiency を使用しないようにするか、またはボリュームを作成してから実行することができます http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["CLI を使用してデータ圧縮を無効にします"^]。
+
+
+NOTE: 再起動後のキャッシュの再ウォームアップは、 Cloud Volumes ONTAP ではサポートされていません。
+
+
+
+== Azure Central US リージョンで HA がサポートされます （ 2019 年 3 月 25 日）
+
+Azure の米国中部リージョンで HA ペアがサポートされるようになりました。
+
+https://cloud.netapp.com/cloud-volumes-global-regions["サポートされる Azure リージョンの一覧を参照してください"^]。
+
+
+
+== 9.5 P1 パッチ（ 2019 年 3 月 18 日）
+
+Cloud Volumes ONTAP の 9.5 P1 パッチリリースがすべての構成で利用できるようになりました。既存のシステムのこのパッチリリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。
+
+Azure に HA ペアがすでにある場合は、 P1 パッチリリースの適用を支援するために、ネットアップから連絡があります。
+
+https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.5P1["P1 で修正されたバグを表示するには、ここをクリックしてください パッチ"^] （ネットアップサポートサイトへのログインが必要です）。
+
+
+
+== Cloud Volumes ONTAP HA は、 Azure で一般提供されるようになりました （ 2019 年 3 月 18 日）
+
+9.5 P1 パッチのリリースでは、 Azure の HA ペアが一般提供（ GA ）になりました。Preview ライセンスは不要になりました。
+
+GA リリースは、次の点を除いて、ほとんどの Azure リージョンで利用できます。
+
+* 米国中部
+* 北米
+* 米国政府地域
+* 米国西部
+* アメリカ西部
+
+
+これらのリージョンをメンテナンスすると、 Cloud Volumes ONTAP を作成できず、フェイルオーバーが実行されない可能性があります。メンテナンスが完了したら、ただちにこれらの地域をサポートすることを計画しています。
+
+https://cloud.netapp.com/cloud-volumes-global-regions["サポートされる Azure リージョンの一覧を参照してください"^]。
+
+
+
+== 9.5 AWS および Azure の GA （ 2019 年 2 月 4 日）
+
+Cloud Volumes ONTAP 9.5 の General Availability （ GA ）リリースが AWS と Microsoft Azure で利用できるようになりました（シングルノードシステムの場合は Azure のみ）。GA リリースでは、安定性の修正、 AWS の新機能と廃止された機能、およびシステム容量制限の変更が行われています。
+
+
+
+=== すべての Premium 構成および BYOL 構成の容量制限は 368 TB です
+
+Cloud Volumes ONTAP プレミアムおよび BYOL のシステム容量の制限が、すべての構成（ AWS および Azure のシングルノードおよび HA ）で 368 TB になりました。
+
+一部の構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。たとえば、 Azure 内の 1 つのノードシステムのディスクベースの容量は 252TB で、 Azure Blob Storage 内の非アクティブデータは最大 116TB まで許容されます。
+
+ディスクの制限については、を参照してください link:reference_storage_limits_95.html["ストレージの制限"]。
+
+
+
+=== AWS での M5 インスタンスと R5 インスタンスのサポート
+
+Cloud Volumes ONTAP は、 M5 および R5 ファミリーで複数のインスタンスタイプをサポートするようになりました。
+
+[cols="4*"]
+|===
+| 調査 | 標準 | Premium サービス | BYOL 
+
+
+| m5.xlarge のように指定します  a| 
+* m5.2xlarge
+* R5.xlarge （ R5.xlarge ）
+
+ a| 
+* m5.mc
+* r5.2xlarge
+
+ a| 
+* m5.xlarge のように指定します
+* m5.2xlarge
+* m5.mc
+* R5.xlarge （ R5.xlarge ）
+* r5.2xlarge
+
+
+|===
+これらのインスタンスは、 KVM テクノロジに基づくハイパーバイザーを使用します。その結果、各インスタンスでサポートされるデータディスクの数は他のインスタンスタイプよりも少なくなります。シングルノードシステムの場合は最大 24 本、 HA ペアの場合は最大 21 本です。 link:reference_storage_limits_95.html["ストレージの制限事項をご確認ください"]。
+
+の詳細を確認してください https://aws.amazon.com/ec2/instance-types/m5/["M5 インスタンス"^] および https://aws.amazon.com/ec2/instance-types/r5/["R5 インスタンス"^]。
+
+
+
+=== AWS での NetApp Volume Encryption のサポート
+
+https://www.netapp.com/us/media/ds-3899.pdf["NetApp Volume Encryption （ NVE ）"^] は、一度に 1 つのボリュームの保存データを暗号化するソフトウェアベースのテクノロジです。データ、 Snapshot コピー、およびメタデータが暗号化されます。データへのアクセスには、ボリュームごとに 1 つずつ、一意の XTS-AES-256 キーを使用します。
+
+現時点で、 Cloud Volumes ONTAP は外部キー管理サーバを使用した NetApp Volume Encryption をサポートしています。オンボードキーマネージャはサポートされていません。サポートされているキー管理ツールは、で確認できます http://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^] 主要マネージャー * ソリューションの下。
+
+CLI から NetApp Volume Encryption をセットアップする必要があります。その後、 CLI または System Manager を使用して、特定のボリュームで暗号化を有効にできます。Cloud Manager のユーザインターフェイスと API では、 NetApp Volume Encryption がサポートされていません。
+
+https://docs.netapp.com/us-en/occm/task_encrypting_volumes.html["NetApp Volume Encryption のセットアップ方法をご確認ください"^]
+
+
+NOTE: NetApp Volume Encryption は、アグリゲートレベルで暗号化データを暗号化する Cloud Volumes ONTAP 暗号化とは別の暗号化テクノロジであり、現在は廃止されています。この 2 つの暗号化テクノロジをアップグレードすることはできません。を参照してください <<Deprecated features in AWS>> を参照してください。
+
+
+
+=== AWS で廃止された機能
+
+9.5 リリースでは、 2 つの機能がサポートされなくなりました。
+
+
+
+==== Cloud Volumes ONTAP のアグリゲートレベルの暗号化で AWS ネイティブのみがサポートされるようになりました ディスクの暗号化
+
+外部キー管理ツールを使用したアグリゲートの保存データ暗号化はサポートされなくなりました。この機能を現在使用していてアップグレードする場合は、新しい 9.5 システムを起動してからアップグレードする必要があります https://docs.netapp.com/us-en/occm/task_replicating_data.html["データのレプリケート"] そのシステムに。
+
+それ以外の方法でも保管データ暗号化はサポートされます。データは、 NetApp Volume Encryption を使用するか、 AWS Key Management Service （ KMS ）を使用して暗号化できます。 https://docs.netapp.com/us-en/occm/concept_security.html["保存データの暗号化の詳細については、こちらをご覧ください"^]。
+
+
+
+==== C4.2xlarge はサポートされなくなりました
+
+バージョン 9.5 では、 c4.2xlarge インスタンスタイプはサポートされていません。このインスタンスタイプを現在使用している場合は、最初にそのインスタンスタイプを使用する必要があります https://docs.netapp.com/us-en/occm/task_modifying_ontap_cloud.html#changing-the-instance-or-virtual-machine-type-for-cloud-volumes-ontap["新しいインスタンスタイプに変更します"] 9.5 リリースにアップグレードする前に、
+
+
+
+== 9.5 RC1 for Azure （ 2018 年 12 月 4 日）
+
+Cloud Volumes ONTAP 9.5 RC1 が Microsoft Azure で利用できるようになりました。9.5 リリースは AWS であとから提供開始されます。
+
+
+
+=== Microsoft Azure のハイアベイラビリティ（ HA ）ペアのプレビュー版です
+
+Microsoft Azure の Cloud Volumes ONTAP HA ペアのプレビューを利用できるようになりました。HA ペアは、クラウド環境で障害が発生した場合にエンタープライズクラスの信頼性を提供し、継続的な運用を実現します。物理 ONTAP クラスタと同様に、 Azure HA ペアのストレージは 2 つのノードで共有されます。
+
+Azure の HA ペアをプレビュー版として提供中です。プレビューライセンスは、 ng-Cloud-Volume-ONTAP-preview@netapp.com でお問い合わせください。
+
+https://docs.netapp.com/us-en/occm/concept_ha_azure.html["Azure の HA ペアについて詳しくは、こちらをご覧ください"^]。
+
+
+
+=== Azure のネットワークパフォーマンスが向上しました
+
+これで、で Cloud Volumes ONTAP システムが有効になりました https://docs.microsoft.com/en-us/azure/virtual-network/create-vm-accelerated-networking-cli["高速ネットワーク"^] Azure の場合：Cloud Manager を使用すると、 9.5 にアップグレードした場合や、新しい 9.5 システムを導入した場合に、ネットワークの高速化を実現できます。
+
+
+
+=== 新しい Azure リージョンのサポート
+
+これで、フランス中部地域に Cloud Volumes ONTAP を導入できるようになりました。
+
+
+
+=== Azure での NetApp Volume Encryption のサポート
+
+https://www.netapp.com/us/media/ds-3899.pdf["NetApp Volume Encryption （ NVE ）"^] は、一度に 1 つのボリュームの保存データを暗号化するソフトウェアベースのテクノロジです。データ、 Snapshot コピー、およびメタデータが暗号化されます。データへのアクセスには、ボリュームごとに 1 つずつ、一意の XTS-AES-256 キーを使用します。
+
+現時点で、 Cloud Volumes ONTAP は外部キー管理サーバを使用した NetApp Volume Encryption をサポートしています。オンボードキーマネージャはサポートされていません。サポートされているキー管理ツールは、で確認できます http://mysupport.netapp.com/matrix["NetApp Interoperability Matrix Tool で確認できます"^] 主要マネージャー * ソリューションの下。
+
+CLI から NetApp Volume Encryption をセットアップする必要があります。その後、 CLI または System Manager を使用して、特定のボリュームで暗号化を有効にできます。現時点では、 Cloud Manager は NetApp Volume Encryption をサポートしていません。
+
+https://docs.netapp.com/us-en/occm/task_encrypting_volumes.html["NetApp Volume Encryption のセットアップ方法をご確認ください"^]
+
+
+
+== アップグレードに関する注意事項
+
+* Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+* Cloud Volumes ONTAP 9.5 には 9.4 リリースからアップグレードできます。
+* シングルノードシステムのアップグレードでは、 I/O が中断されるまで最大 25 分間システムがオフラインになります。
+* HA ペアのアップグレードは無停止で、 I/O が中断されません。無停止アップグレードでは、各ノードが連携してアップグレードされ、クライアントへの I/O の提供が継続されます。
+

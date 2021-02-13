@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: reference_limitations_gcp_97.html 
+keywords: limitations, google cloud platform, gcp 
+summary: 既知の制限事項は、このリリースの製品でサポートされていないプラットフォーム、デバイス、機能、または製品と正しく相互運用できない機能を特定します。これらの制限事項を慎重に確認してください 
+---
+= GCP の Cloud Volumes ONTAP 9.7 の既知の制限事項
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Google Cloud Platform の Cloud Volumes ONTAP に固有の既知の制限事項はありません。を参照してください link:reference_limitations_97.html["すべてのクラウドプロバイダでの Cloud Volumes ONTAP 9.7 の制限事項"]。

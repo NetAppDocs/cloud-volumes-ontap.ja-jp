@@ -1,0 +1,144 @@
+---
+entries:
+- title: Cloud Volumes ONTAP リリースノート
+  url: "/index.html"
+- title: 9.8 リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new_98.html"
+  - title: サポートされている構成
+    entries:
+    - title: AWS
+      url: "/reference_configs_aws_98.html"
+    - title: Azure
+      url: "/reference_configs_azure_98.html"
+    - title: GCP
+      url: "/reference_configs_gcp_98.html"
+  - title: ストレージの制限
+    entries:
+    - title: AWS
+      url: "/reference_limits_aws_98.html"
+    - title: Azure
+      url: "/reference_limits_azure_98.html"
+    - title: GCP
+      url: "/reference_limits_gcp_98.html"
+  - title: 既知の問題
+    url: "/reference_issues_98.html"
+  - title: 既知の制限
+    entries:
+    - title: 一般的な制限事項
+      url: "/reference_limitations_98.html"
+    - title: AWS の制限事項
+      url: "/reference_limitations_aws_98.html"
+    - title: Azure の制限事項
+      url: "/reference_limitations_azure_98.html"
+    - title: GCP の制限
+      url: "/reference_limitations_gcp_98.html"
+  - title: クラウドプロバイダの統合
+    url: reference_provider_integrations_98.html
+- title: 9.7 リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new_97.html"
+  - title: サポートされている構成
+    entries:
+    - title: AWS
+      url: "/reference_configs_aws_97.html"
+    - title: Azure
+      url: "/reference_configs_azure_97.html"
+    - title: GCP
+      url: "/reference_configs_gcp_97.html"
+  - title: ストレージの制限
+    entries:
+    - title: AWS
+      url: "/reference_limits_aws_97.html"
+    - title: Azure
+      url: "/reference_limits_azure_97.html"
+    - title: GCP
+      url: "/reference_limits_gcp_97.html"
+  - title: 既知の問題
+    url: "/reference_issues_97.html"
+  - title: 既知の制限
+    entries:
+    - title: 一般的な制限事項
+      url: "/reference_limitations_97.html"
+    - title: AWS の制限事項
+      url: "/reference_limitations_aws_97.html"
+    - title: Azure の制限事項
+      url: "/reference_limitations_azure_97.html"
+    - title: GCP の制限
+      url: "/reference_limitations_gcp_97.html"
+- title: 9.6 リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new_96.html"
+  - title: サポートされている構成
+    entries:
+    - title: AWS
+      url: "/reference_configs_aws_96.html"
+    - title: Azure
+      url: "/reference_configs_azure_96.html"
+    - title: GCP
+      url: "/reference_configs_gcp_96.html"
+  - title: ストレージの制限
+    entries:
+    - title: AWS
+      url: "/reference_limits_aws_96.html"
+    - title: Azure
+      url: "/reference_limits_azure_96.html"
+    - title: GCP
+      url: "/reference_limits_gcp_96.html"
+  - title: 既知の問題
+    url: "/reference_issues_96.html"
+  - title: 既知の制限
+    entries:
+    - title: 一般的な制限事項
+      url: "/reference_limitations_96.html"
+    - title: AWS の制限事項
+      url: "/reference_limitations_aws_96.html"
+    - title: Azure の制限事項
+      url: "/reference_limitations_azure_96.html"
+    - title: GCP の制限
+      url: "/reference_limitations_gcp_96.html"
+- title: 9.5 リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new_95.html"
+  - title: サポートされている構成
+    url: "/reference_supported_configs_95.html"
+  - title: ストレージの制限
+    url: "/reference_storage_limits_95.html"
+  - title: 既知の問題
+    url: "/reference_issues_95.html"
+  - title: 既知の制限
+    url: "/reference_limitations_95.html"
+- title: 9.4 リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new_94.html"
+  - title: サポートされている構成
+    url: "/reference_supported_configs_94.html"
+  - title: ストレージの制限
+    url: "/reference_storage_limits_94.html"
+  - title: 既知の問題
+    url: "/reference_issues_94.html"
+  - title: 既知の制限
+    url: "/reference_limitations_94.html"
+- title: 9.3 リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new_93.html"
+  - title: サポートされている構成
+    url: "/reference_supported_configs_93.html"
+  - title: ストレージの制限
+    url: "/reference_storage_limits_93.html"
+  - title: 既知の問題
+    url: "/reference_issues_93.html"
+  - title: 既知の制限
+    url: "/reference_limitations_93.html"
+- title: Cloud Manager のドキュメント
+  url: https://docs.netapp.com/us-en/occm/index.html
+- title: 関連リンク
+  url: "/reference_additional_info.html"
+- title: 法的通知
+  url: "/reference_legal_notices.html"

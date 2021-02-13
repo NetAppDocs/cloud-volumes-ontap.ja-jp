@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: reference_limitations_azure_98.html 
+keywords: limitations, ha, azure, pay-as-you-go, paygo, cloud solution provider, nfsv3 
+summary: これらの既知の制限は、 Microsoft Azure の Cloud Volumes ONTAP に固有のものです。 
+---
+= Azure での Cloud Volumes ONTAP 9.8 に関する既知の制限事項
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+以下に示す既知の制限事項は、 Microsoft Azure の Cloud Volumes ONTAP に固有のものです。また、必ず確認してください link:reference_limitations_98.html["すべてのクラウドプロバイダで Cloud Volumes ONTAP 9.8 を使用する場合の制限事項"]。
+
+
+
+== Flash Cache の制限事項
+
+Standard_L8s_v2 VM タイプにはローカルの NVMe ストレージが含まれており、 Cloud Volumes ONTAP はこれらのストレージを _Flash Cache _ として使用します。Flash Cache に関する次の制限事項に注意してください。
+
+* Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。
++
+Cloud Manager からボリュームを作成するときに Storage Efficiency を使用しないようにするか、またはボリュームを作成してから実行することができます http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["CLI を使用してデータ圧縮を無効にします"^]。
+
+* 再起動後のキャッシュの再ウォームアップは、 Cloud Volumes ONTAP ではサポートされていません。
+
+
+
+
+== HA の制限事項
+
+次の制限事項が Microsoft Azure の Cloud Volumes ONTAP HA ペアに影響します。
+
+* NFSv4 はサポートされていません。NFSv3 がサポートされています。
+* 一部のリージョンでは HA ペアがサポートされません。
++
+https://cloud.netapp.com/cloud-volumes-global-regions["サポートされる Azure リージョンの一覧を参照してください"^]。
+
+
+
+
+
+== 従量課金制は、 CSP パートナーが利用できません
+
+マイクロソフトクラウドソリューションプロバイダー (CSP) パートナーの場合、従量課金制のサブスクリプションは CSP パートナーに提供されないため、 Cloud Volumes ONTAP Explore 、 Standard 、または Premium を展開することはできません。ライセンスを購入し、 Cloud Volumes ONTAP BYOL を導入する必要があります。

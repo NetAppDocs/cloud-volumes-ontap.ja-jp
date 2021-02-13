@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: reference_issues_94.html 
+keywords: issues, bugs, known issues 
+summary: 既知の問題は、このリリースの製品を正常に使用できない可能性のある問題を特定します。 
+---
+= Cloud Volumes ONTAP 9.4 の既知の問題
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+既知の問題は、このリリースの製品を正常に使用できない可能性のある問題を特定します。
+
+このリリースの Cloud Volumes ONTAP 固有の既知の問題はありません。
+
+ONTAP ソフトウェアの既知の問題は、で確認できます https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP リリースノート"^]。

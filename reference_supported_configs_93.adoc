@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: reference_supported_configs_93.html 
+keywords: ec2, instance, type, vm, explore, standard, premium, byol, capacity, maximum, virtual machine, ontap cloud, supported, configurations 
+summary: ONTAP クラウドには、 AWS と Azure の複数の構成があります。 
+---
+= ONTAP Cloud 9.3 でサポートされる構成
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP クラウドは、 AWS と Azure で 2 つの料金プラン（従量課金制、お客様所有のライセンスを使用（ BYOL ））から選択できます。従量課金制の場合は、 Explore 、 Standard 、 Premium の 3 つの構成から選択できます。
+
+
+
+== ONTAP Cloud for AWS
+
+AWS では、 ONTAP クラウドを単一システムまたは HA ペアとして導入できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| EC2 インスタンスタイプ | m4.xlarge  a| 
+* m4.2xlarge
+* R4.xlarge （ R4.xlarge ）
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge を使用する場合
+* m4.mc
+* r4.2xlarge
+
+ a| 
+* c4.4xlarge
+* c4.8xlarge を使用する場合
+* m4.xlarge
+* m4.2xlarge
+* m4.mc
+* R4.xlarge （ R4.xlarge ）
+* r4.2xlarge
+
+
+
+
+| 基盤となるストレージ 4+| 汎用 SSD 、プロビジョニング済み IOPS SSD 、スループット最適化 HDD 、コールド HDD を、ディスクあたり最大 16TB で提供します 
+
+
+| ライセンス容量の制限 | 2TB | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. 従量課金制の構成は GovCloud （ US ）ではサポートされません。
+. EC2 インスタンスタイプを選択する場合は、そのインスタンスが共有インスタンスか専用インスタンスかを指定できます。
+. ONTAP クラウドの Standard 、 Premium 、および BYOL で EBS SSD を使用すると、書き込みパフォーマンスが向上します。
+. データ階層化は、 ONTAP クラウドの Standard 、 Premium 、および BYOL でサポートされています。
+. データ階層化を有効にすると、システムの容量制限は同じままになります。容量の制限には、ディスクとオブジェクトストレージの両方が含まれます。
+. AWS リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"]。
+
+
+
+
+== ONTAP Cloud for Azure
+
+Azure では、 ONTAP クラウドをシングルノードシステムとして導入できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| 仮想マシンのタイプ | DS3_v2 の場合  a| 
+* DS4_v2
+* DS13_v2 の場合
+
+ a| 
+* DS5_v2 の場合
+* DS14_v2
+
+ a| 
+* DS3_v2 の場合
+* DS4_v2
+* DS5_v2 の場合
+* DS13_v2 の場合
+* DS14_v2
+
+
+
+
+| 基盤となるストレージ 4+| 標準 HDD 管理ディスク、標準 SSD 管理ディスク、およびプレミアム SSD 管理ディスク（ディスクあたり最大 32 TB ） 
+
+
+| ライセンス容量の制限 | 2TB | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. ONTAP Cloud Standard 、 Premium 、および BYOL で Azure Premium Storage ディスクを使用している場合は、書き込みパフォーマンスの向上がサポートされますが、 DS3_v2 仮想マシンタイプを使用している場合はサポートされません。
+. Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"]。
+
