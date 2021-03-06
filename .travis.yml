@@ -5,7 +5,7 @@ rvm:
 jobs:
   include:
     - stage: deploy
-      if: branch = master OR repo =~ /-stage/
+      if: branch = main OR repo =~ /-stage/
       before_install:
       - echo -e "machine github.com\n login $GH_TOKEN" > ~/.netrc && chmod 600 ~/.netrc
       - git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
