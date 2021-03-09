@@ -18,11 +18,3 @@ Cloud Volumes ONTAP のリリースノートには、リリースの新機能、
 このリリースノートは Cloud Volumes ONTAP 固有のものです。を表示します https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP リリースノート"^] ONTAP ソフトウェアの新機能、既知の問題、および一般的な制限事項を特定する。
 
 Cloud Volumes ONTAP の導入と管理の方法について説明したドキュメントが必要な場合は、を参照してください link:https://docs.netapp.com/us-en/occm/["Cloud Manager のドキュメント"^]。
-
-* link:reference_new_98.html["9.8 リリースノート"]
-* link:reference_new_97.html["9.7 リリースノート"]
-* link:reference_new_96.html["9.6 リリースノート"]
-* link:reference_new_95.html["9.5 リリースノート"]
-* link:reference_new_94.html["9.4 リリースノート"]
-* link:reference_new_93.html["9.3 リリースノート"]
-

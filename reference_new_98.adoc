@@ -51,7 +51,7 @@ C4 、 M4 、または R4 インスタンスタイプで実行されている既
 
 シングルノードシステムと同様に、 Cloud Manager では、 C5 、 M5 、または R5 インスタンスタイプを使用すると、 AWS で 9.8 の新しい HA ペア環境にコアディスクが割り当てられます。コアディスクを使用すると、サポートされるインスタンスタイプを切り替えることができ、問題が発生した場合にコアファイルを収集するシステムの機能が拡張され、将来的にはより大規模なインスタンスタイプをサポートできるようになります。
 
-コアディスクは 540 GB の汎用 SSD です。
+コアディスクは、 540 GB の汎用 SSD （ gp2 ）です。
 
 
 NOTE: このコアディスクの追加により、これらのインスタンスタイプを使用するシステムでサポートされるデータディスクの数が 1 つ少なくなりました。 link:reference_limits_aws_98.html["AWS のストレージの制限に関する詳細は、こちらをご覧ください"]。
@@ -101,19 +101,19 @@ https://docs.netapp.com/us-en/occm/concept_write_speed.html["詳細はこちら�
 
 
 
-=== AWS では 24 個の Storage VM がサポートされます
+=== AWS では最大 24 台の Storage VM をサポートします
 
-C5 、 M5 、 R5 のいずれかのインスタンスタイプを使用し、独自のライセンスを使用する（ BYOL ）場合、 AWS の Cloud Volumes ONTAP で最大 24 個の Storage VM がサポートされるようになりました。
+C5 、 M5 、 R5 のいずれかのインスタンスタイプを使用して独自のライセンスを有効にすると、 AWS の Cloud Volumes ONTAP で最大 24 個の Storage VM がサポートされるようになりました。これら 24 個の Storage VM のうち、ディザスタリカバリ（ DR ）用に最大 12 個を設定できます。
 
-これら 24 個の Storage VM のうち、ディザスタリカバリ（ DR ）用に最大 12 個を設定できます。
+使用する EC2 インスタンスタイプによっては、上限値がそれよりも低くなる可能性があります。
 
-Cloud Volumes ONTAP に付属する最初の Storage VM に追加する _data-pサービング _svm のそれぞれに、デフォルトでアドオンライセンスが必要です。アカウントチームに連絡して SVM アドオンライセンスを入手してください。
+デフォルトでは、 Cloud Volumes ONTAP に付属する最初の Storage VM 以降に追加する data_serving_storage VM ごとにアドオンライセンスが必要です。アカウントチームに連絡して SVM アドオンライセンスを入手してください。
 
 ディザスタリカバリ（ DR ）用に設定する Storage VM には追加ライセンスは必要ありませんが（無償）、 Storage VM の数は制限に含まれます。
 
 link:reference_limits_aws_98.html["Storage VM の制限に関する詳細情報"]。
 
-https://docs.netapp.com/us-en/occm/task_managing_licenses.html["Cloud Volume にシステムライセンスを追加する方法について説明します ONTAP"^]。
+https://docs.netapp.com/us-en/occm/task_managing_svms_aws.html["Cloud Volume 用のデータ提供用 Storage VM を作成する方法について説明します AWS の ONTAP"]。
 
 
 
@@ -121,7 +121,7 @@ https://docs.netapp.com/us-en/occm/task_managing_licenses.html["Cloud Volume に
 
 C5 、 M5 、または R5 のインスタンスタイプを使用すると、 Cloud Manager で AWS で 9.8 のシングルノード環境にコアディスクが割り当てられるようになりました。コアディスクを使用すると、サポートされるインスタンスタイプを切り替えることができ、問題が発生した場合にコアファイルを収集するシステムの機能が拡張され、将来的にはより大規模なインスタンスタイプをサポートできるようになります。
 
-コアディスクは 540 GB の汎用 SSD です。
+コアディスクは、 540 GB の汎用 SSD （ gp2 ）です。
 
 
 NOTE: このコアディスクの追加により、これらのインスタンスタイプを使用するシングルノードシステムでサポートされるデータディスク数が 1 本少なくなりました。 link:reference_limits_aws_98.html["AWS のストレージの制限に関する詳細は、こちらをご覧ください"]。

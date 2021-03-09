@@ -49,6 +49,7 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[""^]
 
 通知ファイルには、ネットアップソフトウェアで使用されるサードパーティの著作権およびライセンスに関する情報が記載されています。
 
+* link:media/notice_cloud_volumes_ontap_9.9.0.pdf["Cloud Volumes ONTAP 9.9.0 の注意事項"^]
 * link:media/notice_cloud_volumes_ontap_9.8.pdf["Cloud Volumes ONTAP 9.8 に関する注意事項"^]
 * link:media/notice_cloud_volumes_ontap_9.7.pdf["Cloud Volumes ONTAP 9.7 の場合の注意事項"^]
 * link:media/notice_cloud_volumes_ontap_9.6.pdf["Cloud Volumes ONTAP 9.6 に関する注意事項"^]

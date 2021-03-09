@@ -2,6 +2,40 @@
 entries:
 - title: Cloud Volumes ONTAP リリースノート
   url: "/index.html"
+- title: 9.9.0 リリースノート
+  entries:
+  - title: 新機能
+    url: "/reference_new_990.html"
+  - title: サポートされている構成
+    entries:
+    - title: AWS
+      url: "/reference_configs_aws_990.html"
+    - title: Azure
+      url: "/reference_configs_azure_990.html"
+    - title: GCP
+      url: "/reference_configs_gcp_990.html"
+  - title: ストレージの制限
+    entries:
+    - title: AWS
+      url: "/reference_limits_aws_990.html"
+    - title: Azure
+      url: "/reference_limits_azure_990.html"
+    - title: GCP
+      url: "/reference_limits_gcp_990.html"
+  - title: 既知の問題
+    url: "/reference_issues_990.html"
+  - title: 既知の制限
+    entries:
+    - title: 一般的な制限事項
+      url: "/reference_limitations_990.html"
+    - title: AWS の制限事項
+      url: "/reference_limitations_aws_990.html"
+    - title: Azure の制限事項
+      url: "/reference_limitations_azure_990.html"
+    - title: GCP の制限
+      url: "/reference_limitations_gcp_990.html"
+  - title: クラウドプロバイダの統合
+    url: reference_provider_integrations_990.html
 - title: 9.8 リリースノート
   entries:
   - title: 新機能

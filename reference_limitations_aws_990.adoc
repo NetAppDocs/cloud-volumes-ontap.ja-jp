@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: reference_limitations_aws_98.html 
+permalink: reference_limitations_aws_990.html 
 keywords: limitations, aws, amazon web services, flashe cache, alarms, cloudwatch, giveback, govcloud, c2s, aws outpost, outposts 
 summary: これらの既知の制限は、 Amazon Web Services の Cloud Volumes ONTAP に固有のものです。 
 ---
-= Cloud Volumes ONTAP 9.8 での AWS の既知の制限事項
+= AWS での Cloud Volumes ONTAP 9.9.0 の既知の制限事項
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -13,7 +13,7 @@ summary: これらの既知の制限は、 Amazon Web Services の Cloud Volumes
 
 
 [role="lead"]
-以下に記載する制限は、 Amazon Web Services の Cloud Volumes ONTAP に固有のものです。また、必ず確認してください link:reference_limitations_98.html["すべてのクラウドプロバイダで Cloud Volumes ONTAP 9.8 を使用する場合の制限事項"]。
+以下に記載する制限は、 Amazon Web Services の Cloud Volumes ONTAP に固有のものです。また、必ず確認してください link:reference_limitations_990.html["すべてのクラウドプロバイダでの Cloud Volumes ONTAP 9.9.0 の制限事項"]。
 
 
 

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: reference_configs_aws_98.html 
+permalink: reference_configs_aws_990.html 
 keywords: ec2, instance, type, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, sizes, disks, networking, bandwidth 
 summary: Cloud Volumes ONTAP は、単一ノードシステムまたは HA ペアとして AWS で使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランが用意されています。 
 ---
-= Cloud Volumes ONTAP 9.8 で AWS でサポートされる構成
+= AWS で Cloud Volumes ONTAP 9.9.0 のサポートされる構成
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -85,7 +85,7 @@ Cloud Volumes ONTAP では、データ階層化用に複数のタイプの EBS �
 | S3 へのコールドデータ階層化 | サポート対象外 3+| サポート対象ですが、コールド HDD ディスクではサポートされません 
 |===
 . HA ペアの場合、容量の上限は HA ペア全体に適用されます。ノード単位ではありません。たとえば、 Premium ライセンスを使用する場合、両方のノード間で最大 368 TB の容量を確保できます。
-. 一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_98.html["ストレージの制限"]。
+. 一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_990.html["ストレージの制限"]。
 . SSD を Cloud Volumes ONTAP Standard 、 Premium 、および BYOL とともに使用すると、書き込みパフォーマンスが向上します。
 
 
@@ -154,13 +154,16 @@ AWS では、アグリゲートに同じタイプおよびサイズのディス�
 | * BYOL の探検および * | m5.xlarge のように指定します | 4. | 16 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポート（シングルノードのみ） 
 
 
-.2+| * Standard および BYOL * | R5.xlarge （ R5.xlarge ） | 4. | 32 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポート（シングルノードのみ） 
+.3+| * Standard および BYOL * | R5.xlarge （ R5.xlarge ） | 4. | 32 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポート（シングルノードのみ） 
+
+
+| m5a.2xlarge | 8. | 32 | サポート対象外 | 最大 10 個 | 最大 2,880 | サポートされます 
 
 
 | m5.2xlarge | 8. | 32 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポートされます 
 
 
-.16+| * プレミアムおよび BYOL * | m5n.2xlarge | 8. | 32 | サポート対象外 | 最大 25 | 最大 4,750 | サポートされます 
+.18+| * プレミアムおよび BYOL * | m5n.2xlarge | 8. | 32 | サポート対象外 | 最大 25 | 最大 4,750 | サポートされます 
 
 
 | r5.2xlarge | 8. | 64 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポートされます 
@@ -190,6 +193,9 @@ AWS では、アグリゲートに同じタイプおよびサイズのディス�
 | c5n.9xlarge | 36 | 96 | サポート対象外 | 50 | 9,500 | サポートされます 
 
 
+| C5a.18 倍 | 48^4^ | 96 | サポート対象外 | 12. | 4,750 | サポートされます 
+
+
 | c5.18 × ラージ | 48^4^ | 144 | サポート対象外 | 25 | 19,000 | サポートされます 
 
 
@@ -200,6 +206,9 @@ AWS では、アグリゲートに同じタイプおよびサイズのディス�
 
 
 | c5n.18 × ラージ | 48^4^ | 192 | サポート対象外 | 100 | 19,000 | サポートされます 
+
+
+| m5a.16 x ラージ | 48^4^ | 256 | サポート対象外 | 12. | 9,500 | サポートされます 
 
 
 | m5.16 x ラージ | 48^4^ | 256 | サポート対象外 | 20 | 13,600 | サポートされます 

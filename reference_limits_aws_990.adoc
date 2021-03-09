@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: reference_limits_aws_98.html 
+permalink: reference_limits_aws_990.html 
 keywords: limits, maximum, storage, aggregates, disks, volumes, capacity, luns, size, storage virtual machine, SVM, ebs 
 summary: 信頼性の高い運用を実現するために、 Cloud Volumes ONTAP には AWS にストレージ構成の制限があります。最大のパフォーマンスを得るためには、システムを最大値で構成しないでください。 
 ---
-= Cloud Volumes ONTAP 9.8 での AWS でのストレージの制限
+= AWS での Cloud Volumes ONTAP 9.9.0 のストレージの制限
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -59,7 +59,7 @@ Cloud Volumes ONTAP は EBS ボリュームをディスクとして使用し、�
 
 次の点に注意してください。
 
-* 新しい Cloud Volumes ONTAP 9.8 システムでは、 C4 、 M4 、および R4 インスタンスタイプはサポートされません。ただし、これらのインスタンスタイプのいずれかで実行している場合は、システムを 9.8 リリースにアップグレードできるため、これらのインスタンスタイプのディスク制限は引き続き表示されています。
+* 新しい Cloud Volumes ONTAP 9.9.0 システムでは、 C4 、 M4 、および R4 インスタンスタイプはサポートされません。ただし、これらのインスタンスタイプのいずれかで実行している場合は、システムを 9.9.0 リリースにアップグレードできるため、これらのインスタンスタイプのディスク制限は引き続き表示されます。
 * 以下のディスク制限は、ユーザデータが格納されたディスクに固有です。この制限には、ブートディスクとルートディスクは含まれていません。
 * Premium ライセンスと BYOL ライセンスでは、容量制限に Explore または Standard ライセンスでアクセスできないため、制限が表示されます。
 * Cloud Volumes ONTAP BYOL システムに複数のライセンスを購入して、 368 TB を超える容量を割り当てることができるようになりました。シングルノードシステムまたは HA ペアに対して購入できるライセンスの数に制限はありません。ディスク制限によって、ディスクだけを使用することで容量制限に達することがないことに注意してください。を使用すると、ディスク制限を超えることができます http://docs.netapp.com/occm/us-en/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。 https://docs.netapp.com/us-en/occm/task_managing_licenses.html["Cloud Volume にシステムライセンスを追加する方法について説明します ONTAP"^]。
@@ -172,7 +172,7 @@ C5 、 M5 、または R5 のインスタンスタイプを使用する場合、
 
 ディザスタリカバリ（ DR ）用に設定する Storage VM には追加ライセンスは必要ありませんが（無償）、 Storage VM の数は制限に含まれます。たとえば、ディザスタリカバリ用に設定されたデータ提供用の Storage VM が 12 台ある場合、上限に達し、それ以上 Storage VM を作成できません。
 
-https://docs.netapp.com/us-en/occm/task_managing_svms.html["Storage VM を追加で作成する方法について説明します"^]。
+https://docs.netapp.com/us-en/occm/task_managing_svms_aws.html["Storage VM を追加で作成する方法について説明します"^]。
 
 
 

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: reference_configs_azure_97.html 
+permalink: reference_configs_azure_990.html 
 keywords: vm, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, disks, sizes 
 summary: Cloud Volumes ONTAP は、 Azure でシングルノードシステムまたは HA ペアとして使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランが用意されています。 
 ---
-= Cloud Volumes ONTAP 9.7 で Azure でサポートされる構成
+= Azure で Cloud Volumes ONTAP 9.9.0 がサポートされる構成
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -121,16 +121,18 @@ Azure で Cloud Volumes ONTAP を HA ペアとして導入する場合は、次�
 * DS13_v2 の場合
 
  a| 
-* DS5_v2 の場合
-* DS14_v2
-* DS15_v2 の場合
+* DS5_v2^1^
+* DS14_v2^1 ^
+* DS15_v2 ^1
+* E48s_v3^1^
 
  a| 
 * DS4_v2
-* DS5_v2 の場合
+* DS5_v2^1^
 * DS13_v2 の場合
-* DS14_v2
-* DS15_v2 の場合
+* DS14_v2^1 ^
+* DS15_v2 ^1
+* E48s_v3^1^
 
 
 
@@ -145,6 +147,7 @@ Azure で Cloud Volumes ONTAP を HA ペアとして導入する場合は、次�
 |===
 注：
 
+. Cloud Volumes ONTAP では、 HA ペアを使用する場合、これらの VM タイプで高速な書き込み速度がサポートされます。シングルノードシステムを使用する場合、すべてのタイプのインスタンスで高速書き込みがサポートされます。 https://docs.netapp.com/us-en/occm/concept_write_speed.html["書き込み速度の選択方法の詳細については、こちらをご覧ください"^]。
 . Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
 . Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。
 

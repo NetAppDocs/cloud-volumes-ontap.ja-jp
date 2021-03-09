@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: reference_new_990.html 
+keywords: what's new, new, features, release notes, enhancements 
+summary: Cloud Volumes ONTAP 9.9.0 には、いくつかの新機能と機能拡張が含まれています。 
+---
+= Cloud Volumes ONTAP 9.9.0 の新機能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.9.0 には、いくつかの新機能と機能拡張が含まれています。
+
+その他の機能と機能拡張は、 Cloud Manager の最新バージョンで導入されました。を参照してください https://docs.netapp.com/us-en/occm/reference_new_occm.html["Cloud Manager リリースノート"^] を参照してください。
+
+
+
+== 書き込みパフォーマンスの向上
+
+このリリースでは、すべてのクラウドプロバイダとすべての構成で、 Cloud Volumes ONTAP の書き込みパフォーマンスが向上しています。
+
+
+
+== 新しい EC2 インスタンスタイプがサポートされます
+
+次の Amazon EC2 インスタンスタイプで Cloud Volumes ONTAP がサポートされるようになりました。
+
+* m5a.2xlarge 、 with Standard および BYOL 」の 2 つのタイプがあります
+* m5a.16 倍（ Premium および BYOL
+* C5a.12xL （プレミアムおよび BYOL ）
+
+
+の詳細を確認してください https://aws.amazon.com/ec2/instance-types/m5/["M5a インスタンス"^] および https://aws.amazon.com/ec2/instance-types/c5/["C5a インスタンス"^]。
+
+link:reference_configs_aws_990.html["AWS でサポートされている設定を表示します"]。
+
+
+
+== Azure で 24 個の Storage VM がサポートされます
+
+独自のライセンスを使用（ BYOL ）すると、 Azure の Cloud Volumes ONTAP で 24 個の Storage VM がサポートされるようになりました。
+
+デフォルトでは、 Cloud Volumes ONTAP に付属する最初の Storage VM 以降に追加する data_serving_storage VM ごとにアドオンライセンスが必要です。アカウントチームに連絡して SVM アドオンライセンスを入手してください。
+
+ディザスタリカバリ（ DR ）用に設定する Storage VM には追加ライセンスは必要ありませんが（無償）、 Storage VM の数は制限に含まれます。
+
+link:reference_limits_azure_990.html#storage-vm-limits["Azure の Storage VM の制限に関する詳細はこちらをご覧ください"]。
+
+https://docs.netapp.com/us-en/occm/task_managing_svms_azure.html["Cloud Volume 用のデータ提供用 Storage VM を作成する方法について説明します Azure の ONTAP"^]。
+
+
+
+== Cloud Manager 3.9.4 で導入された変更点
+
+Cloud Manager 3.9.4 リリースでは、 AWS KMS のサポート強化、 Google Cloud での共有 VPC のサポート、 Google Cloud での IP の削減など、 Cloud Volumes ONTAP の管理機能がいくつか強化されています。
+
+にアクセスします https://docs.netapp.com/us-en/occm/reference_new_occm.html["Cloud Manager リリースノート"^] 3.9.4 リリースの詳細については、を参照してください。
+
+
+
+== アップグレードに関する注意事項
+
+* Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+* 9.8 リリースから Cloud Volumes ONTAP 9.9.0 にアップグレードできます。既存の Cloud Volumes ONTAP 9.8 システムを 9.9.0 リリースにアップグレードするよう求めるメッセージが Cloud Manager に表示されます。
++
+http://docs.netapp.com/us-en/occm/task_updating_ontap_cloud.html#upgrading-cloud-volumes-ontap-from-cloud-manager-notifications["Cloud Manager から通知された場合のアップグレード方法について説明します"^]。
+
+* シングルノードシステムのアップグレードでは、 I/O が中断されるまで最大 25 分間システムがオフラインになります。
+* HA ペアのアップグレードは無停止で、 I/O が中断されません。無停止アップグレードでは、各ノードが連携してアップグレードされ、クライアントへの I/O の提供が継続されます。
+
