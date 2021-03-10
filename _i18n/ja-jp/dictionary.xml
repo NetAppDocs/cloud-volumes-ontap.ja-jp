@@ -1283,7 +1283,6 @@
   <block id="f38d1b7914333c6e9323df43b6106a84" category="cell">プロビジョニングされた IOPS - SSD （ io1 ）</block>
   <block id="1ffd24563a8ba078752a34d474e1f403" category="cell">m5a.2xlarge</block>
   <block id="c82994e8dd530a69b81d79cb4e505f09" category="cell">最大 2,880</block>
-  <block id="0ddac4b34cfbd925e1d81d2ebaa8910b" category="cell">C5a.18 倍</block>
   <block id="f5efe0addbdd614da5490e8dfe6205cc" category="cell">m5a.16 x ラージ</block>
   <block id="48ae2b506e2ea77c04c0d5169438f61a" category="doc">GCP の Cloud Volumes ONTAP 9.9.0 の既知の制限事項</block>
   <block id="914cbff2e81c63b70cf43388ad462b32" category="inline-link-macro">すべてのクラウドプロバイダでの Cloud Volumes ONTAP 9.9.0 の制限事項</block>
@@ -1329,4 +1328,5 @@
   <block id="235550454c43c31fd80424e4ce805eaa" category="list-text">新しい Cloud Volumes ONTAP 9.9.0 システムでは、 C4 、 M4 、および R4 インスタンスタイプはサポートされません。ただし、これらのインスタンスタイプのいずれかで実行している場合は、システムを 9.9.0 リリースにアップグレードできるため、これらのインスタンスタイプのディスク制限は引き続き表示されます。</block>
   <block id="7c09fb47b20e56429575dab2c5a83d69" category="paragraph"><block ref="3fd51c28c639224b3586bb1967d192ba" category="inline-link-rx"></block>。</block>
   <block id="23bec6a6f135dddae329a8a70c590b60" category="sidebar">9.9.0 リリースノート</block>
+  <block id="2d3e51e89d3f05d2abe99df631cb0b4c" category="cell">C5a.12xlarge</block>
 </blocks>
