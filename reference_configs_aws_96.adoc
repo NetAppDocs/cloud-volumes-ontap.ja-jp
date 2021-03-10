@@ -77,7 +77,7 @@ Cloud Volumes ONTAP は、フォールトトレランスとノンストップオ
 
 
 
-| サポートされているディスクタイプ ^4^ 4+| 汎用 SSD （ gp2 ）、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、およびコールド HDD （ sc1 シングルノードのみ） 
+| サポートされているディスクタイプ ^4^ 4+| 汎用 SSD （ gp2 ） ^5^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、コールド HDD （ sc1 シングルノードのみ） 
 
 
 | S3 へのコールドデータ階層化 | サポート対象外 3+| サポート対象ですが、コールド HDD ディスクではサポートされません 
@@ -91,6 +91,7 @@ Cloud Volumes ONTAP は、フォールトトレランスとノンストップオ
 . これらのインスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。 link:reference_limitations_aws_96.html#flash-cache-limitations["詳細はこちら。"]。
 . Cloud Volumes ONTAP 9.6 P3 以降では、 c5d.18 x large および m5d.8xlarge がサポートされます。
 . SSD を Cloud Volumes ONTAP Standard 、 Premium 、および BYOL とともに使用すると、書き込みパフォーマンスが向上します。
+. GP3 SSD はサポートされていません。
 . 一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_96.html["ストレージの制限"]。
 . AWS リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
 

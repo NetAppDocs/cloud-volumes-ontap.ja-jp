@@ -1032,7 +1032,6 @@
   <block id="dfeeabb8d703f59f841c2a6e2ed8d240" category="inline-link">Flash Cache の詳細については、こちらをご覧ください</block>
   <block id="5f8bbe78a704e43ee22a046e8a5a4a65" category="list-text">一部のインスタンスタイプにはローカル NVMe ストレージが含まれており、 Cloud Volumes ONTAP では _Flash Cache _ として使用されます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。<block ref="6e5c7756e53ebaf35203d7b7a7ddd869" category="inline-link-rx"></block>。</block>
   <block id="8032bcf520b695278250f029746190b4" category="list-text">Cloud Volumes ONTAP では、 HA ペアを使用する場合、ほとんどのインスタンスタイプで高速な書き込みがサポートされます。シングルノードシステムを使用する場合、すべてのタイプのインスタンスで高速書き込みがサポートされます。<block ref="48e62fbf9c94710926746e7ae45aa577" category="inline-link-rx"></block>。</block>
-  <block id="9e13a4fd5db43cfffde1c6a8789738be" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。この制限は、新規に導入した 9.8 HA ペアおよびシングルノードシステムまたは 9.7 からアップグレードした HA ペアに適用されます。この制限は、新規に展開された 9.8 シングルノードシステムには影響しません。</block>
   <block id="f18904153dfcf72e0d6ca5f227644b87" category="list-text">この EC2 インスタンスタイプでは 48 個以上の vCPU がサポートされますが、 Cloud Volumes ONTAP では最大 48 個の vCPU がサポートされます。</block>
   <block id="afea36f2c9999a231c58b7e9dcf3b16e" category="list-text">Cloud Volumes ONTAP は、予約済みまたはオンデマンドの EC2 インスタンスで実行できます。他のタイプのインスタンスを使用するソリューションはサポートされていません。</block>
   <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">サポートされている地域</block>
@@ -1096,8 +1095,6 @@
   <block id="69d57fad7a91530f700bee5942097e3c" category="list-text">m5d.12xlarge ^2^</block>
   <block id="8bbb77ed89ea3463f0ce6a4b71b42a75" category="list-text">r5.12xlarge ^4^</block>
   <block id="8e03f97d52c42cc342fa9fcb84cdb8e3" category="cell">サポートされているディスクタイプ ^5^</block>
-  <block id="15473d0d5ccee3207453ed1651f5f5fb" category="cell">368 TB^6^</block>
-  <block id="0ac3daabe34ac2358aaf7d53cc30f0bb" category="cell">ライセンスあたり 368 TB ^6^</block>
   <block id="7e92c0baf85d8e4f82180229203ee9ca" category="list-text">これらのインスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。<block ref="c44758d6e9ba3f1095a7715a2cab0c63" category="inline-link-rx"></block>。</block>
   <block id="006f76c464223b3110d68e954ba511b8" category="list-text">C5n.9xlarge および c5n.18xlarge は 9.7 P5 以降でサポートされています。</block>
   <block id="b1cc92c4fd4cc62fe29503eb59d61723" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。</block>
@@ -1274,7 +1271,6 @@
   <block id="b5c170dc92c171802024c4e45d1e5760" category="inline-link">Cloud Volume 用のデータ提供用 Storage VM を作成する方法について説明します AWS の ONTAP</block>
   <block id="dbf320a58554be9367d2db7a4aeb8323" category="paragraph"><block ref="660d5d2fe9a120340ead411c48b8b43a" category="inline-link-rx"></block>。</block>
   <block id="c85fea08324529bfd220eb56f8f93c85" category="doc">AWS で Cloud Volumes ONTAP 9.9.0 のサポートされる構成</block>
-  <block id="f87a673dafbe96479eb37b982c3d2a92" category="list-text">汎用 SSD （ gp2 ） ^3^</block>
   <block id="6cd4ae2aba2a092cf2052266e4fcdc94" category="list-text">プロビジョニングされた IOPS SSD （ io1 ） ^3^</block>
   <block id="74b24c10801797086647102e0eb23b24" category="list-text">スループット最適化 HDD （ st1 ）</block>
   <block id="cc0e151effc0229b35e8317723dd01ca" category="list-text">コールド HDD （ sc1 - シングルノードのみ）</block>
@@ -1291,7 +1287,6 @@
   <block id="e7b885fb6c9cc4b30cc4c9bc54ca43d2" category="doc">Azure の Cloud Volumes ONTAP 9.9.0 の既知の制限事項</block>
   <block id="a7fe90b23da008e60bac69d18b9a49ca" category="paragraph">以下に示す既知の制限事項は、 Microsoft Azure の Cloud Volumes ONTAP に固有のものです。また、必ず確認してください <block ref="e2bf6c634814d1757fade1a659a77fe1" category="inline-link-macro-rx"></block>。</block>
   <block id="b73cfe36c7ff7b1b656525a530b23497" category="list-text">現時点では、汎用 SSD （ gp2 ）のみがサポートされます</block>
-  <block id="af0acbaa425c731a1178c0ddd8606879" category="cell">汎用 SSD （ gp2 ）、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、およびコールド HDD （ sc1 シングルノードのみ）</block>
   <block id="0c11951245f2ef7895ea0fc514386d6e" category="paragraph">Cloud Volumes ONTAP は、フォールトトレランスとノンストップオペレーションを実現するために、 Google Cloud Platform ではシングルノードシステムとして、ハイアベイラビリティ（ HA ）ペアのノードとして利用できます。</block>
   <block id="bdc7ec529b8b9246fa7423de574e6549" category="inline-link-macro">Cloud Volumes ONTAP 9.9.0 の注意事項</block>
   <block id="b6f192e15929896286ce8e84f2d939b8" category="list-text"><block ref="b6f192e15929896286ce8e84f2d939b8" category="inline-link-macro-rx"></block></block>
@@ -1329,4 +1324,12 @@
   <block id="7c09fb47b20e56429575dab2c5a83d69" category="paragraph"><block ref="3fd51c28c639224b3586bb1967d192ba" category="inline-link-rx"></block>。</block>
   <block id="23bec6a6f135dddae329a8a70c590b60" category="sidebar">9.9.0 リリースノート</block>
   <block id="2d3e51e89d3f05d2abe99df631cb0b4c" category="cell">C5a.12xlarge</block>
+  <block id="a361d05994d7e54ef8e33c7e6e49a178" category="list-text">汎用 SSD （ gp2 ） ^3,4^</block>
+  <block id="3de497f7f0c3d4c077d3911a90241bdb" category="list-text">GP3 SSD はサポートされていません。</block>
+  <block id="8e6a2ebba2f4ad1a560224744383ef97" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。この制限は、新規に導入した HA ペアおよび 9.8 からアップグレードした HA ペアに適用されます。ただし、新しく導入するシングルノードシステムには影響しません。</block>
+  <block id="8b2b7a4196dd2c6be0b8c6925ca8bbb9" category="cell">汎用 SSD （ gp2 ） ^5^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、コールド HDD （ sc1 シングルノードのみ）</block>
+  <block id="0b0e1ba9abd0a1211628a8cecf2d798f" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。この制限は、新規に展開した 9.8 HA ペアおよび 9.7 からアップグレードした HA ペアに適用されます。ただし、新しく導入するシングルノードシステムには影響しません。</block>
+  <block id="f9d6972cddeb6ddbabdd8da6a58579fe" category="cell">汎用 SSD （ gp2 ） ^6^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、コールド HDD （ sc1 シングルノードのみ）</block>
+  <block id="7a050debd6781de08b8901dca851dcfd" category="cell">368 TB^7^</block>
+  <block id="2aa2b80d64984667c13c1d837b999879" category="cell">ライセンスあたり 368 TB ^7^</block>
 </blocks>
