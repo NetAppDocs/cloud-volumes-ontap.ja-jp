@@ -54,6 +54,12 @@ https://docs.netapp.com/us-en/occm/task_managing_svms_azure.html["Cloud Volume �
 
 
 
+== 必要な Cloud Manager Connector のバージョン
+
+新しい Cloud Volumes ONTAP 9.9.0 システムを導入し、既存のシステムを 9.9.4.0 にアップグレードするには、 Cloud Manager Connector のバージョン 3.9.4 以降が実行されている必要があります。
+
+
+
 == Cloud Manager 3.9.4 で導入された変更点
 
 Cloud Manager 3.9.4 リリースでは、 AWS KMS のサポート強化、 Google Cloud での共有 VPC のサポート、 Google Cloud での IP の削減など、 Cloud Volumes ONTAP の管理機能がいくつか強化されています。

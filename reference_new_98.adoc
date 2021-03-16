@@ -128,6 +128,12 @@ NOTE: このコアディスクの追加により、これらのインスタン�
 
 
 
+== 必要な Cloud Manager Connector のバージョン
+
+新しい Cloud Volumes ONTAP 9.8 システムを導入し、既存のシステムをバージョン 9.8 にアップグレードするには、 Cloud Manager Connector でバージョン 3.9.0 以降が実行されている必要があります。
+
+
+
 == アップグレードに関する注意事項
 
 * Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性

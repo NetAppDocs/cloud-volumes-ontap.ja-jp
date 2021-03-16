@@ -1332,4 +1332,7 @@
   <block id="f9d6972cddeb6ddbabdd8da6a58579fe" category="cell">汎用 SSD （ gp2 ） ^6^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、コールド HDD （ sc1 シングルノードのみ）</block>
   <block id="7a050debd6781de08b8901dca851dcfd" category="cell">368 TB^7^</block>
   <block id="2aa2b80d64984667c13c1d837b999879" category="cell">ライセンスあたり 368 TB ^7^</block>
+  <block id="40a3c7b33b166dae48cfa8c02b36318a" category="section-title">必要な Cloud Manager Connector のバージョン</block>
+  <block id="93aacf7eb6f4981edee3e45fc1561cd4" category="paragraph">新しい Cloud Volumes ONTAP 9.8 システムを導入し、既存のシステムをバージョン 9.8 にアップグレードするには、 Cloud Manager Connector でバージョン 3.9.0 以降が実行されている必要があります。</block>
+  <block id="fa76400c45fa16f022dbcd0982694743" category="paragraph">新しい Cloud Volumes ONTAP 9.9.0 システムを導入し、既存のシステムを 9.9.4.0 にアップグレードするには、 Cloud Manager Connector のバージョン 3.9.4 以降が実行されている必要があります。</block>
 </blocks>
