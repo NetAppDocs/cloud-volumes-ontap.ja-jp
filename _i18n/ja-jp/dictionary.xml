@@ -1160,10 +1160,8 @@
   <block id="1e68310e327ebe908e351cce8fe29a25" category="list-text">Premium ライセンスと BYOL ライセンスでは、容量制限に Explore または Standard ライセンスでアクセスできないため、制限が表示されます。</block>
   <block id="4037b2b5756ae2a7b370c7b6e783aa25" category="cell">インスタンスファミリー</block>
   <block id="92c56680c1760869861a8044ea57048a" category="cell">C5 、 m5 、および r5 インスタンス</block>
-  <block id="3c59dc048e8850243be8079a5c74d079" category="cell">21</block>
   <block id="46adb9326260808f0ce8f66572722386" category="cell">336 TB</block>
   <block id="fc826e6778c6295676325980e26183d6" category="cell">C4 、 M4 、および R4 インスタンス</block>
-  <block id="6f4922f45568161a8cdf4ad2299f6d23" category="cell">18</block>
   <block id="1d23d0476fe0d607860a9e3d2d00ebf9" category="cell">288 TB</block>
   <block id="fa1fa971d1018dcdfc6e158b981c33cb" category="list-text">HA ペアの両方のノードに 18 個のアグリゲートを作成することはできません。これは、作成するとデータディスクの制限を超えてしまうためです。</block>
   <block id="22bc4c4d4a40284116ccc5afd1832acb" category="doc">GCP の Cloud Volumes ONTAP 9.7 でのストレージの制限</block>
@@ -1335,4 +1333,9 @@
   <block id="40a3c7b33b166dae48cfa8c02b36318a" category="section-title">必要な Cloud Manager Connector のバージョン</block>
   <block id="93aacf7eb6f4981edee3e45fc1561cd4" category="paragraph">新しい Cloud Volumes ONTAP 9.8 システムを導入し、既存のシステムをバージョン 9.8 にアップグレードするには、 Cloud Manager Connector でバージョン 3.9.0 以降が実行されている必要があります。</block>
   <block id="fa76400c45fa16f022dbcd0982694743" category="paragraph">新しい Cloud Volumes ONTAP 9.9.0 システムを導入し、既存のシステムを 9.9.4.0 にアップグレードするには、 Cloud Manager Connector のバージョン 3.9.4 以降が実行されている必要があります。</block>
+  <block id="309524b9e1ef1d7d7d905c7cb1d358e9" category="cell">100 TB</block>
+  <block id="40959eff270cd482e3813b16716a7ee3" category="cell">21^1 ^</block>
+  <block id="64d21a165becbe18d275a66aac4f8e8e" category="list-text">Cloud Volumes ONTAP の _NET_Deployments には、 21 本のデータディスクが制限されています。バージョン 9.7 以前で作成されたシステムをアップグレードしても、 22 本のディスクが引き続きサポートされます。9.8 リリース以降のコアディスクが追加されているため、これらのインスタンスタイプを使用する新しいシステムでは、サポートされるデータディスクは 1 本少なくなります。</block>
+  <block id="156b98ab4634edb024f99442726e3e8d" category="cell">18^1 ^ 1^</block>
+  <block id="01d00547146974c6eeb34ecc38263cb0" category="list-text">18 本のデータディスクは、 Cloud Volumes ONTAP の _new_Deployments の制限です。バージョン 9.7 以前で作成されたシステムをアップグレードしても、システムでは 19 本のディスクが引き続きサポートされます。9.8 リリース以降のコアディスクが追加されているため、これらのインスタンスタイプを使用する新しいシステムでは、サポートされるデータディスクは 1 本少なくなります。</block>
 </blocks>

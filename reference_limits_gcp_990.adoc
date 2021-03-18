@@ -143,7 +143,7 @@ Cloud Volumes ONTAP は、 Google Cloud Platform のディスクを _Aggregate_.
 | 最小サイズ | 20 MB 
 
 
-| 最大サイズ | アグリゲートのサイズによって異なります 
+| 最大サイズ | 100 TB 
 
 
 | * qtree * | FlexVol あたりの最大数 | 4,995 
