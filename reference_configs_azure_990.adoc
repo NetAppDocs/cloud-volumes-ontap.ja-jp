@@ -19,7 +19,7 @@ Cloud Volumes ONTAP は、 Azure でシングルノードシステムまたは H
 
 == 従量課金制の概要
 
-* Cloud Volumes ONTAP は、 Explore 、 Standard 、 Premium の 3 種類の構成で提供されます。
+* Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。
 * Azure に初めて導入する Cloud Volumes ONTAP システムについては、 30 日間の無償トライアルを利用できます。
 +
 1 時間ごとのソフトウェア料金は発生しませんが、 Azure インフラの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。
@@ -62,16 +62,22 @@ Cloud Volumes ONTAP をシングルノードシステムとして Azure に導�
 |  | 調査 | 標準 | Premium サービス | BYOL 
 
 
-| サポートされる仮想マシンタイプ | DS3_v2 の場合  a| 
+| サポートされる仮想マシンタイプ  a| 
+* DS3_v2 の場合
+* E4s_v3
+
+ a| 
 * DS4_v2
 * DS13_v2 の場合
+* E8s_v3
 
  a| 
 * DS5_v2 の場合
 * DS14_v2
 * DS15_v2 の場合
 * E32s_v3^1
-* E48s_v3
+* E48s_v3^1^
+* E64is_v3^1^
 
  a| 
 * DS3_v2 の場合
@@ -80,8 +86,11 @@ Cloud Volumes ONTAP をシングルノードシステムとして Azure に導�
 * DS13_v2 の場合
 * DS14_v2
 * DS15_v2 の場合
+* E4s_v3
+* E8s_v3
 * E32s_v3^1
-* E48s_v3
+* E48s_v3^1^
+* E64is_v3^1^
 * L8s_v2^2^
 
 
@@ -90,7 +99,7 @@ Cloud Volumes ONTAP をシングルノードシステムとして Azure に導�
 | サポートされているディスクタイプ ^3^ 4+| 標準 HDD 管理ディスク、標準 SSD 管理ディスク、およびプレミアム SSD 管理ディスク 
 
 
-| BLOB ストレージへのコールドデータの階層化 ^4^ | サポート対象外 3+| サポートされます 
+| BLOB ストレージへのコールドデータ階層化 | サポート対象外 3+| サポートされます 
 
 
 | 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
@@ -100,7 +109,6 @@ Cloud Volumes ONTAP をシングルノードシステムとして Azure に導�
 . この VM タイプはを使用します https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-ultra-ssd["ウルトラ SSD"^] VNVRAM の場合、書き込みパフォーマンスが向上します。
 . この VM タイプにはローカルの NVMe ストレージが含まれており、 Cloud Volumes ONTAP では _Flash Cache _ として使用されます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。 https://docs.netapp.com/us-en/occm/concept_flash_cache.html["詳細はこちら。"^]。
 . 拡張書き込みパフォーマンスは、 SSD を使用している場合は有効になりますが、 DS3_v2 仮想マシンタイプを使用している場合は有効になりません。
-. データ階層化は、 DS3_v2 仮想マシンタイプではサポートされていません。
 . Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
 . Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。
 
@@ -124,6 +132,7 @@ Azure で Cloud Volumes ONTAP を HA ペアとして導入する場合は、次�
 * DS5_v2^1^
 * DS14_v2^1 ^
 * DS15_v2 ^1
+* E8s_v3^1^
 * E48s_v3^1^
 
  a| 
@@ -132,6 +141,7 @@ Azure で Cloud Volumes ONTAP を HA ペアとして導入する場合は、次�
 * DS13_v2 の場合
 * DS14_v2^1 ^
 * DS15_v2 ^1
+* E8s_v3^1^
 * E48s_v3^1^
 
 

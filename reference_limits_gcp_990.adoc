@@ -203,4 +203,3 @@ Cloud Volumes ONTAP は、 Google Cloud Platform のディスクを _Aggregate_.
 
 | * ポートセット * | ノードあたりの最大数 | 256 
 |===
-990

@@ -19,7 +19,7 @@ Cloud Volumes ONTAP は、シングルノードシステムとして Google Clou
 
 == 従量課金制の概要
 
-* Cloud Volumes ONTAP は、 Explore 、 Standard 、 Premium の 3 種類の構成で提供されます。
+* Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。
 * GCP に初めて導入する Cloud Volumes ONTAP システムでは、 30 日間の無償トライアルを利用できます。
 +
 ** ソフトウェア料金は時間単位では発生しませんが、 GCP インフラストラクチャの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。

@@ -4,7 +4,6 @@
   <block id="1b0033f766e771cca15ea2a56206bc4b" category="doc">Cloud Volumes ONTAP 9.8 で Azure でサポートされる構成</block>
   <block id="2c9df2b75e81c798dcc925435d1f5dea" category="paragraph">Cloud Volumes ONTAP は、 Azure でシングルノードシステムまたは HA ペアとして使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランがあります。</block>
   <block id="124b4b8c54c570a1ae4eb529271e8ce9" category="section-title">従量課金制の概要</block>
-  <block id="3547e168710e2dff6076f0696820d1ec" category="list-text">Cloud Volumes ONTAP は、 Explore 、 Standard 、 Premium の 3 種類の構成で提供されます。</block>
   <block id="4f7173661950d89bfe33fc12b95c1e26" category="list-text">Azure に初めて導入する Cloud Volumes ONTAP システムについては、 30 日間の無償トライアルを利用できます。</block>
   <block id="c5043b9126eb463363968cf53a96371b" category="paragraph">1 時間ごとのソフトウェア料金は発生しませんが、 Azure インフラの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。</block>
   <block id="d1b41bae935c2bf4a024f87fd8d51066" category="list-text">PAYGO から BYOL への変換は現在サポートされていません。</block>
@@ -36,7 +35,6 @@
   <block id="46c422fb4fe388086fc278e193d616a8" category="list-text">L8s_v2^2^</block>
   <block id="1b92610db1e84c732fcb7361686ec3c0" category="cell">サポートされているディスクタイプ ^3^</block>
   <block id="19482872b5fad6ff5e1e34947a759a98" category="cell">標準 HDD 管理ディスク、標準 SSD 管理ディスク、およびプレミアム SSD 管理ディスク</block>
-  <block id="6465f0fa096a65308202a8ad6d0eccc6" category="cell">BLOB ストレージへのコールドデータの階層化 ^4^</block>
   <block id="aa7f77e663b832d5b0e544c5511e680c" category="cell">サポート対象外</block>
   <block id="eaa4dc5078017a5c5bebf383ab6f5124" category="cell">サポートされます</block>
   <block id="e02cfa40e076b3e2d41b29974af36f06" category="cell">最大システム容量（ディスク + オブジェクトストレージ）</block>
@@ -665,7 +663,6 @@
   <block id="63eb1ab7826eb9fd0c46ae8c607762c7" category="list-text">r5d.2xlarge ^2^</block>
   <block id="233d7152c6f49c17f5310a33fd5a0139" category="cell">サポートされているディスクタイプ ^4^</block>
   <block id="1f742543feb3ee22b577a40afbb960a2" category="cell">S3 へのコールドデータ階層化</block>
-  <block id="a99db46f710b2ed69d946af1147b2dbe" category="cell">サポート対象ですが、コールド HDD ディスクではサポートされません</block>
   <block id="40cbb965e4a7c7979a4e357cb77e7b8e" category="cell">368 TB^5^</block>
   <block id="09ec9f0be3e973507d7ee2347b249e84" category="cell">ライセンスあたり 368 TB ^5^</block>
   <block id="3cd7d08a934618284a2952d8ffb18465" category="list-text">これらのインスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。 <block ref="6f8fd28fec0fcaac231842fb62338040" category="inline-link-macro-rx"></block>。</block>
@@ -1252,7 +1249,6 @@
   <block id="8e79313a5b6fb51ae3e76e64449c9f1d" category="cell">クローン階層の深さ ^1^</block>
   <block id="2ef3c590f1a4e907f37fba123a3cbd00" category="doc">Azure での Cloud Volumes ONTAP 9.9.0 のストレージの制限</block>
   <block id="24376fc336c8d7e5f011184ae96f2435" category="section-title">BYOL の制限</block>
-  <block id="b7442e81dac8c32eb1d3ad45ae5b6107" category="paragraph">Cloud Volumes ONTAP BYOL では、最大 24 個の Storage VM （ SVM ）がサポートされています。これら 24 個の Storage VM のうち、ディザスタリカバリ（ DR ）用に最大 12 個を設定できます。各 Storage VM に最大 3 つの LIF を設定できます。 2 つはデータ LIF 、 1 つは SVM 管理 LIF です。</block>
   <block id="73cbcc5508ae5bff313fecfcc6e16834" category="paragraph">これらはテスト済みの制限です。理論的には追加の Storage VM を設定できますが、サポート対象外です。</block>
   <block id="462be88593a778d919ad16f30a63dc67" category="paragraph">デフォルトでは、 Cloud Volumes ONTAP に付属する最初の Storage VM 以降に追加する data_serving_storage VM ごとにアドオンライセンスが必要です。アカウントチームに問い合わせて Storage VM アドオンライセンスを取得してください。</block>
   <block id="f964ad94d9d810a12d96e7241a3180d1" category="paragraph"><block ref="0c2b4e164cb84d1c4cc0682773caf905" category="inline-link-rx"></block>。</block>
@@ -1271,9 +1267,7 @@
   <block id="c85fea08324529bfd220eb56f8f93c85" category="doc">AWS で Cloud Volumes ONTAP 9.9.0 のサポートされる構成</block>
   <block id="6cd4ae2aba2a092cf2052266e4fcdc94" category="list-text">プロビジョニングされた IOPS SSD （ io1 ） ^3^</block>
   <block id="74b24c10801797086647102e0eb23b24" category="list-text">スループット最適化 HDD （ st1 ）</block>
-  <block id="cc0e151effc0229b35e8317723dd01ca" category="list-text">コールド HDD （ sc1 - シングルノードのみ）</block>
   <block id="de356915859ba6b21156f5b820f15e80" category="list-text">一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="b2d7c36dabd24e2a1df49390ddfb6d56" category="inline-link-macro-rx"></block>。</block>
-  <block id="38635cccbf393cd6c7e48c957a5dc8b0" category="cell">汎用 SSD （ gp2 ）</block>
   <block id="f38d1b7914333c6e9323df43b6106a84" category="cell">プロビジョニングされた IOPS - SSD （ io1 ）</block>
   <block id="1ffd24563a8ba078752a34d474e1f403" category="cell">m5a.2xlarge</block>
   <block id="c82994e8dd530a69b81d79cb4e505f09" category="cell">最大 2,880</block>
@@ -1316,18 +1310,14 @@
   <block id="ff8ffaeea00a21776b38dd3e9adc2dab" category="paragraph">にアクセスします<block ref="b9a1194ef83355d71c9e181552865c95" category="inline-link-rx"></block> 3.9.4 リリースの詳細については、を参照してください。</block>
   <block id="b26ba6521088950e63da32767807013a" category="list-text">9.8 リリースから Cloud Volumes ONTAP 9.9.0 にアップグレードできます。既存の Cloud Volumes ONTAP 9.8 システムを 9.9.0 リリースにアップグレードするよう求めるメッセージが Cloud Manager に表示されます。</block>
   <block id="f154557322ff33258d7ae8148758f47a" category="doc">GCP の Cloud Volumes ONTAP 9.9.0 でのストレージの制限</block>
-  <block id="4fac9ba115140ac4f1c22da82aa0bc7f" category="paragraph">990</block>
   <block id="6e705b4d72c2cd977e440a0c2f05ffae" category="doc">AWS での Cloud Volumes ONTAP 9.9.0 のストレージの制限</block>
   <block id="235550454c43c31fd80424e4ce805eaa" category="list-text">新しい Cloud Volumes ONTAP 9.9.0 システムでは、 C4 、 M4 、および R4 インスタンスタイプはサポートされません。ただし、これらのインスタンスタイプのいずれかで実行している場合は、システムを 9.9.0 リリースにアップグレードできるため、これらのインスタンスタイプのディスク制限は引き続き表示されます。</block>
   <block id="7c09fb47b20e56429575dab2c5a83d69" category="paragraph"><block ref="3fd51c28c639224b3586bb1967d192ba" category="inline-link-rx"></block>。</block>
   <block id="23bec6a6f135dddae329a8a70c590b60" category="sidebar">9.9.0 リリースノート</block>
   <block id="2d3e51e89d3f05d2abe99df631cb0b4c" category="cell">C5a.12xlarge</block>
-  <block id="a361d05994d7e54ef8e33c7e6e49a178" category="list-text">汎用 SSD （ gp2 ） ^3,4^</block>
   <block id="3de497f7f0c3d4c077d3911a90241bdb" category="list-text">GP3 SSD はサポートされていません。</block>
   <block id="8e6a2ebba2f4ad1a560224744383ef97" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。この制限は、新規に導入した HA ペアおよび 9.8 からアップグレードした HA ペアに適用されます。ただし、新しく導入するシングルノードシステムには影響しません。</block>
-  <block id="8b2b7a4196dd2c6be0b8c6925ca8bbb9" category="cell">汎用 SSD （ gp2 ） ^5^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、コールド HDD （ sc1 シングルノードのみ）</block>
   <block id="0b0e1ba9abd0a1211628a8cecf2d798f" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。この制限は、新規に展開した 9.8 HA ペアおよび 9.7 からアップグレードした HA ペアに適用されます。ただし、新しく導入するシングルノードシステムには影響しません。</block>
-  <block id="f9d6972cddeb6ddbabdd8da6a58579fe" category="cell">汎用 SSD （ gp2 ） ^6^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）、コールド HDD （ sc1 シングルノードのみ）</block>
   <block id="7a050debd6781de08b8901dca851dcfd" category="cell">368 TB^7^</block>
   <block id="2aa2b80d64984667c13c1d837b999879" category="cell">ライセンスあたり 368 TB ^7^</block>
   <block id="40a3c7b33b166dae48cfa8c02b36318a" category="section-title">必要な Cloud Manager Connector のバージョン</block>
@@ -1338,4 +1328,47 @@
   <block id="64d21a165becbe18d275a66aac4f8e8e" category="list-text">Cloud Volumes ONTAP の _NET_Deployments には、 21 本のデータディスクが制限されています。バージョン 9.7 以前で作成されたシステムをアップグレードしても、 22 本のディスクが引き続きサポートされます。9.8 リリース以降のコアディスクが追加されているため、これらのインスタンスタイプを使用する新しいシステムでは、サポートされるデータディスクは 1 本少なくなります。</block>
   <block id="156b98ab4634edb024f99442726e3e8d" category="cell">18^1 ^ 1^</block>
   <block id="01d00547146974c6eeb34ecc38263cb0" category="list-text">18 本のデータディスクは、 Cloud Volumes ONTAP の _new_Deployments の制限です。バージョン 9.7 以前で作成されたシステムをアップグレードしても、システムでは 19 本のディスクが引き続きサポートされます。9.8 リリース以降のコアディスクが追加されているため、これらのインスタンスタイプを使用する新しいシステムでは、サポートされるデータディスクは 1 本少なくなります。</block>
+  <block id="7d11aba6c40237104a266be93dc3a00f" category="cell">E64is_v3</block>
+  <block id="31e15d90597db8f67574c519a0e03cff" category="cell">E4s_v3</block>
+  <block id="969b1353a365c7db85deb88d7c944c40" category="cell">160 TB</block>
+  <block id="aa1cf82517b500e91f431051f2593e87" category="cell">E8s_v3</block>
+  <block id="96ce6e6844f84006a3ba2e4bad5704f1" category="cell">208 TB</block>
+  <block id="f55deefbacbbbbbbf9993380dd4f5bc7" category="paragraph">Cloud Volumes ONTAP BYOL では、最大 24 個の Storage VM （ SVM ）がサポートされています。これらの 24 個の Storage VM からデータを提供することも、ディザスタリカバリ（ DR ）用に設定することもできます。各 Storage VM に最大 3 つの LIF を設定できます。 2 つはデータ LIF 、 1 つは SVM 管理 LIF です。</block>
+  <block id="81f3c286de00a7871e69b15c21bc0f04" category="list-text">Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。</block>
+  <block id="640598bf1a684960a893971a12733089" category="list-text">E64is_v3^1^</block>
+  <block id="0b18b27a719f6faaf241f4b0651d936f" category="cell">BLOB ストレージへのコールドデータ階層化</block>
+  <block id="3e25b8eaf9ed482edf1d7cc1aa7dd3f1" category="list-text">E8s_v3^1^</block>
+  <block id="da09d8bd3eb91a9179d69cbb9fe34907" category="list-text">汎用 SSD （ GP3 および GP2 ） ^3^</block>
+  <block id="320a1bc96a642b93ac47eb0838fbf1ff" category="list-text">スループット最適化 HDD （ st1 ） ^4^</block>
+  <block id="907c78338365697be8fd8d4a130503c8" category="list-text">スループット最適化 HDD （ st1 ）を使用している場合、オブジェクトストレージへのデータの階層化は推奨されません。</block>
+  <block id="afb82c4f80baa4ecca2a2e4e97df3ada" category="cell">汎用 SSD （ GP3 および gp2 ）</block>
+  <block id="c50feb3c9ed89b38a1757f8a63ccd0a6" category="cell">プロビジョニングされた IOPS - SSDs （ io1 ）</block>
+  <block id="b097d252160f5ccb21350abbc9a2d37d" category="cell">スループット最適化 HDDs （ st1 ）</block>
+  <block id="3f6ed0ebf44d28e7eb4b3c36f8a12264" category="cell">汎用 SSD （ gp2 ） ^5^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）</block>
+  <block id="eaa2d3a786327e0ea77b42c648bf6007" category="cell">汎用 SSDs （ gp2 ）</block>
+  <block id="31dba98b34792a8f7d2348b76d66bd2d" category="cell">汎用 SSD （ gp2 ）、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）。ディスクあたり最大 16TB です</block>
+  <block id="435a7b2379bdb20c4b1eda965deb9abc" category="list-text">汎用 SSD （ GP3 および gp2 ） ^3^</block>
+  <block id="94f166eda7b421c443ca5a01dbc89b88" category="list-text">プロビジョニングされた IOPS SSDs （ io1 ） ^3^</block>
+  <block id="5e0e80b3bd820038e21051785b12707e" category="list-text">スループット最適化 HDD （ st1 ） ^4^</block>
+  <block id="1be71a8367cf69a805cdda7657db8090" category="cell">汎用 SSD （ GP3 および gp2 ）、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ） ^6^</block>
+  <block id="afcafb45b2c97e15b8215381244daacf" category="cell">汎用 SSD （ GP3 および GP2 ）</block>
+  <block id="422377493977e63c0bd8424963633516" category="section-title">最新のアップデート（ 2021 年 4 月 21 日）</block>
+  <block id="fb064ee7b94ba2fa52f1a7828fd59e25" category="paragraph">AWS では、ディザスタリカバリ（ DR ）用に最大 24 個の Storage VM （ SVM ）を設定できるようになりました。これまでの制限は、 DR に使用する Storage VM 12 台でした。</block>
+  <block id="19066b19a32f1d487da6291569c14d89" category="paragraph"><block ref="046c4d2a9cfe569d3c89673ae4716b85" category="inline-link-macro-rx"></block>。</block>
+  <block id="a1e33f88c731028ce816c354c2cb51f9" category="section-title">最新のアップデート（ 2021 年 4 月 12 日）</block>
+  <block id="95cab76cc60fb17ec31c5d14a6d85c21" category="paragraph">Cloud Volumes ONTAP 9.9.0 のリリース以降、いくつかの更新が行われています。</block>
+  <block id="65a0fdfad8d3d8dddcaf280d9255c1d0" category="paragraph">* AWS アップデート *</block>
+  <block id="6ea0dc95163e24bf77f1e7e109f27a99" category="list-text">Cloud Volumes ONTAP では、 9.7 リリース以降、汎用 SSD （ GP3 ）ディスクがサポートされるようになりました。GP3 ディスクは、幅広いワークロードのコストとパフォーマンスのバランスが取れた、最も低コストの SSD です。</block>
+  <block id="78bc98a7ac6c3cfd719ffa5be638119b" category="inline-link">Cloud Volumes ONTAP で GP3 ディスクを使用する方法については、こちらをご覧ください</block>
+  <block id="54fcce46ff59e5194f3bc2b8463f5b57" category="paragraph"><block ref="2b9b710423eddedd393a2875e214f6cd" category="inline-link-rx"></block>。</block>
+  <block id="46d98c0abb13a137de84cc92dabaf4ee" category="list-text">Cloud Volumes ONTAP はコールド HDD （ sc1 ）ディスクをサポートしなくなりました。</block>
+  <block id="43ab30bcd6753a8f13ff684dc91925f0" category="paragraph">これらの EBS ディスクの変更は、 Cloud Manager 3.2.5 の一部として導入されました。</block>
+  <block id="93a805de30db8aed5e29e7e223c52ea5" category="paragraph">* Azure アップデート *</block>
+  <block id="416247cdfd95c24e8b0018dec41624a5" category="list-text">新しい E シリーズ VM タイプがサポートされます。</block>
+  <block id="89567849e54395d27c32428de6821a45" category="list-text">4S_v3 でシングルノードシステムの場合は、 PAYGO Explore または BYOL を使用します</block>
+  <block id="86a6c7071265ed79b645d35507ea0b53" category="list-text">ONTAP を使用する単一ノードシステムの場合は、 PAYGO Standard または BYOL を使用し、 HA ペアは PAYGO Premium または BYOL を使用します</block>
+  <block id="3fdd0271f7ec1f727704eca84657dfeb" category="list-text">E64is_v3 ： PAYGO Premium または BYOL を使用したシングルノードシステム</block>
+  <block id="b9b5c571c15496209a892157f1639d16" category="list-text">Cloud Volumes ONTAP BYOL では、最大 24 個の Storage VM （ SVM ）がサポートされています。これらの 24 個の Storage VM からデータを提供することも、ディザスタリカバリ（ DR ）用に設定することもできます。</block>
+  <block id="0566eb64b9b3f216ba664514bb462224" category="paragraph">Azure では、これまでの上限である DR 用に 12 台の Storage VM を使用しました。</block>
+  <block id="358d12d26e45631f545154e009896a99" category="paragraph">これらの 24 個の Storage VM からデータを提供することも、ディザスタリカバリ（ DR ）用に設定することもできます。</block>
 </blocks>

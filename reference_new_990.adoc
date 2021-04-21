@@ -19,6 +19,46 @@ Cloud Volumes ONTAP 9.9.0 には、いくつかの新機能と機能拡張が含
 
 
 
+== 最新のアップデート（ 2021 年 4 月 21 日）
+
+AWS では、ディザスタリカバリ（ DR ）用に最大 24 個の Storage VM （ SVM ）を設定できるようになりました。これまでの制限は、 DR に使用する Storage VM 12 台でした。
+
+link:reference_limits_aws_990.html#storage-vm-limits["Storage VM の制限に関する詳細情報"]。
+
+
+
+== 最新のアップデート（ 2021 年 4 月 12 日）
+
+Cloud Volumes ONTAP 9.9.0 のリリース以降、いくつかの更新が行われています。
+
+* AWS アップデート *
+
+* Cloud Volumes ONTAP では、 9.7 リリース以降、汎用 SSD （ GP3 ）ディスクがサポートされるようになりました。GP3 ディスクは、幅広いワークロードのコストとパフォーマンスのバランスが取れた、最も低コストの SSD です。
++
+https://docs.netapp.com/us-en/occm/task_planning_your_config.html#sizing-your-system-in-aws["Cloud Volumes ONTAP で GP3 ディスクを使用する方法については、こちらをご覧ください"^]。
+
+* Cloud Volumes ONTAP はコールド HDD （ sc1 ）ディスクをサポートしなくなりました。
+
+
+これらの EBS ディスクの変更は、 Cloud Manager 3.2.5 の一部として導入されました。
+
+* Azure アップデート *
+
+* 新しい E シリーズ VM タイプがサポートされます。
++
+** 4S_v3 でシングルノードシステムの場合は、 PAYGO Explore または BYOL を使用します
+** ONTAP を使用する単一ノードシステムの場合は、 PAYGO Standard または BYOL を使用し、 HA ペアは PAYGO Premium または BYOL を使用します
+** E64is_v3 ： PAYGO Premium または BYOL を使用したシングルノードシステム
+
+
+* Cloud Volumes ONTAP BYOL では、最大 24 個の Storage VM （ SVM ）がサポートされています。これらの 24 個の Storage VM からデータを提供することも、ディザスタリカバリ（ DR ）用に設定することもできます。
++
+Azure では、これまでの上限である DR 用に 12 台の Storage VM を使用しました。
+
+
+
+
+
 == 書き込みパフォーマンスの向上
 
 このリリースでは、すべてのクラウドプロバイダとすべての構成で、 Cloud Volumes ONTAP の書き込みパフォーマンスが向上しています。
