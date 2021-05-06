@@ -45,7 +45,7 @@ Cloud Manager からボリュームを作成するときに Storage Efficiency �
 
 == Amazon CloudWatch から誤ったアラームが報告されます
 
-Cloud Volumes ONTAP はアイドル状態のときに CPU を解放しないため、 Amazon CloudWatch は使用率を 100% と認識しているため、 EC2 インスタンスに対して CPU 使用率の上昇を警告します。このアラームは無視してかまいません。ONTAP statistics コマンドを実行すると、 CPU の実際の使用状況が表示されます。
+Cloud Volumes ONTAP はアイドル時に CPU を解放しません https://aws.amazon.com/cloudwatch/["Amazon CloudWatch"^] では、使用率が 100% になっていることが検出されたため、 EC2 インスタンスについて CPU 使用率の上昇を警告できます。このアラームは無視してかまいません。ONTAP statistics コマンドを実行すると、 CPU の実際の使用状況が表示されます。
 
 
 
@@ -53,8 +53,4 @@ Cloud Volumes ONTAP はアイドル状態のときに CPU を解放しないた�
 
 ノードがリブートしたら、ストレージを戻す前に、パートナーがデータを同期する必要があります。データの再同期にかかる時間は、ノードが停止している間にクライアントが書き込んだデータの量、およびギブバックの実行中のデータの書き込み速度によって異なります。
 
-
-
-== AWS C2S 環境の制限事項
-
-を参照してください https://docs.netapp.com/us-en/occm/media/c2s.pdf["AWS Commercial クラウドサービス環境向けクイックスタートガイド"^]。
+https://docs.netapp.com/us-en/occm/concept_ha.html#how-storage-works-in-an-ha-pair["Cloud Volumes ONTAP HA でのストレージの仕組みをご確認ください AWS で実行されているペア"^]。

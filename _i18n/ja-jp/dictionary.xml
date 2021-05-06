@@ -1371,4 +1371,12 @@
   <block id="b9b5c571c15496209a892157f1639d16" category="list-text">Cloud Volumes ONTAP BYOL では、最大 24 個の Storage VM （ SVM ）がサポートされています。これらの 24 個の Storage VM からデータを提供することも、ディザスタリカバリ（ DR ）用に設定することもできます。</block>
   <block id="0566eb64b9b3f216ba664514bb462224" category="paragraph">Azure では、これまでの上限である DR 用に 12 台の Storage VM を使用しました。</block>
   <block id="358d12d26e45631f545154e009896a99" category="paragraph">これらの 24 個の Storage VM からデータを提供することも、ディザスタリカバリ（ DR ）用に設定することもできます。</block>
+  <block id="6fa7d9268a4a052eee070e7e621245fe" category="paragraph">Cloud Volumes ONTAP システムの最大システム容量はライセンスで決まります。最大システム容量には、ディスクベースのストレージに加えて、データの階層化に使用されるオブジェクトストレージが含まれます。</block>
+  <block id="b160602445b0a1ec96684f26bf8b35d3" category="paragraph">ネットアップでは、システム容量の制限を超えた使用はサポートしていません。ライセンス容量の上限に達すると、 Cloud Manager は「 Action Required 」メッセージを表示し、ディスクを追加できなくなります。</block>
+  <block id="4b88d56bd65ef92611ac63064c38369f" category="inline-link">Amazon CloudWatch</block>
+  <block id="a23b1ce34926ce9e5d8867b831892dbc" category="paragraph">Cloud Volumes ONTAP はアイドル時に CPU を解放しません<block ref="72a40ee21b60b90e7ca12bb4a1f5b009" category="inline-link-rx"></block> では、使用率が 100% になっていることが検出されたため、 EC2 インスタンスについて CPU 使用率の上昇を警告できます。このアラームは無視してかまいません。ONTAP statistics コマンドを実行すると、 CPU の実際の使用状況が表示されます。</block>
+  <block id="ac1c2f0887629ee768721c3b8cf91e3a" category="inline-link">Cloud Volumes ONTAP HA でのストレージの仕組みをご確認ください AWS で実行されているペア</block>
+  <block id="2633250c1ea457d0189087e9517836eb" category="paragraph"><block ref="c4e56fa9c34eccbdc8a7e2ef53026dc6" category="inline-link-rx"></block>。</block>
+  <block id="99f1a3106d17ba2e561a53823cc750b8" category="inline-link">AWS C2S で Cloud Volumes ONTAP の制限事項を表示します</block>
+  <block id="b0d7b54126f71ca4c93f6e445e561570" category="paragraph"><block ref="963d2888bbb29d700440f0ae78bf42c3" category="inline-link-rx"></block>。</block>
 </blocks>
