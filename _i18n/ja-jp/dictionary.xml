@@ -972,7 +972,6 @@
   <block id="e4eee90462d3620f82cb392f084180c4" category="paragraph">Cloud Volumes ONTAP では、従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランをご用意しています。PAYGO の場合は Explore 、 Standard 、 Premium のいずれかを選択できます。これらのライセンスオプションを使用すると、それぞれのニーズに合った構成を選択できます。</block>
   <block id="9a0b8839d2be67eefefe81649bfc04e5" category="list-text">AWS に初めて導入する Cloud Volumes ONTAP システムに対しては、 30 日間の無償トライアルを利用できます。</block>
   <block id="e6614296baae9060707d519bd4179d3d" category="list-text">1 時間ごとのソフトウェア料金は発生しませんが、 AWS インフラの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。</block>
-  <block id="dce4f192dd5d7d3856b8be87ead14a0d" category="list-text">無料トライアルが終了すると、選択したライセンスに従って 1 時間ごとに請求されます。<block ref="48184aaa5228db24998a332822189621" category="inline-link-rx"></block>。購読していない場合は、システムがシャットダウンします。</block>
   <block id="7db0f9060b8b2def82346add7b8e89c0" category="section-title">サポートされるノード数</block>
   <block id="a0a1c13507a24083c5a835cbc79ea6c7" category="paragraph">Cloud Volumes ONTAP は、フォールトトレランスとノンストップオペレーションを実現するために、 AWS ではシングルノードシステムとして、ハイアベイラビリティ（ HA ）ペアのノードとして利用できます。</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="section-title">サポートされるストレージ</block>
@@ -981,7 +980,6 @@
   <block id="c5a27c05ad608efda7a7a192ee480209" category="paragraph">各ライセンスでサポートされる最大システム容量は異なります。最大システム容量には、ディスクベースのストレージに加えて、データの階層化に使用されるオブジェクトストレージが含まれます。ネットアップでは、この制限を超えることはサポートしていません</block>
   <block id="2a3273b13e4da5a861913a955ede7809" category="cell">最大システム容量（ディスク + オブジェクトストレージ） ^1 ^</block>
   <block id="aeb44542addec32784665466e4508e47" category="list-text">HA ペアの場合、容量の上限は HA ペア全体に適用されます。ノード単位ではありません。たとえば、 Premium ライセンスを使用する場合、両方のノード間で最大 368 TB の容量を確保できます。</block>
-  <block id="a10d9eba4ba2f7b5792c25519ae9ebec" category="list-text">一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="c6f0c6902676294d567c37288f090d75" category="inline-link-macro-rx"></block>。</block>
   <block id="fdf00ba23cb18fd3bf6d1a42ba4fac9f" category="section-title">サポートされるコンピューティングリソース</block>
   <block id="a1834fbcd2847d469ef79f5526dcee65" category="inline-link">最新かつ完全な情報については、 AWS を参照してください EC2 インスタンスタイプの詳細です</block>
   <block id="98ade5346ada08656e0c7b517b695d0f" category="paragraph">各 Cloud Volumes ONTAP ライセンスでサポートされる EC2 インスタンスタイプは異なります。次の表に、サポートされる各インスタンスタイプの vCPU 、 RAM 、および帯域幅を示します。<block ref="7fe5ce03f92ccda8dcb0aa0fab836a1f" category="inline-link-rx"></block>。</block>
@@ -1091,11 +1089,9 @@
   <block id="927ebb06156fd26e34abcdc5d99c8712" category="list-text">m5d.8xlarge ^2^</block>
   <block id="69d57fad7a91530f700bee5942097e3c" category="list-text">m5d.12xlarge ^2^</block>
   <block id="8bbb77ed89ea3463f0ce6a4b71b42a75" category="list-text">r5.12xlarge ^4^</block>
-  <block id="8e03f97d52c42cc342fa9fcb84cdb8e3" category="cell">サポートされているディスクタイプ ^5^</block>
   <block id="7e92c0baf85d8e4f82180229203ee9ca" category="list-text">これらのインスタンスタイプには、 Cloud Volumes ONTAP が _Flash Cache _ として使用するローカル NVMe ストレージが含まれます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。<block ref="c44758d6e9ba3f1095a7715a2cab0c63" category="inline-link-rx"></block>。</block>
   <block id="006f76c464223b3110d68e954ba511b8" category="list-text">C5n.9xlarge および c5n.18xlarge は 9.7 P5 以降でサポートされています。</block>
   <block id="b1cc92c4fd4cc62fe29503eb59d61723" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。</block>
-  <block id="cdb736833822f4abffa7d283eda237e9" category="list-text">一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="da469d3f6b1858cd6209b02889a2490e" category="inline-link-macro-rx"></block>。</block>
   <block id="ddb395d9f5bc4bc4cb7f893fb08f9786" category="doc">Cloud Volumes ONTAP 9.7 の既知の問題</block>
   <block id="e0634615e9273878a02b7b58efce8a7e" category="section-title">複数の SVM を使用する HA ペアでは、ノードの停止が失敗することがあります</block>
   <block id="3a5e03b7b135c9d474e815f783afc39e" category="paragraph">複数の Storage VM （ SVM ）がある HA ペアの Cloud Volumes ONTAP ノードを停止またはリブートする場合は、ノードをシャットダウンする前に、すべての論理インターフェイス（ LIF ）をパートナーノードに事前に移行しておくことを推奨します。</block>
@@ -1154,7 +1150,6 @@
   <block id="839e19615030ec6fb4b66254146ac5e8" category="paragraph">Cloud Volumes ONTAP は EBS ボリュームをディスクとして使用し、最大ディスクサイズは 16TB です。以下のセクションでは、 EC2 インスタンスファミリーごとにディスクと階層化の制限を示します。これは、多くの EC2 インスタンスタイプでディスクの制限が異なるためです。また、シングルノードシステムと HA ペアではディスク制限も異なります。</block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">次の点に注意してください。</block>
   <block id="e90f95f156ebcb53348489eaa698b2a4" category="list-text">新しい Cloud Volumes ONTAP 9.8 システムでは、 C4 、 M4 、および R4 インスタンスタイプはサポートされません。ただし、これらのインスタンスタイプのいずれかで実行している場合は、システムを 9.8 リリースにアップグレードできるため、これらのインスタンスタイプのディスク制限は引き続き表示されています。</block>
-  <block id="1e68310e327ebe908e351cce8fe29a25" category="list-text">Premium ライセンスと BYOL ライセンスでは、容量制限に Explore または Standard ライセンスでアクセスできないため、制限が表示されます。</block>
   <block id="4037b2b5756ae2a7b370c7b6e783aa25" category="cell">インスタンスファミリー</block>
   <block id="92c56680c1760869861a8044ea57048a" category="cell">C5 、 m5 、および r5 インスタンス</block>
   <block id="46adb9326260808f0ce8f66572722386" category="cell">336 TB</block>
@@ -1267,7 +1262,6 @@
   <block id="c85fea08324529bfd220eb56f8f93c85" category="doc">AWS で Cloud Volumes ONTAP 9.9.0 のサポートされる構成</block>
   <block id="6cd4ae2aba2a092cf2052266e4fcdc94" category="list-text">プロビジョニングされた IOPS SSD （ io1 ） ^3^</block>
   <block id="74b24c10801797086647102e0eb23b24" category="list-text">スループット最適化 HDD （ st1 ）</block>
-  <block id="de356915859ba6b21156f5b820f15e80" category="list-text">一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="b2d7c36dabd24e2a1df49390ddfb6d56" category="inline-link-macro-rx"></block>。</block>
   <block id="f38d1b7914333c6e9323df43b6106a84" category="cell">プロビジョニングされた IOPS - SSD （ io1 ）</block>
   <block id="1ffd24563a8ba078752a34d474e1f403" category="cell">m5a.2xlarge</block>
   <block id="c82994e8dd530a69b81d79cb4e505f09" category="cell">最大 2,880</block>
@@ -1318,8 +1312,6 @@
   <block id="3de497f7f0c3d4c077d3911a90241bdb" category="list-text">GP3 SSD はサポートされていません。</block>
   <block id="8e6a2ebba2f4ad1a560224744383ef97" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。この制限は、新規に導入した HA ペアおよび 9.8 からアップグレードした HA ペアに適用されます。ただし、新しく導入するシングルノードシステムには影響しません。</block>
   <block id="0b0e1ba9abd0a1211628a8cecf2d798f" category="list-text">r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。この制限は、新規に展開した 9.8 HA ペアおよび 9.7 からアップグレードした HA ペアに適用されます。ただし、新しく導入するシングルノードシステムには影響しません。</block>
-  <block id="7a050debd6781de08b8901dca851dcfd" category="cell">368 TB^7^</block>
-  <block id="2aa2b80d64984667c13c1d837b999879" category="cell">ライセンスあたり 368 TB ^7^</block>
   <block id="40a3c7b33b166dae48cfa8c02b36318a" category="section-title">必要な Cloud Manager Connector のバージョン</block>
   <block id="93aacf7eb6f4981edee3e45fc1561cd4" category="paragraph">新しい Cloud Volumes ONTAP 9.8 システムを導入し、既存のシステムをバージョン 9.8 にアップグレードするには、 Cloud Manager Connector でバージョン 3.9.0 以降が実行されている必要があります。</block>
   <block id="fa76400c45fa16f022dbcd0982694743" category="paragraph">新しい Cloud Volumes ONTAP 9.9.0 システムを導入し、既存のシステムを 9.9.4.0 にアップグレードするには、 Cloud Manager Connector のバージョン 3.9.4 以降が実行されている必要があります。</block>
@@ -1347,10 +1339,6 @@
   <block id="3f6ed0ebf44d28e7eb4b3c36f8a12264" category="cell">汎用 SSD （ gp2 ） ^5^ 、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）</block>
   <block id="eaa2d3a786327e0ea77b42c648bf6007" category="cell">汎用 SSDs （ gp2 ）</block>
   <block id="31dba98b34792a8f7d2348b76d66bd2d" category="cell">汎用 SSD （ gp2 ）、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ）。ディスクあたり最大 16TB です</block>
-  <block id="435a7b2379bdb20c4b1eda965deb9abc" category="list-text">汎用 SSD （ GP3 および gp2 ） ^3^</block>
-  <block id="94f166eda7b421c443ca5a01dbc89b88" category="list-text">プロビジョニングされた IOPS SSDs （ io1 ） ^3^</block>
-  <block id="5e0e80b3bd820038e21051785b12707e" category="list-text">スループット最適化 HDD （ st1 ） ^4^</block>
-  <block id="1be71a8367cf69a805cdda7657db8090" category="cell">汎用 SSD （ GP3 および gp2 ）、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ） ^6^</block>
   <block id="afcafb45b2c97e15b8215381244daacf" category="cell">汎用 SSD （ GP3 および GP2 ）</block>
   <block id="422377493977e63c0bd8424963633516" category="section-title">最新のアップデート（ 2021 年 4 月 21 日）</block>
   <block id="fb064ee7b94ba2fa52f1a7828fd59e25" category="paragraph">AWS では、ディザスタリカバリ（ DR ）用に最大 24 個の Storage VM （ SVM ）を設定できるようになりました。これまでの制限は、 DR に使用する Storage VM 12 台でした。</block>
@@ -1379,4 +1367,91 @@
   <block id="2633250c1ea457d0189087e9517836eb" category="paragraph"><block ref="c4e56fa9c34eccbdc8a7e2ef53026dc6" category="inline-link-rx"></block>。</block>
   <block id="99f1a3106d17ba2e561a53823cc750b8" category="inline-link">AWS C2S で Cloud Volumes ONTAP の制限事項を表示します</block>
   <block id="b0d7b54126f71ca4c93f6e445e561570" category="paragraph"><block ref="963d2888bbb29d700440f0ae78bf42c3" category="inline-link-rx"></block>。</block>
+  <block id="9b79d25ed5d8acca9d31ff501d4bdee2" category="doc">Azure での Cloud Volumes ONTAP 9.9.1 のストレージの制限</block>
+  <block id="931b32fa5e4bbf209c230ea6d5b6b4c6" category="doc">Azure の Cloud Volumes ONTAP 9.9.1 の既知の制限事項</block>
+  <block id="b0291f4c2653a32d1e6bcc1ef64237d8" category="inline-link-macro">すべてのクラウドプロバイダでの Cloud Volumes ONTAP 9.9.1 の制限事項</block>
+  <block id="41d4062804a1fce0c12b917d0e62309d" category="paragraph">以下に示す既知の制限事項は、 Microsoft Azure の Cloud Volumes ONTAP に固有のものです。また、必ず確認してください <block ref="9992193d64f13ea3121c1026c2b30f2f" category="inline-link-macro-rx"></block>。</block>
+  <block id="8efc36afc2e7202a9c9bda00b8e8a75d" category="section-title">ライセンスの概要</block>
+  <block id="b24ddca1b2dbcca8076e9521accb7199" category="paragraph">AWS で Cloud Volumes ONTAP の料金を支払うには、次のいずれかのオプションを使用します。</block>
+  <block id="e76e2328473cf4699692b3499c17fccf" category="list-text">* PAYGO * ： AWS Marketplace でのサブスクリプションでは、従量課金制の料金を 1 時間単位でお支払いいただけます</block>
+  <block id="3ca9ffd11e63e30e984b1669c4a606a3" category="list-text">* BYOL * ：お客様所有のライセンスをネットアップから購入されます</block>
+  <block id="7fef13e6a1094d14abd2a99a2246cf02" category="list-text">* プロフェッショナルパッケージ * ： AWS Marketplace サブスクリプションを通じて、年間契約付きで TiB あたりの料金をお支払いいただけます</block>
+  <block id="fca0127fdb88f211f91cc96e608ad55f" category="section-title">PAYGO</block>
+  <block id="abcbe3d937c7806aad33fd2a9ae9c808" category="list-text">AWS Marketplace での従量課金制のサブスクリプションが時間単位で必要です。</block>
+  <block id="88328620feb62b14271c5e38c156c668" category="list-text">Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。それぞれのライセンスで、異なる量のストレージとコンピューティングがサポートされます。</block>
+  <block id="09f41548b969047f17abfc1e3c785538" category="list-text">無料トライアルが終了すると、選択したライセンスに応じて 1 時間ごとに請求されます。ただし、ご登録いただいている場合に限ります。購読していない場合は、システムがシャットダウンします。</block>
+  <block id="c718711485cd2f5ebfa8049fb37db191" category="paragraph">Cloud Volumes ONTAP システムの作成時に、 Cloud Manager から AWS Marketplace に登録するよう求められます。</block>
+  <block id="fef83f1f189cfa8de02a05ca12b357ef" category="list-text">別のライセンスオプションへの変換はサポートされていません。</block>
+  <block id="4f63b8d9611ebb908e3a68ef24820325" category="inline-link">に関連付けられたネットアップのシリアル番号を登録してアクティブ化します システム</block>
+  <block id="78d6b915da85e0e7913feda3a651cba4" category="list-text">基本的なテクニカルサポートが提供されますが、必ず実施する必要があります<block ref="068e55ba83fa2fea36e5036e2f995cc2" category="inline-link-rx"></block>。</block>
+  <block id="5f69fb110496dd2b57b09a5d391d6172" category="inline-link">AWS Marketplace で価格情報を確認</block>
+  <block id="3e5150686d13cacc07b7555d704effba" category="paragraph"><block ref="990b6b0da141a205d2bc68ee2b188308" category="inline-link-rx"></block>。</block>
+  <block id="2ba9c53e77779eed8bff2544f2ce78ab" category="inline-xref">ストレージのサポートに関する詳細情報</block>
+  <block id="32cb78bbf53a49cada0fd9eb28cf2279" category="list-text">システムライセンスは、 BYOL システムごとに必要です。 EBS ディスクと S3 オブジェクトストレージへの階層化によって、最大 368 TB の容量を提供します。 <block ref="95e7008b958df9da0a7ee5b4fefae57b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="99229043f5e38b010454241dc7c5970b" category="list-text">追加容量ライセンスを購入して、 368 TB を超える容量を割り当てることができます。</block>
+  <block id="0fb72d56d27f0f970c24efd34ea8f1f3" category="paragraph">たとえば、容量ライセンスを追加購入して、最大 736TB の容量を Cloud Volumes ONTAP に割り当てることができます。また、最大 1.4 PB までライセンスを 3 つ購入することもできます。</block>
+  <block id="f2213b04acf4d3b9fcad6cdbc77cd671" category="section-title">プロフェッショナルパッケージ</block>
+  <block id="a63ab03806dd1577c9a3f2f84f958f1f" category="list-text">Cloud Volumes ONTAP と Cloud Backup Service の両方にライセンスを提供します。</block>
+  <block id="efdbf7f1d4a7e8e8e441713e6908dde4" category="list-text">この契約に対して複数の Cloud Volumes ONTAP システムを請求できます。</block>
+  <block id="8bcb927ad7f525e8b2302592d8abf7c0" category="list-text">AWS Marketplace からのサブスクリプションが、 12 カ月、 24 カ月、または 36 カ月の年間契約として必要です。</block>
+  <block id="6eb65597c355dd81776a54ddcbb7aab9" category="list-text">EBS ディスクと S3 オブジェクトストレージへの階層化で、最大 2PB の容量を提供します。 <block ref="95e7008b958df9da0a7ee5b4fefae57b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="4a41cdb176572d5b588aa445b5b5fe23" category="paragraph"><block ref="71a72211c17fd368888eb0d5f2a6c445" category="inline-link-rx"></block>。</block>
+  <block id="671e8254c7b0d121dddb0c891a704d08" category="cell">PAYGO Explore</block>
+  <block id="42e4a6694dd7d5280c1ebd4d2d70f50d" category="cell">PAYGO Standard の略</block>
+  <block id="158b2d2f93973854e733f030be8e4545" category="cell">PAYGO Premium</block>
+  <block id="4b3106367df13b6394d1fcda33243319" category="cell">2 PB ^2^</block>
+  <block id="e831f3318db231dc4304246a1f496ede" category="list-text">一部の構成では、ディスク制限により、ディスクのみを使用して容量制限に達することができません。その場合、で容量の制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="b2d7c36dabd24e2a1df49390ddfb6d56" category="inline-link-macro-rx"></block>。</block>
+  <block id="789f7b372f32412febae7a678005ae71" category="section-title">サポートされる EC2 コンピューティング</block>
+  <block id="5909cf23a76db75e2e44bb37b62f39e1" category="doc">GCP の Cloud Volumes ONTAP 9.9.1 でサポートされている構成</block>
+  <block id="1d27aade4327013f6f576aac837a8035" category="paragraph"><block ref="156326773e50b36af895c0a3a283a512" category="inline-link-macro-rx"></block>。</block>
+  <block id="2a630df9bbf9abc91630ae209c845c1d" category="summary">Cloud Volumes ONTAP には、いくつかのライセンスオプションがあります。これらのライセンスオプションを使用すると、それぞれのニーズに合った構成を選択できます。</block>
+  <block id="29fe57d1ffcf06fdbf216dca2a42e789" category="doc">AWS の Cloud Volumes ONTAP 9.9.1 でサポートされている構成</block>
+  <block id="12fa43de7fd4775b177b003e52124658" category="paragraph">Cloud Volumes ONTAP では、データ階層化用に複数のタイプの EBS ディスクと S3 オブジェクトストレージがサポートされています。最大ストレージ容量は、選択したライセンスによって決まります。</block>
+  <block id="31d2fb4c349cbfcbc23ca5411ab57976" category="list-text">一部の構成では、ディスク制限により、ディスクのみを使用して容量制限に達することができません。その場合、で容量の制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="588eb3ac6f6c769f791014c3c919a8d4" category="inline-link-macro-rx"></block>。</block>
+  <block id="97f0d393cf9967ec8056b1ef69607c9c" category="cell">* Explore 、 BYOL 、または Professional *</block>
+  <block id="40f9bf5e68f3f2dfa46bd795b0e46fd4" category="cell">* Standard 、 BYOL 、または Professional *</block>
+  <block id="36b65bd179e227fe3def6d882ea84ecc" category="cell">* Premium 、 BYOL 、または Professional *</block>
+  <block id="f11983ee8203e9296a335aaeb05d471e" category="doc">AWS での Cloud Volumes ONTAP 9.9.1 の既知の制限事項</block>
+  <block id="00845abb7f76919b747d0e474734d087" category="paragraph">以下に記載する制限は、 Amazon Web Services の Cloud Volumes ONTAP に固有のものです。また、必ず確認してください <block ref="9992193d64f13ea3121c1026c2b30f2f" category="inline-link-macro-rx"></block>。</block>
+  <block id="7c70b0b4175c1ba0d3c6a86c9e730912" category="doc">AWS での Cloud Volumes ONTAP 9.9.1 のストレージの制限</block>
+  <block id="b59e3b157cea0264582f9eee2261e1f0" category="paragraph">一部の構成では、ディスク制限により、ディスクのみを使用して容量制限に達することができません。その場合、で容量の制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。詳細については、以下の容量とディスクの制限を参照してください。</block>
+  <block id="fcbbbbf63a3670e6d833837ba2594683" category="list-text">新しい Cloud Volumes ONTAP 9.9.1 システムでは、 C4 、 M4 、および R4 インスタンスタイプはサポートされません。ただし、これらのインスタンスタイプのいずれかで実行している場合は、システムを 9.9.1 リリースにアップグレードできるため、これらのインスタンスタイプのディスク制限は引き続き表示されます。</block>
+  <block id="207d3262226e2391e41a9bddacc3529d" category="list-text">PAYGO Premium 、 BYOL 、 Professional のパッケージでは、制限が表示されます。PAYGO Explore または Standard では容量制限に到達できません。</block>
+  <block id="495c76d9caaab1345477ad1ca556ac98" category="section-title">Professional パッケージを含むシングルノード</block>
+  <block id="c53e0ab4c58f92ab934fbdce6cc2582b" category="section-title">Professional パッケージを使用した HA ペア</block>
+  <block id="f14f80ab5afb954a08217c696ea331c4" category="list-text">一部の HA 構成では、ディスク制限により、ディスクのみを使用することで容量制限に達することができません。その場合、で容量の制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="c6f0c6902676294d567c37288f090d75" category="inline-link-macro-rx"></block>。</block>
+  <block id="249c7217cdf0f74da98fc23956a841fc" category="summary">Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含まれています。</block>
+  <block id="9fda7a32484ab76081a9f46e0b661d48" category="doc">Cloud Volumes ONTAP 9.9.1 の新機能</block>
+  <block id="c28ba2c45523ea37860b96091780999e" category="section-title">9.9.1 Release Candidate （ 2021 年 5 月 24 日）</block>
+  <block id="ca4201d28938fbbc1301fefe736b5064" category="paragraph">Cloud Volumes ONTAP 9.9.1 Release Candidate は、 AWS 、 Azure 、 Google Cloud Platform で提供されるようになりました。</block>
+  <block id="74eb178224c5fa701fbcd96998feaafe" category="inline-link">ONTAP 9.9.1</block>
+  <block id="c4e16f31e9301da9679ff0d280fc90e0" category="paragraph">で導入された機能に加えて<block ref="f8eb7c849e49bd34defb48183ca74658" category="inline-link-rx"></block>このリリースの Cloud Volumes ONTAP には、次の機能が含まれています。</block>
+  <block id="16b2f65c23dd2baf11901d57765ea03d" category="list-text"><block ref="3d8d650b1f533ac475b7e359ae04f468" category="inline-xref-macro-rx"></block></block>
+  <block id="01ba6f55a9b97befe6cd2e4120c26a74" category="list-text"><block ref="fd917c4a90c83fbe106a974c7cc3a6a5" category="inline-xref-macro-rx"></block></block>
+  <block id="189f5372ac2745ae6d53ce67ff7e5934" category="list-text"><block ref="6d6a22bef29f1d22adb67f2dba9809c3" category="inline-xref-macro-rx"></block></block>
+  <block id="a41b4af6d045ad0c300ae78f1f7db78e" category="section-title">Azure での ONTAP S3 のサポート</block>
+  <block id="45149df4848d920bf9ec26e112299cc8" category="paragraph">Azure の Cloud Volumes ONTAP から S3 オブジェクトストレージを提供できるようになりました。Cloud Volumes ONTAP for Microsoft Azure では、 NFS や SMB などの従来型のファイルベースプロトコルに加え、スケールアウトストレージのオプションとして S3 をサポートしています。</block>
+  <block id="5e02c0dddf5ca2c2a77a3cacc5cfea9b" category="list-text">Cloud Volumes ONTAP S3 と ONTAP の主なユースケースは、汎用のオブジェクトストアです。</block>
+  <block id="ba36d0b77efc9f46158b78a4e8ec9019" category="list-text">現時点では、 AWS の Cloud Volumes ONTAP や Google Cloud では S3 プロトコルはサポートされていません。</block>
+  <block id="53a519b7a61b6af057f2717112606b16" category="inline-link">S3 構成パワーガイド</block>
+  <block id="ae4cd94b7cc987333c1e7777ad039bc6" category="paragraph">CLI を使用することが、 Cloud Volumes ONTAP からの S3 クライアントアクセスを設定するためのベストプラクティスです。詳細については、を参照してください<block ref="49e8fee748cd4c8d6f01bdb03113fc2a" category="inline-link-rx"></block>。</block>
+  <block id="0b4aca79467c89cc8b72ab4f0d58ce24" category="section-title">高速の書き込み速度で AWS のパフォーマンスが向上します</block>
+  <block id="592a11e70865354385c68046a8c4f7db" category="inline-link">高速の書き込み速度</block>
+  <block id="d9d55c4e4b86a673d18200e206008d9a" category="paragraph">Cloud Volumes ONTAP のスループットパフォーマンスが向上しました いつ<block ref="17580b1eaeb69932ac7a59d3e50b8f0c" category="inline-link-rx"></block> サポートされているインスタンスタイプで有効になっている。</block>
+  <block id="e4b3e02d200753cd3b178d20fb8f398a" category="section-title">IO2 ： AWS でブートディスクを使用します</block>
+  <block id="c84752dd79544448d536900ed5d574ed" category="paragraph">AWS では、新しい Cloud Volumes ONTAP システムのブートディスクがプロビジョニングされた IOPS SSD （ IO2 ）ボリュームになります。IO2 ボリュームは、以前はブートディスクに使用されていた io1 ボリュームよりも信頼性が高くなります。</block>
+  <block id="9614f32c358767a69fcd9b6f7bfcda40" category="paragraph">新しい Cloud Volumes ONTAP 9.9.1 システムを導入し、既存のシステムを 9.1.1 にアップグレードするには、 Cloud Manager Connector のバージョン 3.9.6 以降が実行されている必要があります。</block>
+  <block id="220baf63d4ac13ee4237453e33150e58" category="list-text">9.9.0 リリースおよび 9.8 リリースから Cloud Volumes ONTAP 9.9.1 にアップグレードできます。Cloud Volumes ONTAP 9.9.0 および 9.8 システムから 9.9.1 リリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。</block>
+  <block id="25055e1c7b1f458a316fab0ee0109bc3" category="list-text">システムライセンスは、 BYOL システムごとに必要です。 EBS ディスクと S3 オブジェクトストレージへの階層化によって、最大 368 TB の容量を提供します。</block>
+  <block id="8f21e303a5dc2d4f37b7b038d94151e6" category="list-text">EBS ディスクと S3 オブジェクトストレージへの階層化で、最大 2PB の容量を提供します。</block>
+  <block id="4be9ff5b68d0a8776b9002fec6b34a0a" category="list-text">一部の HA 構成では、ディスク制限により、ディスクのみを使用することで容量制限に達することができません。その場合、で容量の制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。ディスクの制限については、を参照してください <block ref="da469d3f6b1858cd6209b02889a2490e" category="inline-link-macro-rx"></block>。</block>
+  <block id="30ab9a58c827ae690563626c218d592e" category="doc">GCP での Cloud Volumes ONTAP 9.9.1 の既知の制限事項</block>
+  <block id="31b796482df635457cbfb2956c48b337" category="paragraph">Google Cloud Platform の Cloud Volumes ONTAP に固有の既知の制限事項はありません。を参照してください <block ref="9992193d64f13ea3121c1026c2b30f2f" category="inline-link-macro-rx"></block>。</block>
+  <block id="a8f528a2e3936e4b951f5bedbc59c198" category="doc">Cloud Volumes ONTAP 9.9.1 の既知の問題</block>
+  <block id="f1bc3db11bb1dc64a4f1c078187b73b6" category="paragraph">一部の HA 構成では、ディスク制限により、ディスクのみを使用することで容量制限に達することができません。その場合、で容量の制限に達することができます<block ref="bebbdb0ca1e7b07d9f7caf3b6109b30e" category="inline-link-rx"></block>。詳細については、以下の容量とディスクの制限を参照してください。</block>
+  <block id="cf3dd7db178051dc2fc952746918d721" category="paragraph">以下に示す制限は、 PAYGO Premium 、 BYOL 、および Professional パッケージの場合に適用されます。PAYGO Explore または Standard では容量制限に到達できません。</block>
+  <block id="65b5a9bd8c8f8c26af773f2fbe6eadfe" category="doc">Azure で Cloud Volumes ONTAP 9.9.1 がサポートされる構成</block>
+  <block id="f408e682b68e18e390a7d513950616ba" category="doc">GCP での Cloud Volumes ONTAP 9.9.1 のストレージの制限</block>
+  <block id="3b17cc3288153f4fda78f32c760abf3e" category="list-text">AWS と Google Cloud で ONTAP S3 を使用 （ S3 プロトコルは Azure でサポートされます）</block>
+  <block id="38d8fb16996b41feada53a9dd228d8c5" category="sidebar">9.9.1 リリースノート</block>
 </blocks>

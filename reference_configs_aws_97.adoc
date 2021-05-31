@@ -17,33 +17,66 @@ Cloud Volumes ONTAP は、単一ノードシステムまたは HA ペアとし�
 
 
 
-== 従量課金制の概要
+== ライセンスの概要
 
-* Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。
+AWS で Cloud Volumes ONTAP の料金を支払うには、次のいずれかのオプションを使用します。
+
+* * PAYGO * ： AWS Marketplace でのサブスクリプションでは、従量課金制の料金を 1 時間単位でお支払いいただけます
+* * BYOL * ：お客様所有のライセンスをネットアップから購入されます
+* * プロフェッショナルパッケージ * ： AWS Marketplace サブスクリプションを通じて、年間契約付きで TiB あたりの料金をお支払いいただけます
+
+
+
+
+=== PAYGO
+
+* AWS Marketplace での従量課金制のサブスクリプションが時間単位で必要です。
+* この契約に対して複数の Cloud Volumes ONTAP システムを請求できます。
+* Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。それぞれのライセンスで、異なる量のストレージとコンピューティングがサポートされます。
 * AWS に初めて導入する Cloud Volumes ONTAP システムに対しては、 30 日間の無償トライアルを利用できます。
 +
 ** 1 時間ごとのソフトウェア料金は発生しませんが、 AWS インフラの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。
-** 無料トライアルが終了すると、選択したライセンスに従って 1 時間ごとに請求されます。 https://aws.amazon.com/marketplace/pp/B07QX2QLXX["購読している限り"^]。購読していない場合は、システムがシャットダウンします。
-
-
-* PAYGO から BYOL への変換は現在サポートされていません。
-* 基本的なテクニカルサポートが提供されますが、ご使用のシステムに関連付けられたネットアップのシリアル番号を登録して有効化する必要があります。
+** 無料トライアルが終了すると、選択したライセンスに応じて 1 時間ごとに請求されます。ただし、ご登録いただいている場合に限ります。購読していない場合は、システムがシャットダウンします。
 +
-https://docs.netapp.com/us-en/occm/task_registering.html["Cloud Manager で従量課金制システムを登録"^]
+Cloud Volumes ONTAP システムの作成時に、 Cloud Manager から AWS Marketplace に登録するよう求められます。
 
 
 
+* 別のライセンスオプションへの変換はサポートされていません。
+* 基本的なテクニカルサポートが提供されますが、必ず実施する必要があります https://docs.netapp.com/us-en/occm/task_registering.html["に関連付けられたネットアップのシリアル番号を登録してアクティブ化します システム"^]。
 
 
-== BYOL の概要
+https://aws.amazon.com/marketplace/pp/prodview-eap6ybxwk5ycg["AWS Marketplace で価格情報を確認"]。
+
+
+
+=== BYOL
 
 * 12 カ月、 24 カ月などの期間ベースのサブスクリプションオプションを使用するシングルノードライセンスまたは HA ライセンスです。
 * サブスクリプション期間中はサポートが含まれます。
-* Cloud Volumes ONTAP BYOL システムでは、複数のライセンスを購入して、 368 TB を超える容量を割り当てることができます。
+* 別のライセンスオプションへの変換はサポートされていません。
+* システムライセンスは、 BYOL システムごとに必要です。 EBS ディスクと S3 オブジェクトストレージへの階層化によって、最大 368 TB の容量を提供します。
+* 追加容量ライセンスを購入して、 368 TB を超える容量を割り当てることができます。
 +
-たとえば、 2 つのライセンスを購入して、 Cloud Volumes ONTAP に最大 736TB の容量を割り当てることができます。また、 4 つのライセンスを購入して、最大 1.4 PB までライセンスを取得することもできます。
+たとえば、容量ライセンスを追加購入して、最大 736TB の容量を Cloud Volumes ONTAP に割り当てることができます。また、最大 1.4 PB までライセンスを 3 つ購入することもできます。
 
 
+
+
+
+=== プロフェッショナルパッケージ
+
+* Cloud Volumes ONTAP と Cloud Backup Service の両方にライセンスを提供します。
+* AWS Marketplace からのサブスクリプションが、 12 カ月、 24 カ月、または 36 カ月の年間契約として必要です。
++
+Cloud Volumes ONTAP システムの作成時に、 Cloud Manager から AWS Marketplace に登録するよう求められます。
+
+* サブスクリプション期間中はサポートが含まれます。
+* 別のライセンスオプションへの変換はサポートされていません。
+* EBS ディスクと S3 オブジェクトストレージへの階層化で、最大 2PB の容量を提供します。
+
+
+https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace で価格情報を確認"^]。
 
 
 
@@ -55,10 +88,10 @@ Cloud Volumes ONTAP は、フォールトトレランスとノンストップオ
 
 [cols="h,d,d,d,d"]
 |===
-|  | 調査 | 標準 | Premium サービス | BYOL 
+|  | PAYGO Explore | PAYGO Standard の略 | PAYGO Premium | BYOL 
 
 
-| サポートされている EC2 インスタンスタイプ ^1  a| 
+| プロフェッショナルパッケージ | サポートされている EC2 インスタンスタイプ ^1  a| 
 * m4.xlarge
 * m5.xlarge のように指定します
 
@@ -89,43 +122,7 @@ Cloud Volumes ONTAP は、フォールトトレランスとノンストップオ
 * r5.12xlarge ^4^
 * r5d.2xlarge ^2^
 
- a| 
-* c4.4xlarge
-* c4.8xlarge を使用する場合
-* c5.9xlarge のサイズ
-* c5.18 × ラージ
-* c5d.csi^2^
-* c5d.9xlarge ^2^
-* c5d.18 x ラージ ^2^
-* c5n.9xlarge ^3^
-* c5n.18 x ラージ ^3^
-* m4.xlarge
-* m4.2xlarge
-* m4.mc
-* m5.xlarge のように指定します
-* m5.2xlarge
-* m5.mc
-* m5.16 x ラージ
-* m5d.8xlarge ^2^
-* m5d.12xlarge ^2^
-* R4.xlarge （ R4.xlarge ）
-* r4.2xlarge
-* R5.xlarge （ R5.xlarge ）
-* r5.2xlarge
-* r5.8xlarge
-* r5.12xlarge ^4^
-* r5d.2xlarge ^2^
 
-
-
-
-| サポートされているディスクタイプ ^5^ 4+| 汎用 SSD （ GP3 および gp2 ）、プロビジョニングされた IOPS SSD （ io1 ）、スループット最適化 HDD （ st1 ） ^6^ 
-
-
-| S3 へのコールドデータ階層化 | サポート対象外 3+| サポートされます 
-
-
-| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB^7^ | ライセンスあたり 368 TB ^7^ 
 |===
 注：
 
@@ -135,7 +132,7 @@ Cloud Volumes ONTAP は、フォールトトレランスとノンストップオ
 . r5.12xlarge インスタンスタイプには、サポート性に関する既知の制限があります。パニックが原因でノードが予期せずリブートした場合は、トラブルシューティングに使用されるコアファイルがシステムで収集されず、問題の原因となる可能性があります。お客様はリスクと限定的なサポート条件に同意し、この状況が発生した場合はすべてのサポート責任を負います。
 . SSD を Cloud Volumes ONTAP Standard 、 Premium 、および BYOL とともに使用すると、書き込みパフォーマンスが向上します。
 . スループット最適化 HDD （ st1 ）を使用している場合、オブジェクトストレージへのデータの階層化は推奨されません。
-. 一部の HA 構成では、ディスク制限により、ディスクのみを使用して 368 TB の容量制限に達することができません。このような場合は、で 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_97.html["ストレージの制限"]。
+. 一部の HA 構成では、ディスク制限により、ディスクのみを使用することで容量制限に達することができません。その場合、で容量の制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_97.html["ストレージの制限"]。
 . AWS リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
 . Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。
 

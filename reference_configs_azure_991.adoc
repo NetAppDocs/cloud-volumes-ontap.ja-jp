@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: reference_configs_azure_991.html 
+keywords: vm, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, disks, sizes 
+summary: Cloud Volumes ONTAP は、 Azure でシングルノードシステムまたは HA ペアとして使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランが用意されています。 
+---
+= Azure で Cloud Volumes ONTAP 9.9.1 がサポートされる構成
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP は、 Azure でシングルノードシステムまたは HA ペアとして使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランがあります。
+
+
+
+== 従量課金制の概要
+
+* Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。
+* Azure に初めて導入する Cloud Volumes ONTAP システムについては、 30 日間の無償トライアルを利用できます。
++
+1 時間ごとのソフトウェア料金は発生しませんが、 Azure インフラの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。
+
+* PAYGO から BYOL への変換は現在サポートされていません。
+* 基本的なテクニカルサポートが提供されますが、ご使用のシステムに関連付けられたネットアップのシリアル番号を登録して有効化する必要があります。
++
+https://docs.netapp.com/us-en/occm/task_registering.html["Cloud Manager で従量課金制システムを登録"^]
+
+
+
+
+
+== BYOL の概要
+
+* 12 カ月、 24 カ月などの期間ベースのサブスクリプションオプションを使用するシングルノードライセンスまたは HA ライセンスです。
+* サブスクリプション期間中はサポートが含まれます。
+* Cloud Volumes ONTAP BYOL システムでは、複数のライセンスを購入して、 368 TB を超える容量を割り当てることができます。
++
+たとえば、 2 つのライセンスを購入して、 Cloud Volumes ONTAP に最大 736TB の容量を割り当てることができます。また、 4 つのライセンスを購入して、最大 1.4 PB までライセンスを取得することもできます。
+
+
+
+
+
+== ライセンスでサポートされている構成
+
+Cloud Volumes ONTAP は、フォールトトレランスとノンストップオペレーションを実現するために、 Azure ではシングルノードシステムとして、ハイアベイラビリティ（ HA ）ペアのノードとして使用できます。
+
+シングルノードシステムの HA ペアへのアップグレードはサポートされていません。シングルノードシステムと HA ペアを切り替える場合は、新しいシステムを導入し、既存のシステムから新しいシステムにデータをレプリケートする必要があります。
+
+
+
+=== シングルノードシステム
+
+Cloud Volumes ONTAP をシングルノードシステムとして Azure に導入する場合は、次の構成から選択できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| サポートされる仮想マシンタイプ  a| 
+* DS3_v2 の場合
+* E4s_v3
+
+ a| 
+* DS4_v2
+* DS13_v2 の場合
+* E8s_v3
+
+ a| 
+* DS5_v2 の場合
+* DS14_v2
+* DS15_v2 の場合
+* E32s_v3^1
+* E48s_v3^1^
+* E64is_v3^1^
+
+ a| 
+* DS3_v2 の場合
+* DS4_v2
+* DS5_v2 の場合
+* DS13_v2 の場合
+* DS14_v2
+* DS15_v2 の場合
+* E4s_v3
+* E8s_v3
+* E32s_v3^1
+* E48s_v3^1^
+* E64is_v3^1^
+* L8s_v2^2^
+
+
+
+
+| サポートされているディスクタイプ ^3^ 4+| 標準 HDD 管理ディスク、標準 SSD 管理ディスク、およびプレミアム SSD 管理ディスク 
+
+
+| BLOB ストレージへのコールドデータ階層化 | サポート対象外 3+| サポートされます 
+
+
+| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. この VM タイプはを使用します https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-ultra-ssd["ウルトラ SSD"^] VNVRAM の場合、書き込みパフォーマンスが向上します。
+. この VM タイプにはローカルの NVMe ストレージが含まれており、 Cloud Volumes ONTAP では _Flash Cache _ として使用されます。Flash Cache は、最近読み取られたユーザデータとネットアップのメタデータをリアルタイムでインテリジェントにキャッシングすることで、データへのアクセスを高速化します。データベース、 E メール、ファイルサービスなど、ランダムリードが大量に発生するワークロードに効果的です。Flash Cache のパフォーマンス向上を利用するには、すべてのボリュームで圧縮を無効にする必要があります。 https://docs.netapp.com/us-en/occm/concept_flash_cache.html["詳細はこちら。"^]。
+. 拡張書き込みパフォーマンスは、 SSD を使用している場合は有効になりますが、 DS3_v2 仮想マシンタイプを使用している場合は有効になりません。
+. Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
+. Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。
+
+
+
+
+=== HA ペア
+
+Azure で Cloud Volumes ONTAP を HA ペアとして導入する場合は、次の構成から選択できます。
+
+[cols="h,d,d,d,d"]
+|===
+|  | 調査 | 標準 | Premium サービス | BYOL 
+
+
+| サポートされる仮想マシンタイプ | サポート対象外  a| 
+* DS4_v2
+* DS13_v2 の場合
+
+ a| 
+* DS5_v2^1^
+* DS14_v2^1 ^
+* DS15_v2 ^1
+* E8s_v3^1^
+* E48s_v3^1^
+
+ a| 
+* DS4_v2
+* DS5_v2^1^
+* DS13_v2 の場合
+* DS14_v2^1 ^
+* DS15_v2 ^1
+* E8s_v3^1^
+* E48s_v3^1^
+
+
+
+
+| サポートされているディスクタイプ | サポート対象外 3+| プレミアムページブロブ 
+
+
+| BLOB ストレージへのコールドデータの階層化 ^2^ | サポート対象外 3+| サポートされます 
+
+
+| 最大システム容量（ディスク + オブジェクトストレージ） | サポート対象外 | 10 TB | 368 TB | 1 ライセンスあたり 368 TB 
+|===
+注：
+
+. Cloud Volumes ONTAP では、 HA ペアを使用する場合、これらの VM タイプで高速な書き込み速度がサポートされます。シングルノードシステムを使用する場合、すべてのタイプのインスタンスで高速書き込みがサポートされます。 https://docs.netapp.com/us-en/occm/concept_write_speed.html["書き込み速度の選択方法の詳細については、こちらをご覧ください"^]。
+. Azure リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
+. Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。
+
+
+
+
+== サポートされるディスクサイズ
+
+Azure では、アグリゲートに同じタイプおよびサイズのディスクを 12 本まで含めることができます。
+
+
+
+=== シングルノードシステム
+
+シングルノードシステムで Azure Managed Disks を使用している。次のディスクサイズがサポートされています。
+
+[cols="3*"]
+|===
+| Premium SSD の場合 | 標準 SSD | 標準的な HDD 
+
+
+ a| 
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 32 TB
+
+ a| 
+* 100 GB
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 32 TB
+
+ a| 
+* 100 GB
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 32 TB
+
+
+|===
+
+
+=== HA ペア
+
+HA ペアでは、 Premium ページ BLOB を使用します。次のディスクサイズがサポートされています。
+
+* 500 GB
+* 1 TB
+* 2TB
+* 4 TB
+* 8 TB
+

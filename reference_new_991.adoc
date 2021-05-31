@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: reference_new_991.html 
+keywords: what's new, new, features, release notes, enhancements 
+summary: Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含まれています。 
+---
+= Cloud Volumes ONTAP 9.9.1 の新機能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含まれています。
+
+その他の機能と機能拡張は、 Cloud Manager の最新バージョンで導入されました。を参照してください https://docs.netapp.com/us-en/occm/reference_new_occm.html["Cloud Manager リリースノート"^] を参照してください。
+
+
+
+== 9.9.1 Release Candidate （ 2021 年 5 月 24 日）
+
+Cloud Volumes ONTAP 9.9.1 Release Candidate は、 AWS 、 Azure 、 Google Cloud Platform で提供されるようになりました。
+
+で導入された機能に加えて https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP 9.9.1"^]このリリースの Cloud Volumes ONTAP には、次の機能が含まれています。
+
+* <<ONTAP S3 support in Azure>>
+* <<Enhanced performance in AWS with high write speed>>
+* <<io2 boot disk in AWS>>
+
+
+
+
+=== Azure での ONTAP S3 のサポート
+
+Azure の Cloud Volumes ONTAP から S3 オブジェクトストレージを提供できるようになりました。Cloud Volumes ONTAP for Microsoft Azure では、 NFS や SMB などの従来型のファイルベースプロトコルに加え、スケールアウトストレージのオプションとして S3 をサポートしています。
+
+次の点に注意してください。
+
+* Cloud Volumes ONTAP S3 と ONTAP の主なユースケースは、汎用のオブジェクトストアです。
+* 現時点では、 AWS の Cloud Volumes ONTAP や Google Cloud では S3 プロトコルはサポートされていません。
+
+
+CLI を使用することが、 Cloud Volumes ONTAP からの S3 クライアントアクセスを設定するためのベストプラクティスです。詳細については、を参照してください http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["S3 構成パワーガイド"^]。
+
+
+
+=== 高速の書き込み速度で AWS のパフォーマンスが向上します
+
+Cloud Volumes ONTAP のスループットパフォーマンスが向上しました いつ https://docs.netapp.com/us-en/occm/concept_write_speed.html["高速の書き込み速度"^] サポートされているインスタンスタイプで有効になっている。
+
+
+
+=== IO2 ： AWS でブートディスクを使用します
+
+AWS では、新しい Cloud Volumes ONTAP システムのブートディスクがプロビジョニングされた IOPS SSD （ IO2 ）ボリュームになります。IO2 ボリュームは、以前はブートディスクに使用されていた io1 ボリュームよりも信頼性が高くなります。
+
+
+
+== 必要な Cloud Manager Connector のバージョン
+
+新しい Cloud Volumes ONTAP 9.9.1 システムを導入し、既存のシステムを 9.1.1 にアップグレードするには、 Cloud Manager Connector のバージョン 3.9.6 以降が実行されている必要があります。
+
+
+
+== アップグレードに関する注意事項
+
+* Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性
+* 9.9.0 リリースおよび 9.8 リリースから Cloud Volumes ONTAP 9.9.1 にアップグレードできます。Cloud Volumes ONTAP 9.9.0 および 9.8 システムから 9.9.1 リリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。
++
+http://docs.netapp.com/us-en/occm/task_updating_ontap_cloud.html#upgrading-cloud-volumes-ontap-from-cloud-manager-notifications["Cloud Manager から通知された場合のアップグレード方法について説明します"^]。
+
+* シングルノードシステムのアップグレードでは、 I/O が中断されるまで最大 25 分間システムがオフラインになります。
+* HA ペアのアップグレードは無停止で、 I/O が中断されません。無停止アップグレードでは、各ノードが連携してアップグレードされ、クライアントへの I/O の提供が継続されます。
+
