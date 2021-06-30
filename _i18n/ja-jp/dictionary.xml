@@ -1454,4 +1454,15 @@
   <block id="f408e682b68e18e390a7d513950616ba" category="doc">GCP での Cloud Volumes ONTAP 9.9.1 のストレージの制限</block>
   <block id="3b17cc3288153f4fda78f32c760abf3e" category="list-text">AWS と Google Cloud で ONTAP S3 を使用 （ S3 プロトコルは Azure でサポートされます）</block>
   <block id="38d8fb16996b41feada53a9dd228d8c5" category="sidebar">9.9.1 リリースノート</block>
+  <block id="db1fed454ba079d3f879c983b0f9d489" category="section-title">9.9.1 アップデート（ 2021 年 6 月 3 日）</block>
+  <block id="46ca0a48f1a2c23c8ea31b2b282edaa5" category="paragraph">最近の Cloud Manager 3.9.7 リリースでは、新しいプロフェッショナルパッケージのサポートが導入されています。このパッケージを使用すると、 AWS Marketplace で年単位の契約を締結して Cloud Volumes ONTAP と Cloud Backup Service をバンドルできます。</block>
+  <block id="04bef10d23ad95e45f419a6ca38a1c06" category="inline-link-macro">このライセンスオプションの詳細については、こちらをご覧ください。</block>
+  <block id="a173b4e5d4458b572b2c223ad948d77a" category="paragraph"><block ref="a173b4e5d4458b572b2c223ad948d77a" category="inline-link-macro-rx"></block></block>
+  <block id="c5444b69e0d4a498ada01a16f84ab46d" category="list-text">Cloud Manager には、 ONTAP S3 機能に対する管理機能はありません。</block>
+  <block id="8e9d6d95264b6231f0a1d0ca22c087f7" category="summary">以下のガイドは、 Google Cloud で Cloud Volumes ONTAP を使用して具体的なユースケースに対応するためのガイドです。</block>
+  <block id="f540a08b090d18fa948ca4ade8ceb7ff" category="doc">Cloud Volumes ONTAP for Google Cloud の略</block>
+  <block id="f22e86b63856df3737d333499d0d8642" category="inline-link-macro">Google Cloud で Cloud Volumes ONTAP を使用するには、セットアップのチュートリアルを参照してください</block>
+  <block id="a480525c508abef033c6011b6b8ae5db" category="list-text"><block ref="a480525c508abef033c6011b6b8ae5db" category="inline-link-macro-rx"></block></block>
+  <block id="85536ede959e4a62b6eeb8fa7da21b71" category="inline-link-macro">ディザスタリカバリのために、 ONTAP のオンプレミスデータを NetApp Cloud Volumes ONTAP にレプリケート</block>
+  <block id="8b26f0918bd84f8f658268af9e2d60ac" category="list-text"><block ref="8b26f0918bd84f8f658268af9e2d60ac" category="inline-link-macro-rx"></block></block>
 </blocks>

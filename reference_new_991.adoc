@@ -19,6 +19,14 @@ Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含
 
 
 
+== 9.9.1 アップデート（ 2021 年 6 月 3 日）
+
+最近の Cloud Manager 3.9.7 リリースでは、新しいプロフェッショナルパッケージのサポートが導入されています。このパッケージを使用すると、 AWS Marketplace で年単位の契約を締結して Cloud Volumes ONTAP と Cloud Backup Service をバンドルできます。
+
+link:reference_configs_aws_991.html["このライセンスオプションの詳細については、こちらをご覧ください。"]
+
+
+
 == 9.9.1 Release Candidate （ 2021 年 5 月 24 日）
 
 Cloud Volumes ONTAP 9.9.1 Release Candidate は、 AWS 、 Azure 、 Google Cloud Platform で提供されるようになりました。
@@ -40,6 +48,7 @@ Azure の Cloud Volumes ONTAP から S3 オブジェクトストレージを提�
 
 * Cloud Volumes ONTAP S3 と ONTAP の主なユースケースは、汎用のオブジェクトストアです。
 * 現時点では、 AWS の Cloud Volumes ONTAP や Google Cloud では S3 プロトコルはサポートされていません。
+* Cloud Manager には、 ONTAP S3 機能に対する管理機能はありません。
 
 
 CLI を使用することが、 Cloud Volumes ONTAP からの S3 クライアントアクセスを設定するためのベストプラクティスです。詳細については、を参照してください http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["S3 構成パワーガイド"^]。
