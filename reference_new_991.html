@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>Cloud Volumes ONTAP 9.9.1 の新機能 | NetApp Cloud Docs</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Cloud Volumes ONTAP 9.9.1 の新機能 | NetApp Cloud Docs" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_991.html" />
+	<meta property="og:description" content="Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含まれています。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/cloud-volumes-ontap/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含まれています。">
+  <meta name="keywords" content=" what's new, new, features, release notes, enhancements">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ja-jp/cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+  <link rel="alternate" type="application/rss+xml" title="NetApp Cloud Docs" href="/ja-jp/cloud-volumes-ontap/feed.xml">
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-volumes-ontap/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/cloud-volumes-ontap/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-volumes-ontap/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-volumes-ontap/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-volumes-ontap/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/cloud-volumes-ontap/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/cloud-volumes-ontap/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/cloud-volumes-ontap/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/cloud-volumes-ontap/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/cloud-volumes-ontap/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/cloud-volumes-ontap/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/cloud-volumes-ontap/css/na-pagenav.css' type='text/css'>
+
+  
+
+  
+  <link rel='stylesheet' href='/ja-jp/cloud-volumes-ontap/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ja-jp/cloud-volumes-ontap/js/na-search.js'></script>
+  
+
+  
+  <script src='/ja-jp/cloud-volumes-ontap/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ja-jp/cloud-volumes-ontap/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/cloud-volumes-ontap/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/cloud-volumes-ontap/js/na-utility.js'></script>
+  <script src='/ja-jp/cloud-volumes-ontap/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ja-jp/cloud-volumes-ontap/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/cloud-volumes-ontap/js/toc.js'></script>
+  <script src='/ja-jp/cloud-volumes-ontap/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" data-type="widget" data-placeholder="ドキュメントを検索" data-no-results-found="{query}に該当する結果はありません" data-did-you-mean="{suggestion} を検索" data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" data-results-found="{hitCount} 件見つかりました"  ></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar"><div id="ie-i18n-tooltip" class="luci-tooltip luci-tooltip--left-bottom">
+      <div class="luci-tooltip__trigger" aria-describedby="luci-tooltip-1">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#circle-info">
+          </use>
+        </svg>
+      </div>
+      <div class="luci-tooltip__content" role="tooltip" id="luci-tooltip-1">
+        <div class="luci-tooltip__content-inner">
+          <div id="nmt-disclaimer" class="luci-tooltip__text"> NetAppは、業界をリードするニューラル機械翻訳ツールを利用して、このコンテンツを提供しています。 </div>
+        </div>
+      </div>
+    </div><!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">日本語</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <div class="n-language-selector-menu__header">
+            <span class="n-language-selector-menu__title">言語を選択</span>
+          </div>
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/cloud-volumes-ontap" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li></ul>
+            </li>
+          </ul>
+          <div class="menu__footer">
+            <p>選択中の言語: 日本語
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+        <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">ホーム</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">ドキュメント</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/ja-jp/cloud/">Cloud Docs</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/cloud-volumes-ontap/">Cloud&nbsp;Volumes&nbsp;ONTAP</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          Cloud Volumes ONTAP 9.9.1 の新機能
+        </li>
+      </ul>
+    </div>
+
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">PDF<span>
+    </span>
+  </a>
+</div>
+<ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><div class="n-pdf-section">
+      <span class="n-pdf-section-title">サイト</span>
+    </div>
+    <li>
+      <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/fullsite-sidebar/NetApp_Cloud_Volumes_ONTAP_リリースノート.pdf" >
+        <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+        NetApp Cloud Volumes ONTAP リリースノート
+      </a>
+    </li>
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_9_1_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.9.1 リリースノート
+          </a>
+        </li>
+        <span>
+          
+    <div class="n-pdf-section">
+  <span class="n-pdf-section-title">このページ</span>
+</div>
+
+<li class="active">
+  <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/pages/reference_new_991.pdf" >
+    <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+    Cloud Volumes ONTAP 9.9.1 の新機能
+  </a>
+</li>
+
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/サポートされている構成.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            サポートされている構成
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/ストレージの制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            ストレージの制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/既知の制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            既知の制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_9_0_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.9.0 リリースノート
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/サポートされている構成.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            サポートされている構成
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/ストレージの制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            ストレージの制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/既知の制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            既知の制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_8_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.8 リリースノート
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/サポートされている構成.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            サポートされている構成
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/ストレージの制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            ストレージの制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/既知の制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            既知の制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_7_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.7 リリースノート
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/サポートされている構成.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            サポートされている構成
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/ストレージの制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            ストレージの制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/既知の制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            既知の制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_6_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.6 リリースノート
+          </a>
+        </li>
+        <span>
+          
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/サポートされている構成.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            サポートされている構成
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/ストレージの制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            ストレージの制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/既知の制限.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            既知の制限
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_5_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.5 リリースノート
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_4_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.4 リリースノート
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+    
+      <span class="subfolders" style="display:none;">
+        
+          <div class="n-pdf-section">
+            <span class="n-pdf-section-title">
+              セクション
+            </span>
+          </div>
+        
+        <li>
+          <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/sidebar/9_3_リリースノート.pdf" >
+            <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>
+            9.3 リリースノート
+          </a>
+        </li>
+        <span>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </span>
+      </span>
+    
+
+  
+
+
+
+
+
+
+
+
+</ul>
+
+<script>
+  $("#toggleContainerPdf li.active").parents('li').toggle('display');
+  $("#toggleContainerPdf li.active").parents('span.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+  });
+</script><ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="index.html">
+        Cloud Volumes ONTAP リリースノート
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.9.1 リリースノート</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="reference_new_991.html">
+        新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_licensing_991.html">
+        ライセンスの概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> サポートされている構成</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_configs_aws_991.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_azure_991.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_gcp_991.html">
+        GCP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ストレージの制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limits_aws_991.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_azure_991.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_gcp_991.html">
+        GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_issues_991.html">
+        既知の問題
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 既知の制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limitations_991.html">
+        一般的な制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_aws_991.html">
+        AWS の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_azure_991.html">
+        Azure の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_gcp_991.html">
+        GCP の制限
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_provider_integrations_991.html">
+        クラウドプロバイダの統合
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.9.0 リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_990.html">
+        新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_licensing_990.html">
+        ライセンスの概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> サポートされている構成</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_configs_aws_990.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_azure_990.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_gcp_990.html">
+        GCP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ストレージの制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limits_aws_990.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_azure_990.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_gcp_990.html">
+        GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_issues_990.html">
+        既知の問題
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 既知の制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limitations_990.html">
+        一般的な制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_aws_990.html">
+        AWS の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_azure_990.html">
+        Azure の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_gcp_990.html">
+        GCP の制限
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_provider_integrations_990.html">
+        クラウドプロバイダの統合
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.8 リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_98.html">
+        新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_licensing_98.html">
+        ライセンスの概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> サポートされている構成</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_configs_aws_98.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_azure_98.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_gcp_98.html">
+        GCP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ストレージの制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limits_aws_98.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_azure_98.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_gcp_98.html">
+        GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_issues_98.html">
+        既知の問題
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 既知の制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limitations_98.html">
+        一般的な制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_aws_98.html">
+        AWS の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_azure_98.html">
+        Azure の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_gcp_98.html">
+        GCP の制限
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_provider_integrations_98.html">
+        クラウドプロバイダの統合
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.7 リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_97.html">
+        新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="concept_licensing_97.html">
+        ライセンスの概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> サポートされている構成</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_configs_aws_97.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_azure_97.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_gcp_97.html">
+        GCP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ストレージの制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limits_aws_97.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_azure_97.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_gcp_97.html">
+        GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_issues_97.html">
+        既知の問題
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 既知の制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limitations_97.html">
+        一般的な制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_aws_97.html">
+        AWS の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_azure_97.html">
+        Azure の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_gcp_97.html">
+        GCP の制限
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.6 リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_96.html">
+        新機能
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> サポートされている構成</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_configs_aws_96.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_azure_96.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_configs_gcp_96.html">
+        GCP
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ストレージの制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limits_aws_96.html">
+        AWS
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_azure_96.html">
+        Azure
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limits_gcp_96.html">
+        GCP
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="reference_issues_96.html">
+        既知の問題
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 既知の制限</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_limitations_96.html">
+        一般的な制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_aws_96.html">
+        AWS の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_azure_96.html">
+        Azure の制限事項
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_gcp_96.html">
+        GCP の制限
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.5 リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_95.html">
+        新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_supported_configs_95.html">
+        サポートされている構成
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_storage_limits_95.html">
+        ストレージの制限
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_issues_95.html">
+        既知の問題
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_95.html">
+        既知の制限
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.4 リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_94.html">
+        新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_supported_configs_94.html">
+        サポートされている構成
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_storage_limits_94.html">
+        ストレージの制限
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_issues_94.html">
+        既知の問題
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_94.html">
+        既知の制限
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 9.3 リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="reference_new_93.html">
+        新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_supported_configs_93.html">
+        サポートされている構成
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_storage_limits_93.html">
+        ストレージの制限
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_issues_93.html">
+        既知の問題
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_limitations_93.html">
+        既知の制限
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/occm/index.html">
+        Cloud Manager のドキュメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_additional_info.html">
+        関連リンク
+      </a></li><li class=" "><a class="na-navbar-padding" href="reference_legal_notices.html">
+        法的通知
+      </a></li></ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      
+
+
+
+<div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Cloud Volumes ONTAP 9.9.1 の新機能</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2021-07-08 18:40:04 +0000">07/08/2021</time>
+    
+  
+
+<span>寄稿者
+  <a target="_blank" href="https://github.com/netapp-bcammett">
+    <img  class="avatar avatar-small"
+          alt="netapp-bcammett"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/18287750?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+  <span>
+    <a target="_blank" href="/ja-jp/cloud-volumes-ontap/pdfs/pages/reference_new_991.pdf" role="button">
+      <img src="/ja-jp/cloud-volumes-ontap/images/pdf.png" width="20" height="20"/>このページの PDF をダウンロード</a>
+  </span>
+
+
+</p>
+
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含まれています。</p>
+</div>
+<div class="paragraph">
+<p>その他の機能と機能拡張は、 Cloud Manager の最新バージョンで導入されました。を参照してください <a href="https://docs.netapp.com/us-en/occm/reference_new_occm.html" target="_blank" rel="noopener">"Cloud Manager リリースノート"</a> を参照してください。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="9-9-1-アップデート-2021-年-7-月-7-日">9.9.1 アップデート（ 2021 年 7 月 7 日）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Manager 3.9.8 リリースでは、次の変更が加えられています。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP では、新しい充電方法を利用できます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* 容量ベースの BYOL * ：容量ベースのライセンスでは、 TiB あたりの Cloud Volumes ONTAP 料金を支払うことができます。ライセンスはネットアップアカウントに関連付けられており、ライセンスに十分な容量があるかぎり、複数の Cloud Volumes ONTAP システムを作成することができます。容量ベースのライセンスは、 <em>Essential_or_Professional</em> のいずれかのパッケージ形式で提供されます。</p>
+</li>
+<li>
+<p>* Freemium offering * ： Freemium により、ネットアップのすべての Cloud Volumes ONTAP 機能を無償で使用できます（クラウドプロバイダの料金は引き続き適用されます）。システムあたりの割り当て容量は 500 GB に制限されており、サポート契約はありません。最大 10 個の Freemium システムを使用できます。</p>
+<div class="paragraph">
+<p><a href="concept_licensing_991.html">"これらのライセンスオプションの詳細については、こちらをご覧ください"</a>。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>AWS では、 Cloud Volumes ONTAP が m5dn.24xlarge インスタンスタイプをサポートするようになりました。料金には、 PAYGO Premium 、容量ベースのライセンス（ BYOL ）、ノードベースのライセンス（ BYOL ）があります。</p>
+</li>
+<li>
+<p>Google Cloud では、 Cloud Volumes ONTAP が Balanced Persistent Disk （ pd-bBalanced ）をサポートするようになりました。この SSD は、 GB あたりの IOPS を下げて、パフォーマンスとコストのバランスを取ります。</p>
+</li>
+<li>
+<p>Google Cloud の新しい Cloud Volumes ONTAP システムでは、 custom-4-16384 マシンタイプはサポートされなくなりました。</p>
+<div class="paragraph">
+<p>このタイプのマシンで既存のシステムを実行している場合は、引き続き使用できますが、 n2 標準 -4 マシンタイプに切り替えることをお勧めします。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/occm/reference_new_occm.html" target="_blank" rel="noopener">"Cloud Manager の新機能については、こちらをご覧ください"</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="9-9-1-アップデート-2021-年-6-月-3-日">9.9.1 アップデート（ 2021 年 6 月 3 日）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>最近の Cloud Manager 3.9.7 リリースでは、新しいプロフェッショナルパッケージのサポートが導入されています。このパッケージを使用すると、 AWS Marketplace で年単位の契約を締結して Cloud Volumes ONTAP と Cloud Backup Service をバンドルできます。</p>
+</div>
+<div class="paragraph">
+<p><a href="reference_configs_aws_991.html">"このライセンスオプションの詳細については、こちらをご覧ください。"</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="9-9-1-release-candidate-2021-年-5-月-24-日">9.9.1 Release Candidate （ 2021 年 5 月 24 日）</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Volumes ONTAP 9.9.1 Release Candidate は、 AWS 、 Azure 、 Google Cloud Platform で提供されるようになりました。</p>
+</div>
+<div class="paragraph">
+<p>で導入された機能に加えて <a href="https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508" target="_blank" rel="noopener">"ONTAP 9.9.1"</a>このリリースの Cloud Volumes ONTAP には、次の機能が含まれています。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#ONTAP S3 support in Azure">[ONTAP S3 support in Azure]</a></p>
+</li>
+<li>
+<p><a href="#Enhanced performance in AWS with high write speed">[Enhanced performance in AWS with high write speed]</a></p>
+</li>
+<li>
+<p><a href="#io2 boot disk in AWS">[io2 boot disk in AWS]</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="azure-での-ontap-s3-のサポート">Azure での ONTAP S3 のサポート</h3>
+<div class="paragraph">
+<p>Azure の Cloud Volumes ONTAP から S3 オブジェクトストレージを提供できるようになりました。Cloud Volumes ONTAP for Microsoft Azure では、 NFS や SMB などの従来型のファイルベースプロトコルに加え、スケールアウトストレージのオプションとして S3 をサポートしています。</p>
+</div>
+<div class="paragraph">
+<p>次の点に注意してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP S3 と ONTAP の主なユースケースは、汎用のオブジェクトストアです。</p>
+</li>
+<li>
+<p>現時点では、 AWS の Cloud Volumes ONTAP や Google Cloud では S3 プロトコルはサポートされていません。</p>
+</li>
+<li>
+<p>Cloud Manager には、 ONTAP S3 機能に対する管理機能はありません。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>CLI を使用することが、 Cloud Volumes ONTAP からの S3 クライアントアクセスを設定するためのベストプラクティスです。詳細については、を参照してください <a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html" target="_blank" rel="noopener">"S3 構成パワーガイド"</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="高速の書き込み速度で-aws-のパフォーマンスが向上します">高速の書き込み速度で AWS のパフォーマンスが向上します</h3>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP のスループットパフォーマンスが向上しました いつ <a href="https://docs.netapp.com/us-en/occm/concept_write_speed.html" target="_blank" rel="noopener">"高速の書き込み速度"</a> サポートされているインスタンスタイプで有効になっている。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="io2-aws-でブートディスクを使用します">IO2 ： AWS でブートディスクを使用します</h3>
+<div class="paragraph">
+<p>AWS では、新しい Cloud Volumes ONTAP システムのブートディスクがプロビジョニングされた IOPS SSD （ IO2 ）ボリュームになります。IO2 ボリュームは、以前はブートディスクに使用されていた io1 ボリュームよりも信頼性が高くなります。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="必要な-cloud-manager-connector-のバージョン">必要な Cloud Manager Connector のバージョン</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>新しい Cloud Volumes ONTAP 9.9.1 システムを導入し、既存のシステムを 9.1.1 にアップグレードするには、 Cloud Manager Connector のバージョン 3.9.6 以降が実行されている必要があります。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="アップグレードに関する注意事項">アップグレードに関する注意事項</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP のアップグレードが Cloud Manager から完了している必要があります。System Manager または CLI を使用して Cloud Volumes ONTAP をアップグレードしないでください。これを行うと、システムの安定性に影響を与える可能性</p>
+</li>
+<li>
+<p>9.9.0 リリースおよび 9.8 リリースから Cloud Volumes ONTAP 9.9.1 にアップグレードできます。Cloud Volumes ONTAP 9.9.0 および 9.8 システムから 9.9.1 リリースへのアップグレードを求めるプロンプトが Cloud Manager に表示されます。</p>
+<div class="paragraph">
+<p><a href="http://docs.netapp.com/us-en/occm/task_updating_ontap_cloud.html#upgrading-cloud-volumes-ontap-from-cloud-manager-notifications" target="_blank" rel="noopener">"Cloud Manager から通知された場合のアップグレード方法について説明します"</a>。</p>
+</div>
+</li>
+<li>
+<p>シングルノードシステムのアップグレードでは、 I/O が中断されるまで最大 25 分間システムがオフラインになります。</p>
+</li>
+<li>
+<p>HA ペアのアップグレードは無停止で、 I/O が中断されません。無停止アップグレードでは、各ノードが連携してアップグレードされ、クライアントへの I/O の提供が継続されます。</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="c4-m4-および-r4-インスタンスタイプ">C4 、 M4 、および R4 インスタンスタイプ</h3>
+<div class="paragraph">
+<p>9.8 リリース以降では、新しい Cloud Volumes ONTAP システムで C4 、 M4 、および R4 インスタンスタイプはサポートされません。C4 、 M4 、または R4 インスタンスタイプで実行されている既存の Cloud Volumes ONTAP システムがある場合も、このリリースにアップグレードできます。</p>
+</div>
+<div class="paragraph">
+<p>C5 、 m5 、または r5 インスタンスファミリーのインスタンスタイプに変更することをお勧めします。</p>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div class="page-nav-contribute"  >
+      <div class="page-nav-contribute-title">寄稿する</div>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-volumes-ontap/blob/main/reference_new_991.adoc" class="btn btn-default githubEditButton" role="button"><img src="/ja-jp/cloud-volumes-ontap/images/github.png" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-volumes-ontap/issues/new?body=Page%3A%20[Cloud Volumes ONTAP 9.9.1 の新機能](https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_991.html)" class="btn btn-default githubEditButton" role="button"><img src="/ja-jp/cloud-volumes-ontap/images/github.png" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2021 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-volumes-ontap/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Web サイトについてのフィードバックを<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">お寄せください</a>
+  <a href="https://docs.netapp.com/ja-jp/announcements/" class="n-footer__copyright">お知らせ</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/cloud-volumes-ontap/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/cloud-volumes-ontap/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/cloud-volumes-ontap/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/cloud-volumes-ontap/js/www-ntap.js'></script>
+  </body>
+
+  
+</html>

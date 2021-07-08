@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/concept_licensing_97.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/concept_licensing_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/concept_licensing_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/concept_licensing_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/google_cloud.html</loc>
+      
+      <lastmod>2021-06-30T13:45:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/</loc>
+      
+      <lastmod>2021-03-09T19:29:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_additional_info.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_aws_96.html</loc>
+      
+      <lastmod>2021-04-24T03:00:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_aws_97.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_aws_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_aws_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_aws_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_azure_96.html</loc>
+      
+      <lastmod>2021-04-24T03:00:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_azure_97.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_azure_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_azure_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_azure_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_gcp_96.html</loc>
+      
+      <lastmod>2021-04-24T03:00:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_gcp_97.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_gcp_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_gcp_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_configs_gcp_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_93.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_94.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_95.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_96.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_97.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_98.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_990.html</loc>
+      
+      <lastmod>2021-03-09T19:29:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_issues_991.html</loc>
+      
+      <lastmod>2021-05-31T00:12:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_legal_notices.html</loc>
+      
+      <lastmod>2021-03-09T19:29:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_93.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_94.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_95.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_96.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_97.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_98.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_990.html</loc>
+      
+      <lastmod>2021-03-09T19:29:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_991.html</loc>
+      
+      <lastmod>2021-05-31T00:12:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_aws_96.html</loc>
+      
+      <lastmod>2021-05-06T17:58:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_aws_97.html</loc>
+      
+      <lastmod>2021-05-06T17:58:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_aws_98.html</loc>
+      
+      <lastmod>2021-05-06T17:58:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_aws_990.html</loc>
+      
+      <lastmod>2021-05-06T17:58:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_aws_991.html</loc>
+      
+      <lastmod>2021-05-31T00:12:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_azure_96.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_azure_97.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_azure_98.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_azure_990.html</loc>
+      
+      <lastmod>2021-03-09T19:29:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_azure_991.html</loc>
+      
+      <lastmod>2021-05-31T00:12:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_gcp_96.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_gcp_97.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_gcp_98.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_gcp_990.html</loc>
+      
+      <lastmod>2021-03-09T19:29:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limitations_gcp_991.html</loc>
+      
+      <lastmod>2021-05-31T00:12:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_aws_96.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_aws_97.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_aws_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_aws_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_aws_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_azure_96.html</loc>
+      
+      <lastmod>2021-04-24T03:00:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_azure_97.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_azure_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_azure_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_azure_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_gcp_96.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_gcp_97.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_gcp_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_gcp_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_limits_gcp_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_93.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_94.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_95.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_96.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_97.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_98.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_990.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_new_991.html</loc>
+      
+      <lastmod>2021-07-08T18:40:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_provider_integrations_98.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_provider_integrations_990.html</loc>
+      
+      <lastmod>2021-03-09T19:29:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_provider_integrations_991.html</loc>
+      
+      <lastmod>2021-05-31T00:12:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_storage_limits_93.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_storage_limits_94.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_storage_limits_95.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_supported_configs_93.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_supported_configs_94.html</loc>
+      
+      <lastmod>2021-02-13T20:07:11+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap/reference_supported_configs_95.html</loc>
+      
+      <lastmod>2021-04-24T03:00:24+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/ja-jp/cloud-volumes-ontap//search.html</loc>
+      
+      <lastmod>2021-07-08T18:41:21+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
