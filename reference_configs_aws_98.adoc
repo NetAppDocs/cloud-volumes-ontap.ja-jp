@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference_configs_aws_98.html 
 keywords: ec2, instance, type, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, sizes, disks, networking, bandwidth 
-summary: Cloud Volumes ONTAP は、単一ノードシステムまたは HA ペアとして AWS で使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランが用意されています。 
+summary: AWS では、いくつかの Cloud Volumes ONTAP 構成がサポートされます。 
 ---
 = Cloud Volumes ONTAP 9.8 で AWS でサポートされる構成
 :hardbreaks:
@@ -13,70 +13,7 @@ summary: Cloud Volumes ONTAP は、単一ノードシステムまたは HA ペ�
 
 
 [role="lead"]
-Cloud Volumes ONTAP では、従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランをご用意しています。PAYGO の場合は Explore 、 Standard 、 Premium のいずれかを選択できます。これらのライセンスオプションを使用すると、それぞれのニーズに合った構成を選択できます。
-
-
-
-== ライセンスの概要
-
-AWS で Cloud Volumes ONTAP の料金を支払うには、次のいずれかのオプションを使用します。
-
-* * PAYGO * ： AWS Marketplace でのサブスクリプションでは、従量課金制の料金を 1 時間単位でお支払いいただけます
-* * BYOL * ：お客様所有のライセンスをネットアップから購入されます
-* * プロフェッショナルパッケージ * ： AWS Marketplace サブスクリプションを通じて、年間契約付きで TiB あたりの料金をお支払いいただけます
-
-
-
-
-=== PAYGO
-
-* AWS Marketplace での従量課金制のサブスクリプションが時間単位で必要です。
-* Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。それぞれのライセンスで、異なる量のストレージとコンピューティングがサポートされます。
-* AWS に初めて導入する Cloud Volumes ONTAP システムに対しては、 30 日間の無償トライアルを利用できます。
-+
-** 1 時間ごとのソフトウェア料金は発生しませんが、 AWS インフラの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。
-** 無料トライアルが終了すると、選択したライセンスに応じて 1 時間ごとに請求されます。ただし、ご登録いただいている場合に限ります。購読していない場合は、システムがシャットダウンします。
-+
-Cloud Volumes ONTAP システムの作成時に、 Cloud Manager から AWS Marketplace に登録するよう求められます。
-
-
-
-* 別のライセンスオプションへの変換はサポートされていません。
-* 基本的なテクニカルサポートが提供されますが、必ず実施する必要があります https://docs.netapp.com/us-en/occm/task_registering.html["に関連付けられたネットアップのシリアル番号を登録してアクティブ化します システム"^]。
-
-
-https://aws.amazon.com/marketplace/pp/prodview-eap6ybxwk5ycg["AWS Marketplace で価格情報を確認"]。
-
-
-
-=== BYOL
-
-* 12 カ月、 24 カ月などの期間ベースのサブスクリプションオプションを使用するシングルノードライセンスまたは HA ライセンスです。
-* サブスクリプション期間中はサポートが含まれます。
-* 別のライセンスオプションへの変換はサポートされていません。
-* システムライセンスは、 BYOL システムごとに必要です。 EBS ディスクと S3 オブジェクトストレージへの階層化によって、最大 368 TB の容量を提供します。 <<Supported storage,ストレージのサポートに関する詳細情報>>。
-* 追加容量ライセンスを購入して、 368 TB を超える容量を割り当てることができます。
-+
-たとえば、容量ライセンスを追加購入して、最大 736TB の容量を Cloud Volumes ONTAP に割り当てることができます。また、最大 1.4 PB までライセンスを 3 つ購入することもできます。
-
-
-
-
-
-=== プロフェッショナルパッケージ
-
-* Cloud Volumes ONTAP と Cloud Backup Service の両方にライセンスを提供します。
-* この契約に対して複数の Cloud Volumes ONTAP システムを請求できます。
-* AWS Marketplace からのサブスクリプションが、 12 カ月、 24 カ月、または 36 カ月の年間契約として必要です。
-+
-Cloud Volumes ONTAP システムの作成時に、 Cloud Manager から AWS Marketplace に登録するよう求められます。
-
-* サブスクリプション期間中はサポートが含まれます。
-* 別のライセンスオプションへの変換はサポートされていません。
-* EBS ディスクと S3 オブジェクトストレージへの階層化で、最大 2PB の容量を提供します。 <<Supported storage,ストレージのサポートに関する詳細情報>>。
-
-
-https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace で価格情報を確認"^]。
+AWS では、いくつかの Cloud Volumes ONTAP 構成がサポートされます。
 
 
 
@@ -98,12 +35,12 @@ Cloud Volumes ONTAP では、データ階層化用に複数のタイプの EBS �
 
 各ライセンスでサポートされる最大システム容量は異なります。最大システム容量には、ディスクベースのストレージに加えて、データの階層化に使用されるオブジェクトストレージが含まれます。ネットアップでは、この制限を超えることはサポートしていません
 
-[cols="h,d,d,d,d,d"]
+[cols="h,d,d,d,d,d,d"]
 |===
-|  | PAYGO Explore | PAYGO Standard の略 | PAYGO Premium | BYOL | プロフェッショナルパッケージ 
+|  | フリーミアム | PAYGO Explore | PAYGO Standard の略 | PAYGO Premium | ノードベースのライセンス | 容量単位のライセンスです 
 
 
-| 最大システム容量（ディスク + オブジェクトストレージ） ^1 ^ | 2TB | 10 TB | 368 TB^2^ | ライセンスあたり 368 TB ^2^ | 2 PB ^2^ 
+| 最大システム容量（ディスク + オブジェクトストレージ） ^1 ^ | 500 GB | 2TB | 10 TB | 368 TB^2^ | ライセンスあたり 368 TB ^2^ | 2 PB ^2^ 
 
 
 | サポートされているディスクタイプ  a| 
@@ -114,11 +51,11 @@ Cloud Volumes ONTAP では、データ階層化用に複数のタイプの EBS �
 
 
 
-| S3 へのコールドデータ階層化 | サポート対象外 4+| サポートされます 
+| S3 へのコールドデータ階層化 | サポートされます | サポート対象外 4+| サポートされます 
 |===
 . HA ペアの場合、容量の上限は HA ペア全体に適用されます。ノード単位ではありません。たとえば、 Premium ライセンスを使用する場合、両方のノード間で最大 368 TB の容量を確保できます。
-. 一部の HA 構成では、ディスク制限により、ディスクのみを使用することで容量制限に達することができません。その場合、で容量の制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_98.html["ストレージの制限"]。
-. SSD を Cloud Volumes ONTAP Standard 、 Premium 、および BYOL とともに使用すると、書き込みパフォーマンスが向上します。
+. 一部の構成では、ディスク制限により、ディスクのみを使用して容量制限に達することができません。その場合、で容量の制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。ディスクの制限については、を参照してください link:reference_limits_aws_98.html["ストレージの制限"]。
+. PAYGO Explore を除くすべての Cloud Volumes ONTAP 構成で SSD を使用する場合は、書き込みパフォーマンスの向上が有効になります。
 . スループット最適化 HDD （ st1 ）を使用している場合、オブジェクトストレージへのデータの階層化は推奨されません。
 
 
@@ -177,16 +114,16 @@ AWS では、アグリゲートに同じタイプおよびサイズのディス�
 | 使用許諾 | サポートされるインスタンス | vCPU | RAM | Flash Cache ^1 ^ | ネットワーク帯域幅（ Gbps ） | EBS 帯域幅（ Mbps ） | 高速書き込み速度 ^2^ 
 
 
-| * BYOL の探検および * | m5.xlarge のように指定します | 4. | 16 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポート（シングルノードのみ） 
+| * 他のライセンスを調査 * | m5.xlarge のように指定します | 4. | 16 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポート（シングルノードのみ） 
 
 
-.2+| * Standard および BYOL * | R5.xlarge （ R5.xlarge ） | 4. | 32 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポート（シングルノードのみ） 
+.2+| * 標準ライセンスまたはその他のライセンス * | R5.xlarge （ R5.xlarge ） | 4. | 32 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポート（シングルノードのみ） 
 
 
 | m5.2xlarge | 8. | 32 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポートされます 
 
 
-.16+| * プレミアムおよび BYOL * | m5n.2xlarge | 8. | 32 | サポート対象外 | 最大 25 | 最大 4,750 | サポートされます 
+.16+| * Premium またはその他のライセンス * | m5n.2xlarge | 8. | 32 | サポート対象外 | 最大 25 | 最大 4,750 | サポートされます 
 
 
 | r5.2xlarge | 8. | 64 | サポート対象外 | 最大 10 個 | 最大 4,750 | サポートされます 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference_configs_gcp_98.html 
 keywords: google, gcp, google cloud platform, explore, standard, premium, byol, paygo, disks, supported, capacity, machine types, sizes, HA, high availability, HA pairs 
-summary: Cloud Volumes ONTAP は、シングルノードシステムまたは HA ペアとして Google Cloud Platform で使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランが用意されています。 
+summary: GCP では、いくつかの Cloud Volumes ONTAP 構成がサポートされています。 
 ---
 = GCP の Cloud Volumes ONTAP 9.8 でサポートされている構成
 :hardbreaks:
@@ -13,37 +13,7 @@ summary: Cloud Volumes ONTAP は、シングルノードシステムまたは HA
 
 
 [role="lead"]
-Cloud Volumes ONTAP は、シングルノードシステムまたは HA ペアとして Google Cloud Platform で使用できます。従量課金制とお客様所有のライセンス（ BYOL ）の 2 種類の料金プランがあります。
-
-
-
-== 従量課金制の概要
-
-* Cloud Volumes ONTAP には、 Explore 、 Standard 、 Premium の 3 種類のライセンスオプションがあります。
-* GCP に初めて導入する Cloud Volumes ONTAP システムでは、 30 日間の無償トライアルを利用できます。
-+
-** ソフトウェア料金は時間単位では発生しませんが、 GCP インフラストラクチャの料金（コンピューティング、ストレージ、ネットワーク）は引き続き適用されます。
-** 無料トライアルが終了すると、選択したライセンスに従って 1 時間ごとに請求されます。 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager["購読している限り"^]。購読していない場合は、システムがシャットダウンします。
-
-
-* PAYGO から BYOL への変換は現在サポートされていません。
-* 基本的なテクニカルサポートが提供されますが、ご使用のシステムに関連付けられたネットアップのシリアル番号を登録して有効化する必要があります。
-+
-https://docs.netapp.com/us-en/occm/task_registering.html["Cloud Manager で従量課金制システムを登録"^]
-
-
-
-
-
-== BYOL の概要
-
-* 12 カ月、 24 カ月などの期間ベースのサブスクリプションオプションを使用するシングルノードライセンスまたは HA ライセンスです。
-* サブスクリプション期間中はサポートが含まれます。
-* Cloud Volumes ONTAP BYOL システムでは、複数のライセンスを購入して、 368 TB を超える容量を割り当てることができます。
-+
-たとえば、 2 つのライセンスを購入して、 Cloud Volumes ONTAP に最大 736TB の容量を割り当てることができます。また、 4 つのライセンスを購入して、最大 1.4 PB までライセンスを取得することもできます。
-
-
+GCP では、いくつかの Cloud Volumes ONTAP 構成がサポートされています。
 
 
 
@@ -53,19 +23,22 @@ Cloud Volumes ONTAP は、フォールトトレランスとノンストップオ
 
 シングルノードシステムの HA ペアへのアップグレードはサポートされていません。シングルノードシステムと HA ペアを切り替える場合は、新しいシステムを導入し、既存のシステムから新しいシステムにデータをレプリケートする必要があります。
 
-
-
-=== シングルノードシステム
-
-Cloud Volumes ONTAP を GCP のシングルノードシステムとして導入する場合は、次の構成から選択できます。
-
-[cols="h,d,d,d,d"]
+[cols="h,d,d,d,d,d,d"]
 |===
-|  | 調査 | 標準 | Premium サービス | BYOL 
+|  | フリーミアム | PAYGO Explore | PAYGO Standard の略 | PAYGO Premium | ノードベースのライセンス | 容量単位のライセンスです 
 
 
-| サポートされているマシンタイプ ^1  a| 
-* custom-4-16384
+| 最大システム容量（ディスク + オブジェクトストレージ） ^1 ^ | 500 GB | 2 TB ^2^ | 10 TB | 368 TB | 1 ライセンスあたり 368 TB | 2PB 
+
+
+| サポートされているマシンタイプ ^3  a| 
+* N1-standard-8
+* N1-standard-32
+* N2 - 標準 -4
+* N2-standard-8
+* N2-standard-32
+
+ a| 
 * N2 - 標準 -4
 
  a| 
@@ -77,7 +50,13 @@ Cloud Volumes ONTAP を GCP のシングルノードシステムとして導入�
 * N2-standard-32
 
  a| 
-* custom-4-16384
+* N1-standard-8
+* N1-standard-32
+* N2 - 標準 -4
+* N2-standard-8
+* N2-standard-32
+
+ a| 
 * N1-standard-8
 * N1-standard-32
 * N2 - 標準 -4
@@ -87,77 +66,20 @@ Cloud Volumes ONTAP を GCP のシングルノードシステムとして導入�
 
 
 
-| サポートされているディスクタイプ ^2^ 4+| ゾーン型永続ディスク（ SSD と標準） 
-
-
-| オブジェクトストレージへのコールドデータの階層化 | サポート対象外 3+| サポートされます 
-
-
-| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB^3^ | ライセンスあたり 368 TB ^3^ 
-|===
-注：
-
-. カスタムマシンタイプには、 vCPU 4 個と 16GB のメモリがあります。標準マシンタイプの詳細については、を参照してください https://cloud.google.com/compute/docs/machine-types#standard_machine_types["Google Cloud のドキュメント：「 Machine Types"^]。
-. SSD の使用時には書き込みパフォーマンスの向上が実現します。
-. ディスク制限を使用すると、ディスクだけを使用して 368 TB の容量制限に達することができません。を使用すると、 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。
-+
-link:reference_limits_gcp_98.html["GCP のディスク制限について詳しくは、こちらをご覧ください"]。
-
-. Cloud Manager インターフェイスに、 Standard および BYOL でサポートされる追加のマシンタイプが表示されます。 n1-highmem-4ただし、このマシンタイプは本番環境用ではありません。特定のラボ環境でのみ使用できるようになりました。
-. Google Cloud Platform リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
-. Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。
-
-
-
-
-=== HA ペア
-
-GCP で Cloud Volumes ONTAP を HA ペアとして導入する場合は、次の構成から選択できます。
-
-[cols="h,d,d,d,d"]
-|===
-|  | 調査 | 標準 | Premium サービス | BYOL 
-
-
-| サポートされているマシンタイプ ^1  a| 
-* custom-4-16384
-* N2 - 標準 -4
-
- a| 
-* N1-standard-8
-* N2-standard-8
-
- a| 
-* N1-standard-32
-* N2-standard-32
-
- a| 
-* custom-4-16384
-* N1-standard-8
-* N1-standard-32
-* N2 - 標準 -4
-* N2-standard-8
-* N2-standard-32
-
-
-
-
-| サポートされているディスクタイプ ^2^ 4+| ゾーン型永続ディスク（ SSD と標準） 
-
-
-| オブジェクトストレージへのコールドデータの階層化 | サポート対象外 3+| サポートされます 
-
-
-| 最大システム容量（ディスク + オブジェクトストレージ） | 2TB | 10 TB | 368 TB^3^ | ライセンスあたり 368 TB ^3^ 
+| サポートされているディスクタイプ ^4^ 6+| ゾーン型永続ディスク（ SSD と標準） 
 |===
 注：
 
-. カスタムマシンタイプには、 vCPU 4 個と 16GB のメモリがあります。標準マシンタイプの詳細については、を参照してください https://cloud.google.com/compute/docs/machine-types#standard_machine_types["Google Cloud のドキュメント：「 Machine Types"^]。
-. SSD の使用時には書き込みパフォーマンスの向上が実現します。
-. ディスク制限を使用すると、ディスクだけを使用して 368 TB の容量制限に達することができません。を使用すると、 368 TB の容量制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。
+. ディスク制限を使用すると、ディスクのみを使用することでシステムの最大容量に達することができません。を使用して容量の制限に達することができます https://docs.netapp.com/us-en/occm/concept_data_tiering.html["使用頻度の低いデータをオブジェクトストレージに階層化します"^]。
 +
 link:reference_limits_gcp_98.html["GCP のディスク制限について詳しくは、こちらをご覧ください"]。
 
+. 従量課金制では、 Google Cloud Storage へのデータ階層化はサポートされません。
+. 新しい Cloud Volumes ONTAP システムでは、 custom-4-16384 マシンタイプはサポートされなくなりました。
++
+このタイプのマシンで既存のシステムを実行している場合は、引き続き使用できますが、 n2 標準 -4 マシンタイプに切り替えることをお勧めします。
+
+. SSD の使用時には書き込みパフォーマンスの向上が実現します。
 . Cloud Manager インターフェイスに、 Standard および BYOL でサポートされる追加のマシンタイプが表示されます。 n1-highmem-4ただし、このマシンタイプは本番環境用ではありません。特定のラボ環境でのみ使用できるようになりました。
 . Google Cloud Platform リージョンのサポートについては、を参照してください https://cloud.netapp.com/cloud-volumes-global-regions["Cloud Volume グローバルリージョン"^]。
 . Cloud Volumes ONTAP は、クラウドプロバイダから予約済みまたはオンデマンドの VM インスタンスのいずれかで実行できます。他の種類の VM インスタンスを使用するソリューションはサポートされていません。

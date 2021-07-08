@@ -19,6 +19,31 @@ Cloud Volumes ONTAP 9.9.1 には、いくつかの新機能と機能拡張が含
 
 
 
+== 9.9.1 アップデート（ 2021 年 7 月 7 日）
+
+Cloud Manager 3.9.8 リリースでは、次の変更が加えられています。
+
+* Cloud Volumes ONTAP では、新しい充電方法を利用できます。
++
+** * 容量ベースの BYOL * ：容量ベースのライセンスでは、 TiB あたりの Cloud Volumes ONTAP 料金を支払うことができます。ライセンスはネットアップアカウントに関連付けられており、ライセンスに十分な容量があるかぎり、複数の Cloud Volumes ONTAP システムを作成することができます。容量ベースのライセンスは、 _Essential_or_Professional_ のいずれかのパッケージ形式で提供されます。
+** * Freemium offering * ： Freemium により、ネットアップのすべての Cloud Volumes ONTAP 機能を無償で使用できます（クラウドプロバイダの料金は引き続き適用されます）。システムあたりの割り当て容量は 500 GB に制限されており、サポート契約はありません。最大 10 個の Freemium システムを使用できます。
++
+link:concept_licensing_991.html["これらのライセンスオプションの詳細については、こちらをご覧ください"]。
+
+
+
+* AWS では、 Cloud Volumes ONTAP が m5dn.24xlarge インスタンスタイプをサポートするようになりました。料金には、 PAYGO Premium 、容量ベースのライセンス（ BYOL ）、ノードベースのライセンス（ BYOL ）があります。
+* Google Cloud では、 Cloud Volumes ONTAP が Balanced Persistent Disk （ pd-bBalanced ）をサポートするようになりました。この SSD は、 GB あたりの IOPS を下げて、パフォーマンスとコストのバランスを取ります。
+* Google Cloud の新しい Cloud Volumes ONTAP システムでは、 custom-4-16384 マシンタイプはサポートされなくなりました。
++
+このタイプのマシンで既存のシステムを実行している場合は、引き続き使用できますが、 n2 標準 -4 マシンタイプに切り替えることをお勧めします。
+
+
+
+https://docs.netapp.com/us-en/occm/reference_new_occm.html["Cloud Manager の新機能については、こちらをご覧ください"^]。
+
+
+
 == 9.9.1 アップデート（ 2021 年 6 月 3 日）
 
 最近の Cloud Manager 3.9.7 リリースでは、新しいプロフェッショナルパッケージのサポートが導入されています。このパッケージを使用すると、 AWS Marketplace で年単位の契約を締結して Cloud Volumes ONTAP と Cloud Backup Service をバンドルできます。
@@ -83,3 +108,11 @@ http://docs.netapp.com/us-en/occm/task_updating_ontap_cloud.html#upgrading-cloud
 * シングルノードシステムのアップグレードでは、 I/O が中断されるまで最大 25 分間システムがオフラインになります。
 * HA ペアのアップグレードは無停止で、 I/O が中断されません。無停止アップグレードでは、各ノードが連携してアップグレードされ、クライアントへの I/O の提供が継続されます。
 
+
+
+
+=== C4 、 M4 、および R4 インスタンスタイプ
+
+9.8 リリース以降では、新しい Cloud Volumes ONTAP システムで C4 、 M4 、および R4 インスタンスタイプはサポートされません。C4 、 M4 、または R4 インスタンスタイプで実行されている既存の Cloud Volumes ONTAP システムがある場合も、このリリースにアップグレードできます。
+
+C5 、 m5 、または r5 インスタンスファミリーのインスタンスタイプに変更することをお勧めします。
